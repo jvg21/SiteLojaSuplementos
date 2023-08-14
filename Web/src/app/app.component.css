@@ -1,0 +1,46 @@
+.footer{
+    margin-top: 50px;
+    width: 100vw;
+    left: 0;
+    bottom: 0;
+    background-color: azure;
+    align-self: flex-end;
+    padding-left: 4vw;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.card{
+    display: flex ;
+    flex-direction: column;
+    background-color: white;
+    padding: 8px;
+    height: 450px;
+    width: 300px;
+    border-radius: 15px;
+    margin: 5px;
+
+}
+.card_image{
+    background-color: black;
+    width: 100%;
+    height: 70%;
+    margin-bottom: 5px;
+    border-radius: 15px;
+}
+.card_body{
+    color: black;
+    height: 15%;
+    margin: 20px;
+}
+.card_button{
+    margin: 20px;
+}
+.card_button button{
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+}
