@@ -9,11 +9,13 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import { CardComponent } from './Card/card.component';
+import { MenuComponent } from './Menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent
+    CardComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
