@@ -1,13 +1,3 @@
-.footer{
-    display: flex;
-    margin-top: 50px;
-    width: 100vw;
-    left: 0;
-    bottom: 0;
-    background-color: azure;
-    padding-left: 4vw;
-
-}
 .container{
     display: flex;
     justify-content: center;
