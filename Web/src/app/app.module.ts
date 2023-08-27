@@ -8,14 +8,18 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
-import { CardComponent } from './Card/card.component';
-import { MenuComponent } from './Menu/menu.component';
+import { CardComponent } from './components/Card/card.component';
+import { MenuComponent } from './components/Menu/menu.component';
+import { LayoutComponent } from './components/Layout/layout.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
-    MenuComponent
+    MenuComponent,
+    LayoutComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
