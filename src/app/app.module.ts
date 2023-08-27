@@ -8,10 +8,11 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
-import { CardComponent } from './components/Card/card.component';
+import { CardComponent } from './components/card/card.component';
 import { MenuComponent } from './components/Menu/menu.component';
-import { LayoutComponent } from './components/Layout/layout.component';
+import { LayoutComponent } from './components/layout/layout.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CardDisplayComponent } from './components/card-display/card-display.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FooterComponent } from './components/footer/footer.component';
     CardComponent,
     MenuComponent,
     LayoutComponent,
-    FooterComponent
+    FooterComponent,
+    CardDisplayComponent
   ],
   imports: [
     BrowserModule,

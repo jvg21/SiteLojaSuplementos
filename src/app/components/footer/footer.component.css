@@ -1,0 +1,6 @@
+.footer{
+    display: flex;
+    width: 100vw;
+    background-color: azure;
+    margin-top: 90vh;
+}
