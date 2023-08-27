@@ -10,12 +10,14 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import { CardComponent } from './Card/card.component';
 import { MenuComponent } from './Menu/menu.component';
+import { LayoutComponent } from './Layout/layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
-    MenuComponent
+    MenuComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
