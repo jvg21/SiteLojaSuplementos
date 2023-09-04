@@ -1,31 +1,43 @@
 .card{
     display: flex ;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     background-color: #575757;
-    padding: 8px;
-    height: 300px;
-    width: 300px;
+    height: 500px;
+    width: auto;
     border-radius: 15px;
-    margin: 5px;
+    margin: 15px;
 
 }
+.card:hover{
+    background-color: orange;
+}
 .card_image{
-    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 70%;
     margin-bottom: 5px;
+}
+.card_image img{
+    width: 101.2%;
+    height: 97%;
     border-radius: 15px;
 }
 .card_body{
     color: black;
-    height: 15%;
-    margin: 20px;
+    height: 500px;
+    width: 90%;
 }
 .card_button{
+    width: 100%;
+    height: 100%;
     margin: 20px;
 }
 .card_button button{
-    width: 100%;
+    width: 80%;
     height: 40px;
     font-size: 20px;
 }
