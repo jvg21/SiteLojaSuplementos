@@ -1,0 +1,12 @@
+.Menu-opcoes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+.Opcoes{
+    margin: 5px 8px;
+    text-decoration: none;
+    color: #000;
+}

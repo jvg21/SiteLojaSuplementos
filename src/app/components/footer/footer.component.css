@@ -1,6 +1,7 @@
 .footer{
     display: flex;
     width: 100vw;
+    position: relative;
+    top: 10%;
     background-color: azure;
-    margin-top: 90vh;
 }
