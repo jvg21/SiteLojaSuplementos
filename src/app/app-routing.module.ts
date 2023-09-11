@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { CardComponent } from './components/card/card.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { CardDisplayComponent } from './components/card-display/card-display.component';
+import { LoginComponent } from './login/login.component';
+
 
 const routes: Routes = [
   //{ path: 'layout', component: LayoutComponent },
@@ -10,7 +12,8 @@ const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
-      { path:'', component:CardDisplayComponent },
+      {path:'', component:CardDisplayComponent },
+      {path: 'login',component:LoginComponent}
 
     ]
   }
