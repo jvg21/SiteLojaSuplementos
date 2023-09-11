@@ -13,6 +13,7 @@ import { MenuComponent } from './components/Menu/menu.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardDisplayComponent } from './components/card-display/card-display.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CardDisplayComponent } from './components/card-display/card-display.com
     MenuComponent,
     LayoutComponent,
     FooterComponent,
-    CardDisplayComponent
+    CardDisplayComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
