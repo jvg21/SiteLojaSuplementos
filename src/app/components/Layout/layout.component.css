@@ -1,6 +1,13 @@
-.container{
+*{
+    min-height: 83vh;
+}
+
+.containerRoute{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
 }
+
+
+
