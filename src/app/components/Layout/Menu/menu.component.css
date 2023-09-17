@@ -8,9 +8,12 @@
 .Opcoes{
     margin: 5px 8px;
     text-decoration: none;
-    color: #000;
+    color: white;
 }
 .logo{
     text-decoration: none;
-    color: #000;
+    color: white;
+}
+.mat-toolbar{
+    background-color: rgb(95, 0, 20);
 }

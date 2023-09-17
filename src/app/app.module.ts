@@ -9,10 +9,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import { CardComponent } from './components/card/card.component';
-import { MenuComponent } from './components/Menu/menu.component';
+import { MenuComponent } from './components/Layout/Menu/menu.component';
 import { LayoutComponent } from './components/layout/layout.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { CardDisplayComponent } from './components/card-display/card-display.component';
+import { FooterComponent } from './components/Layout/footer/footer.component';
+import { CardDisplayComponent } from './components/Card-display/card-display.component';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
