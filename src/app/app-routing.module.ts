@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CardComponent } from './components/card/card.component';
-import { LayoutComponent } from './components/layout/layout.component';
 import { CardDisplayComponent } from './components/Card-display/card-display.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './components/login/login.component';
+import { LayoutComponent } from './components/Layout/layout.component';
+import { CadastroComponent } from './components/Cliente/cadastro/cadastro.component';
+
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {path:'', component:CardDisplayComponent },
-      {path: 'login',component:LoginComponent}
+      {path: 'login',component:LoginComponent},
+      {path: 'Cadastro',component:CadastroComponent}
 
     ]
   }

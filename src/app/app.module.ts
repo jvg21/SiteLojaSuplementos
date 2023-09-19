@@ -8,12 +8,13 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
-import { CardComponent } from './components/card/card.component';
+import { CardComponent } from './components/Card-display/Card/card.component';
 import { MenuComponent } from './components/Layout/Menu/menu.component';
-import { LayoutComponent } from './components/layout/layout.component';
+import { LayoutComponent } from './components/Layout/layout.component';
 import { FooterComponent } from './components/Layout/footer/footer.component';
 import { CardDisplayComponent } from './components/Card-display/card-display.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './components/login/login.component';
+import { CadastroComponent } from './components/Cliente/cadastro/cadastro.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LoginComponent } from './login/login.component';
     LayoutComponent,
     FooterComponent,
     CardDisplayComponent,
-    LoginComponent
+    LoginComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,
