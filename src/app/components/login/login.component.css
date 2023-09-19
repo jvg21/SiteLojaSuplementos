@@ -1,13 +1,5 @@
-.loginContainer{
-    
-    padding: 10px;
-    background-color: aliceblue;
-}
-.formLogin{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 5px;
-
+.divLogin {
+    background-color: #757474	;
+    padding: 20vh;
+    border-radius: 2rem;
 }
