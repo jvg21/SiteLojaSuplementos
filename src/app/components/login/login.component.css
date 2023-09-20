@@ -1,5 +1,13 @@
 .divLogin {
-    background-color: #757474	;
-    padding: 20vh;
+    background-color: white	;
+    padding: 20px;
     border-radius: 2rem;
+    width: 40vw;
+    margin: 5vw;
 }
+
+@media only screen and (max-width: 780px) {
+    .divLogin{
+        width: 80vw;
+    }
+  }
