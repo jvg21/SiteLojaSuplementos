@@ -4,6 +4,7 @@ import { CardDisplayComponent } from './components/Card-display/card-display.com
 import { LoginComponent } from './components/login/login.component';
 import { LayoutComponent } from './components/Layout/layout.component';
 import { CadastroComponent } from './components/Cliente/cadastro/cadastro.component';
+import { ProdutoComponent } from './components/produto/produto.component';
 
 
 
@@ -15,7 +16,8 @@ const routes: Routes = [
     children: [
       {path:'', component:CardDisplayComponent },
       {path: 'login',component:LoginComponent},
-      {path: 'Cadastro',component:CadastroComponent}
+      {path: 'Cadastro',component:CadastroComponent},
+      {path: 'produto',component:ProdutoComponent}
 
     ]
   }
