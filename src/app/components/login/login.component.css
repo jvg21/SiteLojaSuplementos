@@ -4,6 +4,7 @@
     border-radius: 2rem;
     width: 40vw;
     margin: 5vw;
+    justify-content: center;
 }
 
 @media only screen and (max-width: 780px) {
@@ -11,3 +12,8 @@
         width: 80vw;
     }
   }
+
+.botaoLogin {
+
+    width: 30%;
+}
