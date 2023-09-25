@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-cadastro',
-  templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.css']
+  selector: 'app-form-control',
+  templateUrl: './form-control.component.html',
+  styleUrls: ['./form-control.component.css']
 })
-export class CadastroComponent {
-
+export class FormControlComponent {
   clienteFoRM = new FormGroup({
-    nome: new FormControl(''),
+    name: new FormControl(''),
     sobreNome: new FormControl(''),
     email: new FormControl(''),
     cpf: new FormControl(''),
@@ -21,12 +20,5 @@ export class CadastroComponent {
     complemento: new FormControl(''),
     
   });
-
-
-  salvar() {
-    console.log(this.clienteFoRM.controls['nome'].value);
-
-
-  }
 
 }

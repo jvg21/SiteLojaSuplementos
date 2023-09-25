@@ -8,6 +8,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CardComponent } from './components/Card-display/Card/card.component';
 import { MenuComponent } from './components/Layout/Menu/menu.component';
 import { LayoutComponent } from './components/Layout/layout.component';
@@ -16,6 +17,7 @@ import { CardDisplayComponent } from './components/Card-display/card-display.com
 import { LoginComponent } from './components/login/login.component';
 import { CadastroComponent } from './components/Cliente/cadastro/cadastro.component';
 import { ProdutoComponent } from './components/produto/produto.component';
+import { FormControlComponent } from './components/Cliente/form-control/form-control.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +29,13 @@ import { ProdutoComponent } from './components/produto/produto.component';
     CardDisplayComponent,
     LoginComponent,
     CadastroComponent,
-    ProdutoComponent
+    ProdutoComponent,
+    FormControlComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,MatToolbarModule, MatButtonModule, MatIconModule,MatListModule
+    BrowserAnimationsModule,MatToolbarModule, MatButtonModule, MatIconModule,MatListModule,ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

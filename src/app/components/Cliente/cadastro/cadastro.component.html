@@ -1,7 +1,8 @@
-<form class="row g-3" id="FormularioID" >
+<form class="row g-3" id="FormularioID" [formGroup]="clienteFoRM" >
+    <h1 >Cadastro</h1>
 
     <div class="col-md-6">
-        <input type="text" class="form-control" placeholder="Nome" aria-label="Nome">
+        <input type="text" class="form-control" placeholder="Nome" aria-label="Nome" formControlName="nome">
       </div>
     <div class="col-md-6">
         <input type="text" class="form-control" placeholder="Sobrenome" aria-label="Sobrenome">
@@ -39,7 +40,7 @@
     <div class="col-md-3">
         <input type="text" class="form-control" placeholder="Complemento" aria-label="Complemento">
     </div>
-    <button type="submit" class="btn btn-primary bg-success border-0">Entrar</button>
+    <button type="button" class="btn btn-primary bg-success border-0" (click)="salvar()">Entrar</button>
     
 
 </form>
