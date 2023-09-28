@@ -4,7 +4,13 @@
     border-radius: 2rem;
     width: 80vw;
     margin: 5vw;
+    justify-content: center;
 }
 h1{
     color: black;
+}
+
+.botaoCad {
+    width: 30%;
+    background-color: #6f2232;
 }

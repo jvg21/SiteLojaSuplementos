@@ -14,9 +14,10 @@
   }
 
 .botaoLogin {
-
     width: 30%;
+    background-color: #6f2232;
 }
+
 h1{
     color: black;
 }
