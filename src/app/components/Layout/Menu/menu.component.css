@@ -1,19 +1,12 @@
-.Menu-opcoes{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+.letter-color {
+    color: white;
+}
 
-}
-.Opcoes{
-    margin: 5px 8px;
-    text-decoration: none;
+.button-border {
+    border-color: white;
     color: white;
 }
-.logo{
-    text-decoration: none;
-    color: white;
-}
-.mat-toolbar{
-    background-color: rgb(95, 0, 20);
+
+.back-color {
+    background-color: #4e4e50;
 }

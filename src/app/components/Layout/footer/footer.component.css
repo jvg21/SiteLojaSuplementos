@@ -2,5 +2,12 @@
     display: flex;
     width: 100vw;
     position: relative;
-    background-color:  rgb(90, 0, 20);
+}
+
+.letter-color {
+    color: white;
+}
+
+.back-color {
+    background-color: #4e4e50;
 }

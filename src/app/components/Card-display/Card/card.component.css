@@ -11,7 +11,7 @@
     transition: 0.7s;
 }
 .card:hover{
-    background-color: rgb(95, 0, 20);
+    background-color: #c3073f;
     color: white;
 
 }
