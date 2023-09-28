@@ -11,7 +11,7 @@
     transition: 0.7s;
 }
 .card:hover{
-    background-color: #c3073f;
+    background-color: #4e4e50;
     color: white;
 
 }
@@ -27,14 +27,12 @@
     height: 100%;
 }
 .btn-primary{
-    background-color: rgb(95, 0, 20);
-    border-color: white;
+    background-color: #6f2232;
+    border: none;
     transition: 1s;
 }
 .btn-primary:hover{
-    background-color: white;
-    border-color: rgb(95, 0, 20);
-    color: rgb(95, 0, 20);
+    background-color: #c3073f;
 }
 
 /* .card{

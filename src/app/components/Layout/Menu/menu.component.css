@@ -3,8 +3,9 @@
 }
 
 .button-border {
-    border-color: white;
+    background-color: #6f2232;
     color: white;
+    border: none;
 }
 
 .back-color {
