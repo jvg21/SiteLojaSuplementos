@@ -5,7 +5,7 @@
 }
  */
 .card{
-    margin: 5px;
+    margin: 2vh;
     padding: 2px;
     width: 20rem;
     transition: 0.7s;
@@ -15,6 +15,8 @@
     color: white;
 
 }
+
+
 .card-image{
     box-sizing: border-box;
     background-color: rgb(216, 216, 216);
