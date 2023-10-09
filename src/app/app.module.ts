@@ -17,6 +17,7 @@ import { CardDisplayComponent } from './components/Card-display/card-display.com
 import { LoginComponent } from './components/login/login.component';
 import { CadastroComponent } from './components/Cliente/cadastro/cadastro.component';
 import { ProdutoComponent } from './components/produto/view/produto.component';
+import { ErrorPageComponent } from './ErrorPage/error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ProdutoComponent } from './components/produto/view/produto.component';
     LoginComponent,
     CadastroComponent,
     ProdutoComponent,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,
