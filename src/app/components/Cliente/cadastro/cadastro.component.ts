@@ -19,10 +19,8 @@ export class CadastroComponent {
     logradouro: new FormControl(''),
     numero: new FormControl(''),
     complemento: new FormControl(''),
-    
   });
-
-
+  
   salvar() {
     console.log(this.clienteForm.controls['nome'].value);
   }
