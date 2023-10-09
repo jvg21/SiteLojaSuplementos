@@ -1,44 +1,44 @@
-<form class="row g-3" id="FormularioID" [formGroup]="clienteFoRM" >
+<form class="row g-3" id="FormularioID" [formGroup]="clienteForm" >
     <h1 >Cadastro</h1>
 
     <div class="col-md-6">
         <input type="text" class="form-control" placeholder="Nome" aria-label="Nome" formControlName="nome">
       </div>
     <div class="col-md-6">
-        <input type="text" class="form-control" placeholder="Sobrenome" aria-label="Sobrenome">
+        <input type="text" class="form-control" placeholder="Sobrenome" aria-label="Sobrenome" formControlName="sobreNome">
     </div>
     <div class="col-md-12">
-        <input type="text" class="form-control" placeholder="Email" aria-label="Email">
+        <input type="text" class="form-control" placeholder="Email" aria-label="Email" formControlName="email">
     </div>
     <div class="col-md-6">
-        <input type="text" class="form-control" placeholder="Cpf" aria-label="Cpf">
+        <input type="text" class="form-control" placeholder="Cpf" aria-label="Cpf" formControlName="cpf">
     </div>
     <div class="col-md-6">
         <input type="hidden" class="form-control" >
     </div>
 
     <div class="col-md-4">
-        <input type="text" class="form-control" placeholder="Cep" aria-label="Cep">
+        <input type="text" class="form-control" placeholder="Cep" aria-label="Cep" formControlName="cep">
     </div>
     <div class="col-md-2">
-        <select id="inputState" class="form-select" placeholder="Unidade Federativa">
+        <select id="inputState" class="form-select" placeholder="Unidade Federativa" formControlName="uf">
             <option selected>UF</option>
             <option>...</option>
           </select>
 
     </div>
     <div class="col-md-6">
-        <input type="text" class="form-control" placeholder="Cidade" aria-label="Cidade">
+        <input type="text" class="form-control" placeholder="Cidade" aria-label="Cidade" formControlName="cidade">
     </div>
 
     <div class="col-md-6">
-        <input type="text" class="form-control" placeholder="Logradouro" aria-label="Logradouro">
+        <input type="text" class="form-control" placeholder="Logradouro" aria-label="Logradouro" formControlName="logradouro"> 
     </div>
     <div class="col-md-3">
-        <input type="number" class="form-control" placeholder="Número" aria-label="Número">
+        <input type="number" class="form-control" placeholder="Número" aria-label="Número" formControlName="numero">
     </div>
     <div class="col-md-3">
-        <input type="text" class="form-control" placeholder="Complemento" aria-label="Complemento">
+        <input type="text" class="form-control" placeholder="Complemento" aria-label="Complemento" formControlName="complemento">
     </div>
     <button type="button" class="btn btn-primary border-0 botaoCad" (click)="salvar()">Entrar</button>
     

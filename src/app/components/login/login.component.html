@@ -1,20 +1,20 @@
-<form class="row g-3 text-white divLogin">
+<form class="row g-3 text-white divLogin" [formGroup]="LoginForm">
     <h1>Login</h1>
 
     <div class="mb-3">
 
       <label for="exampleInputEmail1" class="form-label">Usuário</label>
-      <input placeholder="Usuário" type="text" class="form-control border-2" id="user">
+      <input placeholder="Usuário" type="text" class="form-control border-2" id="user" formControlName="user">
 
     </div>
 
     <div class="mb-3">
 
       <label for="exampleInputPassword1" class="form-label">Senha</label>
-      <input placeholder="Senha" type="password" class="form-control border-2" id="password">
+      <input placeholder="Senha" type="password" class="form-control border-2" id="password" formControlName="password">
    
     </div>
 
-    <button type="submit" class="btn btn-primary border-0 botaoLogin">Entrar</button>
+    <button type="button" class="btn btn-primary border-0 botaoLogin" (click)="salvar()">Entrar</button>
 
   </form>

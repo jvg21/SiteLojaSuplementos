@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
+  LoginForm = new FormGroup({
+    user: new FormControl(''),
+    password: new FormControl('')
+  })
+
+  salvar() {
+    console.log(this.LoginForm.controls['user'].value);
+  }
 }

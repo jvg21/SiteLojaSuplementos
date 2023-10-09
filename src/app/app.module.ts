@@ -17,7 +17,6 @@ import { CardDisplayComponent } from './components/Card-display/card-display.com
 import { LoginComponent } from './components/login/login.component';
 import { CadastroComponent } from './components/Cliente/cadastro/cadastro.component';
 import { ProdutoComponent } from './components/produto/produto.component';
-import { FormControlComponent } from './components/Cliente/form-control/form-control.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +29,6 @@ import { FormControlComponent } from './components/Cliente/form-control/form-con
     LoginComponent,
     CadastroComponent,
     ProdutoComponent,
-    FormControlComponent
   ],
   imports: [
     BrowserModule,

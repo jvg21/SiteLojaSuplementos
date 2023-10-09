@@ -8,7 +8,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class CadastroComponent {
 
-  clienteFoRM = new FormGroup({
+  clienteForm = new FormGroup({
     nome: new FormControl(''),
     sobreNome: new FormControl(''),
     email: new FormControl(''),
@@ -24,9 +24,7 @@ export class CadastroComponent {
 
 
   salvar() {
-    console.log(this.clienteFoRM.controls['nome'].value);
-
-
+    console.log(this.clienteForm.controls['nome'].value);
   }
 
 }
