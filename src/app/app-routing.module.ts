@@ -12,11 +12,12 @@ const routes: Routes = [
     path:'',component:LayoutComponent, children: [
       {path:'',component:HomePageComponent},
       {path:'home',component:HomePageComponent},
-      {path:'produtoView',component:ProdutoViewComponent}
+      {path:'produtoView',component:ProdutoViewComponent},
+      {path:'login',component:LoginComponent},
+      {path:'cadastro',component:CadastroComponent},
     ]
   },
-  {path:'login',component:LoginComponent},
-  {path:'cadastro',component:CadastroComponent},
+  
   {path:'**' , pathMatch:'full', component:ErrorPageComponent}
 ];
 
