@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './Components/layout/layout.component';
@@ -22,11 +22,13 @@ import { CadastroComponent } from './Components/Pages/User/cadastro/cadastro.com
     ErrorPageComponent,
     ProdutoViewComponent,
     LoginComponent,
-    CadastroComponent
+    CadastroComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
