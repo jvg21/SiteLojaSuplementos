@@ -13,3 +13,6 @@
     margin: 10vh 2vw;
     width: 500px;
 }
+.msgError{
+    color: red;
+}

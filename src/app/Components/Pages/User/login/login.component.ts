@@ -7,18 +7,20 @@ import { FormGroup,FormControl,Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  LoginForm = new FormGroup({
+  loginForm = new FormGroup({
     Email: new FormControl('',
     [
-      Validators.required,Validators.email, Validators.minLength(3),Validators.maxLength(80),
+      Validators.required,Validators.email,Validators.maxLength(80),
     ]),
     PassWord: new FormControl('',
-    [Validators.minLength(8),Validators.maxLength(25),
-      Validators.pattern("^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$")])
+    [
+      Validators.required,Validators.minLength(8),Validators.maxLength(20),
+      Validators.pattern(/^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Z]).{8,16}$/) // a senha deve conter um numero, uma letra maiuscula e um caractere especial
+    ])
   })
 
   login(){
-    console.log(this.LoginForm.controls['Email'].value);
+    console.log(this.loginForm.controls['Email'].value);
     
   }
 
