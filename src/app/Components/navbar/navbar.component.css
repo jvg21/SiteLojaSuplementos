@@ -5,3 +5,6 @@
 #navbarNav{
     justify-content: end;
 }
+.nav-link{
+    color: white;
+}
