@@ -11,6 +11,8 @@ import { ErrorPageComponent } from './Components/Pages/error-page/error-page.com
 import { ProdutoViewComponent } from './Components/Pages/Produto/produto-view/produto-view.component';
 import { LoginComponent } from './Components/Pages/User/login/login.component';
 import { CadastroComponent } from './Components/Pages/User/cadastro/cadastro.component';
+import { CardComponent } from './Components/Cards/card/card.component';
+import { CardDisplayComponent } from './Components/Cards/card-display/card-display.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { CadastroComponent } from './Components/Pages/User/cadastro/cadastro.com
     ProdutoViewComponent,
     LoginComponent,
     CadastroComponent,
+    CardComponent,
+    CardDisplayComponent,
 
   ],
   imports: [
