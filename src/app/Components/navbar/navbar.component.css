@@ -1,5 +1,7 @@
-.navBar{
-    width: 100vw;
-    height: 80px;
+.navbar{
     background-color: cadetblue;
+    height: 70px;
+}
+#navbarNav{
+    justify-content: end;
 }

@@ -8,6 +8,9 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { HomePageComponent } from './Components/Pages/home-page/home-page.component';
 import { ErrorPageComponent } from './Components/Pages/error-page/error-page.component';
+import { ProdutoViewComponent } from './Components/Pages/Produto/produto-view/produto-view.component';
+import { LoginComponent } from './Components/Pages/User/login/login.component';
+import { CadastroComponent } from './Components/Pages/User/cadastro/cadastro.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { ErrorPageComponent } from './Components/Pages/error-page/error-page.com
     NavbarComponent,
     FooterComponent,
     HomePageComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    ProdutoViewComponent,
+    LoginComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,
