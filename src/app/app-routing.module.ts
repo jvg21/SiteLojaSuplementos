@@ -6,6 +6,7 @@ import { ErrorPageComponent } from './Components/Pages/error-page/error-page.com
 import { ProdutoViewComponent } from './Components/Pages/Produto/produto-view/produto-view.component';
 import { LoginComponent } from './Components/Pages/User/login/login.component';
 import { CadastroComponent } from './Components/Pages/User/cadastro/cadastro.component';
+import { AdminComponent } from './Components/Pages/User/admin/admin.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,9 @@ const routes: Routes = [
       {path:'cadastro',component:CadastroComponent},
     ]
   },
+  {path:'adm',component:AdminComponent, children:[
+      {path:'adm/produtos',component:LoginComponent}
+  ]},
   
   {path:'**' , pathMatch:'full', component:ErrorPageComponent}
 ];

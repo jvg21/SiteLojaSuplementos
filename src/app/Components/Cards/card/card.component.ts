@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
+  public image;
+  public title;
+  public description;
+
+  constructor(title:String, description:String, image: String){
+    this.title = title;
+    this.description = description;
+    this.image = image;
+  }
 
 }

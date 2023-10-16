@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './card-display.component.html',
   styleUrls: ['./card-display.component.css']
 })
-export class CardDisplayComponent {
 
+export class CardDisplayComponent {
+  
 }
