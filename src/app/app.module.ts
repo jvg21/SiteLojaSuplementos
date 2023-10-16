@@ -13,6 +13,7 @@ import { LoginComponent } from './Components/Pages/User/login/login.component';
 import { CadastroComponent } from './Components/Pages/User/cadastro/cadastro.component';
 import { CardComponent } from './Components/Cards/card/card.component';
 import { CardDisplayComponent } from './Components/Cards/card-display/card-display.component';
+import { AdminComponent } from './Components/Pages/User/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { CardDisplayComponent } from './Components/Cards/card-display/card-displ
     CadastroComponent,
     CardComponent,
     CardDisplayComponent,
+    AdminComponent,
 
   ],
   imports: [
