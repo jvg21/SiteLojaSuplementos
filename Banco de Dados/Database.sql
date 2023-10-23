@@ -67,7 +67,6 @@ CREATE TABLE IF NOT EXISTS `ProjetoMaromba`.`Usuario` (
   `nomeUsuario` VARCHAR(60) NOT NULL,
   `cpfUsuario` VARCHAR(14) NOT NULL,
   `emailUsuario` VARCHAR(45) NOT NULL,
-  `telefoneUsuario` VARCHAR(20) NOT NULL,
   `idLogin` INT NOT NULL,
   PRIMARY KEY (`idUsuario`),
   INDEX `fk_Usuario_Login1_idx` (`idLogin` ASC),
@@ -188,7 +187,6 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `ProjetoMaromba`.`Transportadora` (
   `idTransportadora` INT NOT NULL AUTO_INCREMENT,
   `nomeTransportadora` VARCHAR(45) NOT NULL,
-  `telefoneTransportadora` VARCHAR(20) NOT NULL,
   `cnpfTransportadora` VARCHAR(20) NOT NULL,
   `situacaoTransportadora` VARCHAR(20) NOT NULL,
   `idLogin` INT NOT NULL,
