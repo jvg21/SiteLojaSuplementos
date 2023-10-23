@@ -10,12 +10,12 @@ export class CadastroComponent {
   cadastroForm = new FormGroup({
     FirstName : new FormControl(''),
     LastName : new FormControl(''),
-    Eamil : new FormControl(''),
+    Email : new FormControl(''),
+    Contact : new FormControl(''),
     Cpf : new FormControl(''),
     PassWord : new FormControl(''),
     CpassWord : new FormControl(''),
     UF : new FormControl(''),
-    State : new FormControl(''),
     City : new FormControl(''),
     Address : new FormControl(''),
     AddressNumber : new FormControl(''),
@@ -23,6 +23,10 @@ export class CadastroComponent {
     Cep : new FormControl(''),
 
   })
+
+  cadastrar(){
+    
+  }
   
 
 }

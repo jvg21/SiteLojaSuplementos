@@ -1,30 +1,63 @@
 <div class="LoginPageContent">
     <div class="LoginFormContent">
 
-        <form class="LoginForm">
+
+        <form class="CadastroForm" [formGroup]="cadastroForm" (ngSubmit)="cadastrar()">
             <div class="mb-3">
-                <label class="form-label">Nome Completo</label>
-                <input type="text" class="form-control" formControlName="Name" maxlength="80">
+                <label for="FirstName" class="form-label">Primeiro Nome</label>
+                <input type="text" class="form-control" id="FirstName" formControlName="FirstName">
             </div>
             <div class="mb-3">
-                <label class="form-label">CPF</label>
-                <input type="text" class="form-control" formControlName="Cpf" maxlength="80">
+                <label for="LastName" class="form-label">Sobrenome</label>
+                <input type="text" class="form-control" id="LastName" formControlName="LastName">
             </div>
             <div class="mb-3">
-                <label class="form-label">Telefone</label>
-                <input type="tel" class="form-control" formControlName="Telefone" maxlength="80">
+                <label for="Email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="Email" formControlName="Email">
             </div>
             <div class="mb-3">
-                <label class="form-label">Email address</label>
-                <input type="email" class="form-control" formControlName="Email" maxlength="80">
+                <label for="Contact" class="form-label">Contato</label>
+                <input type="text" class="form-control" id="Contact" formControlName="Contact">
             </div>
             <div class="mb-3">
-                <label class="form-label">Password</label>
-                <input type="password" class="form-control" formControlName="PassWord" maxlength="26">
+                <label for="Cpf" class="form-label">CPF</label>
+                <input type="text" class="form-control" id="Cpf" formControlName="Cpf">
             </div>
-            
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="mb-3">
+                <label for="PassWord" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="PassWord" formControlName="PassWord">
+            </div>
+            <div class="mb-3">
+                <label for="CpassWord" class="form-label">Confirmar Senha</label>
+                <input type="password" class="form-control" id="CpassWord" formControlName="CpassWord">
+            </div>
+            <div class="mb-3">
+                <label for="UF" class="form-label">UF</label>
+                <input type="text" class="form-control" id="UF" formControlName="UF">
+            </div>
+            <div class="mb-3">
+                <label for="City" class="form-label">Cidade</label>
+                <input type="text" class="form-control" id="City" formControlName="City">
+            </div>
+            <div class="mb-3">
+                <label for="Address" class="form-label">Endereço</label>
+                <input type="text" class="form-control" id="Address" formControlName="Address">
+            </div>
+            <div class="mb-3">
+                <label for="AddressNumber" class="form-label">Número do Endereço</label>
+                <input type="text" class="form-control" id="AddressNumber" formControlName="AddressNumber">
+            </div>
+            <div class="mb-3">
+                <label for="Complement" class="form-label">Complemento</label>
+                <input type="text" class="form-control" id="Complement" formControlName="Complement">
+            </div>
+            <div class="mb-3">
+                <label for="Cep" class="form-label">CEP</label>
+                <input type="text" class="form-control" id="Cep" formControlName="Cep">
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="!cadastroForm.valid">Cadastrar</button>
         </form>
+
 
     </div>
 </div>
