@@ -7,6 +7,7 @@ import { ProdutoViewComponent } from './Components/Pages/Produto/produto-view/pr
 import { LoginComponent } from './Components/Pages/User/login/login.component';
 import { CadastroComponent } from './Components/Pages/User/cadastro/cadastro.component';
 import { AdminComponent } from './Components/Pages/User/admin/admin.component';
+import { UserCrudComponent } from './Components/Pages/User/user-crud/user-crud.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,7 @@ const routes: Routes = [
       {path:'produtoView',component:ProdutoViewComponent},
       {path:'login',component:LoginComponent},
       {path:'cadastro',component:CadastroComponent},
+      {path:'usercrud',component:UserCrudComponent}
     ]
   },
   {path:'adm',component:AdminComponent, children:[

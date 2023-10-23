@@ -14,6 +14,8 @@ import { CadastroComponent } from './Components/Pages/User/cadastro/cadastro.com
 import { CardComponent } from './Components/Cards/card/card.component';
 import { CardDisplayComponent } from './Components/Cards/card-display/card-display.component';
 import { AdminComponent } from './Components/Pages/User/admin/admin.component';
+import { ProdutoCrudComponent } from './Components/Pages/Produto/produto-crud/produto-crud.component';
+import { UserCrudComponent } from './Components/Pages/User/user-crud/user-crud.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +31,14 @@ import { AdminComponent } from './Components/Pages/User/admin/admin.component';
     CardComponent,
     CardDisplayComponent,
     AdminComponent,
+    ProdutoCrudComponent,
+    UserCrudComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
