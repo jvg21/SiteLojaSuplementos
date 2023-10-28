@@ -9,6 +9,7 @@ import lombok.*;
 @Setter
 public class UsuarioDTO {
 
+    @Id
     private Integer id;
     @NotBlank
     private String login;

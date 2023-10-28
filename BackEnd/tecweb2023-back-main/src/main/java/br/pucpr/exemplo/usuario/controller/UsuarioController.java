@@ -15,7 +15,7 @@ import java.util.*;
 import java.util.stream.*;
 
 @RestController
-@RequestMapping("/usuario")
+
 public class UsuarioController {
 
     @Autowired
@@ -23,17 +23,29 @@ public class UsuarioController {
 
     private ModelMapper modelMapper = new ModelMapper();;
 
-    @PostMapping
+    @PostMapping("/usuario")
     public ResponseEntity<UsuarioDTO> salvar(@Valid @RequestBody UsuarioDTO usuarioDTO) {
         Usuario usuario = this.modelMapper.map(usuarioDTO, Usuario.class);
         usuarioService.salvar(usuario);
         return new ResponseEntity(usuarioDTO, HttpStatus.CREATED);
     }
 
-    @GetMapping
+    @GetMapping("/usuario")
     public List<UsuarioDTO> listar() {
         List<Usuario> usuarios = usuarioService.listar();
         return usuarios.stream().map(usuario -> modelMapper.map(usuario, UsuarioDTO.class)).
                 collect(Collectors.toList());
+    }
+
+    @DeleteMapping("/usuario/{idUsuario}")
+    public String deletar(@PathVariable int idUsuario){
+      usuarioService.excluir(idUsuario);
+      return "Usuário Deletado";
+    }
+
+    @PutMapping("/usuario/{idUsuario}")
+    public Usuario atualizar(@PathVariable int idUsuario,@Valid @RequestBody UsuarioDTO usuarioDTO){
+      Usuario usuario = this.modelMapper.map(usuarioDTO, Usuario.class);
+      return usuarioService.atualizar(idUsuario,usuario);
     }
 }
