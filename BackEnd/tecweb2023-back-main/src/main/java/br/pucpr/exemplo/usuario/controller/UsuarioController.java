@@ -1,7 +1,5 @@
 package br.pucpr.exemplo.usuario.controller;
 
-import br.pucpr.exemplo.cliente.model.*;
-import br.pucpr.exemplo.cliente.model.entity.*;
 import br.pucpr.exemplo.usuario.model.*;
 import br.pucpr.exemplo.usuario.model.entity.*;
 import br.pucpr.exemplo.usuario.service.*;
@@ -13,16 +11,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 import java.util.stream.*;
-
 @RestController
-
 public class UsuarioController {
 
     @Autowired
     private UsuarioService usuarioService;
-
     private ModelMapper modelMapper = new ModelMapper();;
-
     @PostMapping("/usuario")
     public ResponseEntity<UsuarioDTO> salvar(@Valid @RequestBody UsuarioDTO usuarioDTO) {
         Usuario usuario = this.modelMapper.map(usuarioDTO, Usuario.class);
@@ -37,6 +31,10 @@ public class UsuarioController {
                 collect(Collectors.toList());
     }
 
+    @GetMapping("/usuario/{idUsuario}")
+      public Usuario selecionar(@PathVariable int idUsuario){
+      return usuarioService.selecionar(idUsuario);
+    }
     @DeleteMapping("/usuario/{idUsuario}")
     public String deletar(@PathVariable int idUsuario){
       usuarioService.excluir(idUsuario);

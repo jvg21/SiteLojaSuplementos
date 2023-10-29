@@ -14,12 +14,15 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @Column(name = "LOGIN")
-    private String login;
 
-    @Column(name = "NOME")
+    @Column(name = "nomeUsuario")
     private String nome;
 
-    @Column(name = "EMAIL")
+    @Column(name = "cpfUsuario")
     private String email;
+
+    @Column(name = "emailUsuario")
+    private String cpf;
+
+
 }
