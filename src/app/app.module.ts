@@ -16,6 +16,10 @@ import { AdminComponent } from './Components/Pages/User/admin/admin.component';
 import { LoginComponent } from './Components/Pages/User/login/login.component';
 import { ProdutoCrudComponent } from './Components/Pages/Produto/produto-crud/produto-crud.component';
 import { UserCrudComponent } from './Components/Pages/User/user-crud/user-crud.component';
+import { ProdutoListComponent } from './Components/Pages/Produto/produto-list/produto-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import {MatTableModule} from '@angular/material/table';
+
 
 @NgModule({
   declarations: [
@@ -33,12 +37,16 @@ import { UserCrudComponent } from './Components/Pages/User/user-crud/user-crud.c
     AdminComponent,
     ProdutoCrudComponent,
     UserCrudComponent,
+    ProdutoListComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    MatTableModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

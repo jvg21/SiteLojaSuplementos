@@ -8,6 +8,7 @@ import { LoginComponent } from './Components/Pages/User/login/login.component';
 import { CadastroComponent } from './Components/Pages/User/cadastro/cadastro.component';
 import { AdminComponent } from './Components/Pages/User/admin/admin.component';
 import { UserCrudComponent } from './Components/Pages/User/user-crud/user-crud.component';
+import { ProdutoListComponent } from './Components/Pages/Produto/produto-list/produto-list.component';
 
 const routes: Routes = [
   {
@@ -17,11 +18,12 @@ const routes: Routes = [
       {path:'produtoView',component:ProdutoViewComponent},
       {path:'login',component:LoginComponent},
       {path:'cadastro',component:CadastroComponent},
-      {path:'usercrud',component:UserCrudComponent}
+      {path:'usercrud',component:UserCrudComponent},
+      {path:'/produtoslist',component:ProdutoListComponent}
     ]
   },
-  {path:'adm',component:AdminComponent, children:[
-      {path:'adm/produtos',component:LoginComponent}
+  {path:'/adm',component:AdminComponent, children:[
+      {path:'/produtos',component:ProdutoListComponent}
   ]},
   
   {path:'**' , pathMatch:'full', component:ErrorPageComponent}
