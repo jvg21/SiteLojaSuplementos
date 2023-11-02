@@ -11,6 +11,8 @@ import { HomePageComponent } from './Components/Pages/home-page/home-page.compon
 import { LoginComponent } from './Components/Pages/User/login/login.component';
 import { ProdutoListComponent } from './Components/Pages/Produto/produto-list/produto-list.component';
 import { CadastroComponent } from './Components/Pages/User/cadastro/cadastro.component';
+import { NavbarComponent } from './Components/Pages/Layout/navbar/navbar.component';
+import { FooterComponent } from './Components/Pages/Layout/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { CadastroComponent } from './Components/Pages/User/cadastro/cadastro.com
     HomePageComponent,
     LoginComponent,
     ProdutoListComponent,
-    CadastroComponent
+    CadastroComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
