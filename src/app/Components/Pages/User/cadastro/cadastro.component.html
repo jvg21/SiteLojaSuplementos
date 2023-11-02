@@ -1,63 +1,71 @@
 <div class="LoginPageContent">
     <div class="LoginFormContent">
-
-
-        <form class="CadastroForm" [formGroup]="cadastroForm" (ngSubmit)="cadastrar()">
-            <div class="mb-3">
-                <label for="FirstName" class="form-label">Primeiro Nome</label>
-                <input type="text" class="form-control" id="FirstName" formControlName="FirstName">
+        <form class="formcadastro" [formGroup]="cadastroForm" (ngSubmit)="cadastrar()">
+            <div class="form-row">
+                <div class="col-md-6 forminput">
+                    <label for="FirstName" class="form-label">Primeiro Nome</label>
+                    <input type="text" class="form-control" id="FirstName" formControlName="FirstName">
+                </div>
+                <div class="col-md-6 forminput">
+                    <label for="LastName" class="form-label">Sobrenome</label>
+                    <input type="text" class="form-control" id="LastName" formControlName="LastName">
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="LastName" class="form-label">Sobrenome</label>
-                <input type="text" class="form-control" id="LastName" formControlName="LastName">
+            <div class="form-row"> 
+                <div class="forminput">
+                    <label for="Email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="Email" formControlName="Email">
+                </div>
+                <div class="forminput">
+                    <label for="Contact" class="form-label">Contato</label>
+                    <input type="text" class="form-control" id="Contact" formControlName="Contact">
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="Email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="Email" formControlName="Email">
+            <div class="form-row"> 
+                <div class="forminput">
+                    <label for="Cpf" class="form-label">CPF</label>
+                    <input type="text" class="form-control" id="Cpf" formControlName="Cpf">
+                </div>
+                <div class="forminput">
+                    <label for="PassWord" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="PassWord" formControlName="PassWord">
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="Contact" class="form-label">Contato</label>
-                <input type="text" class="form-control" id="Contact" formControlName="Contact">
+            <div class="form-row"> 
+                <div class="forminput">
+                    <label for="CpassWord" class="form-label">Confirmar Senha</label>
+                    <input type="password" class="form-control" id="CpassWord" formControlName="CpassWord">
+                </div>
+                <div class="forminput">
+                    <label for="UF" class="form-label">UF</label>
+                    <input type="text" class="form-control" id="UF" formControlName="UF">
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="Cpf" class="form-label">CPF</label>
-                <input type="text" class="form-control" id="Cpf" formControlName="Cpf">
+            <div class="form-row"> 
+                <div class="forminput">
+                    <label for="City" class="form-label">Cidade</label>
+                    <input type="text" class="form-control" id="City" formControlName="City">
+                </div>
+                <div class="forminput">
+                    <label for="Address" class="form-label">Endereço</label>
+                    <input type="text" class="form-control" id="Address" formControlName="Address">
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="PassWord" class="form-label">Senha</label>
-                <input type="password" class="form-control" id="PassWord" formControlName="PassWord">
-            </div>
-            <div class="mb-3">
-                <label for="CpassWord" class="form-label">Confirmar Senha</label>
-                <input type="password" class="form-control" id="CpassWord" formControlName="CpassWord">
-            </div>
-            <div class="mb-3">
-                <label for="UF" class="form-label">UF</label>
-                <input type="text" class="form-control" id="UF" formControlName="UF">
-            </div>
-            <div class="mb-3">
-                <label for="City" class="form-label">Cidade</label>
-                <input type="text" class="form-control" id="City" formControlName="City">
-            </div>
-            <div class="mb-3">
-                <label for="Address" class="form-label">Endereço</label>
-                <input type="text" class="form-control" id="Address" formControlName="Address">
-            </div>
-            <div class="mb-3">
-                <label for="AddressNumber" class="form-label">Número do Endereço</label>
-                <input type="text" class="form-control" id="AddressNumber" formControlName="AddressNumber">
-            </div>
-            <div class="mb-3">
-                <label for="Complement" class="form-label">Complemento</label>
-                <input type="text" class="form-control" id="Complement" formControlName="Complement">
-            </div>
-            <div class="mb-3">
-                <label for="Cep" class="form-label">CEP</label>
-                <input type="text" class="form-control" id="Cep" formControlName="Cep">
+            <div class="form-row"> 
+                <div class="forminput">
+                    <label for="AddressNumber" class="form-label">Número</label>
+                    <input type="text" class="form-control" id="AddressNumber" formControlName="AddressNumber">
+                </div>
+                <div class="forminput">
+                    <label for="Complement" class="form-label">Complemento</label>
+                    <input type="text" class="form-control" id="Complement" formControlName="Complement">
+                </div>
+                <div class="forminput">
+                    <label for="Cep" class="form-label">CEP</label>
+                    <input type="text" class="form-control" id="Cep" formControlName="Cep">
+                </div>
             </div>
             <button type="submit" class="btn btn-primary" [disabled]="!cadastroForm.valid">Cadastrar</button>
         </form>
-
-
     </div>
 </div>
