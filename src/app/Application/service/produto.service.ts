@@ -10,13 +10,21 @@ export class ProdutoService {
 
     constructor(private http: HttpClient) { }
 
-
     salvar(produto: ProdutoModel): Observable<ProdutoModel> {
         return this.http.post<ProdutoModel>('http://localhost:8080/produto', produto);
     }
 
     listar(): Observable<ProdutoModel[]> {
-        return this.http.get<ProdutoModel[]>('http://localhost:8080/produto'');
+        let x =  this.http.get<ProdutoModel[]>('http://localhost:8080/produto');
+        x.forEach((s)=>{
+            s.map((w)=>{
+                return console.log(w);
+                
+            })
+            
+        })
+        
+        return x;
     }
 
 }

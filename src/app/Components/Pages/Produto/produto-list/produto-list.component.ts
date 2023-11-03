@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProdutoModel } from 'src/app/Application/model/produto.model';
 import { ProdutoService } from 'src/app/Application/service/produto.service';
 
@@ -15,6 +15,7 @@ export class ProdutoListComponent {
   
   ngOnInit(): void {
     this.listar();
+    console.log(this.dataSource)
   }
 
   listar() {
