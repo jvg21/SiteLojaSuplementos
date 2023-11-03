@@ -1,3 +1,6 @@
-.navbar{
-    background-color: aqua;
+#navBar{
+    padding: 15px;
+    position: relative;
+    background: cadetblue;
 }
+

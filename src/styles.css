@@ -8,4 +8,7 @@ body,html,:root{
     min-height: 100vh;
     background-color: #EFEFEF;
     overflow-x: hidden;
+    min-width: 280px;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
