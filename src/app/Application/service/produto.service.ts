@@ -16,7 +16,7 @@ export class ProdutoService {
     }
 
     listar(): Observable<ProdutoModel[]> {
-        return this.http.get<ProdutoModel[]>('http://localhost:8080/produto');
+        return this.http.get<ProdutoModel[]>('http://localhost:8080/produto'');
     }
 
 }

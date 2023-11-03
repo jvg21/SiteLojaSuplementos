@@ -5,6 +5,7 @@ import { HomePageComponent } from './Components/Pages/home-page/home-page.compon
 import { LoginComponent } from './Components/Pages/User/login/login.component';
 import { ErrorPageComponent } from './Components/Pages/error-page/error-page.component';
 import { CadastroComponent } from './Components/Pages/User/cadastro/cadastro.component';
+import { ProdutoListComponent } from './Components/Pages/Produto/produto-list/produto-list.component';
 
 const routes: Routes = [
   {path:"",redirectTo:"navegar",pathMatch: 'full'},
@@ -13,7 +14,9 @@ const routes: Routes = [
     {path:"login",component:LoginComponent},
     {path:"cadastro",component:CadastroComponent},
   ]},
-  {path:"adm",redirectTo:"",pathMatch:'full'},
+  {path:"adm",component:LayoutComponent,children:[
+    {path:"produtos",component:ProdutoListComponent}
+  ]},
 
   {path:"PageNotFound",component:ErrorPageComponent},
   {path:'**' , pathMatch:'full', redirectTo:"PageNotFound"}
