@@ -44,6 +44,9 @@ public class ProdutoService {
           if (Objects.nonNull(usuario.getPeso()) && !"".equalsIgnoreCase(usuario.getPeso())) {
             user.setPeso(usuario.getPeso());
           }
+          if (Objects.nonNull(usuario.getUrl()) && !"".equalsIgnoreCase(usuario.getUrl())) {
+            user.setUrl(usuario.getUrl());
+          }
           if (Objects.nonNull(usuario.getValor())) {
             user.setValor(usuario.getValor());
           }
@@ -55,4 +58,15 @@ public class ProdutoService {
     public void excluir(Integer id) {
         ProdutoRepository.deleteById(id);
     }
+
+//    public Produto desativar(Integer id){
+//      Produto user = null;
+//      if (ProdutoRepository.findById(id).isPresent()) {
+//        user = ProdutoRepository.findById(id).get();
+//        user.setAtivado(!user.isAtivado());
+//        ProdutoRepository.save(user);
+//      }
+//      return user;
+//
+//    }
 }

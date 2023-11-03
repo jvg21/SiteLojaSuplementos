@@ -3,13 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 //angular materials
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatListModule} from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 
 //components
 import { AppComponent } from './app.component';
@@ -33,9 +39,10 @@ import { FooterComponent } from './Components/Pages/Layout/footer/footer.compone
     CadastroComponent,
     NavbarComponent,
     FooterComponent,
-    
+
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -45,8 +52,12 @@ import { FooterComponent } from './Components/Pages/Layout/footer/footer.compone
     MatIconModule,
     MatButtonModule,
     FormsModule,
-    ReactiveFormsModule
-    
+    ReactiveFormsModule,
+    MatTableModule,
+    MatInputModule,
+    MatRadioModule,
+    MatPaginatorModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

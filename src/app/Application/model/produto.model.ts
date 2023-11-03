@@ -4,7 +4,8 @@ export class ProdutoModel{
     private valor?:number;
     private marca?:string;
     private peso?:string;
+    private ativado?:boolean;
 
-
+  
 }
 

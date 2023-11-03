@@ -4,6 +4,7 @@ import { LayoutComponent } from './Components/Pages/Layout/layout/layout.compone
 import { HomePageComponent } from './Components/Pages/home-page/home-page.component';
 import { LoginComponent } from './Components/Pages/User/login/login.component';
 import { CadastroComponent } from './Components/Pages/User/cadastro/cadastro.component';
+import { ProdutoListComponent } from './Components/Pages/Produto/produto-list/produto-list.component';
 
 const routes: Routes = [
   {path:"",redirectTo:"navegar",pathMatch: 'full'},
@@ -12,7 +13,9 @@ const routes: Routes = [
     {path:"login",component:LoginComponent},
     {path:"cadastro",component:CadastroComponent},
   ]},
-  {path:"adm",redirectTo:"",pathMatch:'full'},
+  {path:"adm",component:LayoutComponent,children:[
+    {path:"produtos",component:ProdutoListComponent}
+  ]},
 
   {path:'**' , pathMatch:'full', redirectTo:"PageNotFound"}
 
