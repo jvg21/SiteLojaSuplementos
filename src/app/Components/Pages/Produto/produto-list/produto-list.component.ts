@@ -10,9 +10,15 @@ import { ProdutoService } from 'src/app/Application/service/produto.service';
 export class ProdutoListComponent {
   displayedColumns: string[] = ['id','nome','valor','marca','peso'];
   dataSource: ProdutoModel[] = [];
+  clickedRows = new Set<ProdutoModel>();
 
   constructor(private produtoService: ProdutoService) {}
   
+  logs(row:ProdutoModel){
+    console.log(row);
+    this.clickedRows.clear();
+    this.clickedRows.add(row)
+  }
   ngOnInit(): void {
     this.listar();
     console.log(this.dataSource)
