@@ -13,7 +13,10 @@ const routes: Routes = [
     {path:"",component:HomePageComponent}
   ]},
   {path:"adm",redirectTo:"",pathMatch:'full'},
-  {path:'**' , pathMatch:'full', component:ErrorPageComponent}
+
+  {path:"PageNotFound",component:ErrorPageComponent},
+  {path:'**' , pathMatch:'full', redirectTo:"PageNotFound"}
+
   
  ];
 
