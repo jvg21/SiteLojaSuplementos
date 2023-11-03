@@ -1,0 +1,45 @@
+<<<<<<< Updated upstream
+=======
+<div class="opcoes">
+    <button style="background-color: rgb(140, 219, 22);">Adcionar Produto</button>
+    <button style="background-color: yellow;">Alterar Produto</button>
+    <button style="background-color: red;">Desabilitar Produto</button>
+</div>
+
+<div class="ProdutoList">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> id </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="nome">
+            <th mat-header-cell *matHeaderCellDef> nome </th>
+            <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="valor">
+            <th mat-header-cell *matHeaderCellDef> preço </th>
+            <td mat-cell *matCellDef="let element"> {{element.valor}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="marca">
+            <th mat-header-cell *matHeaderCellDef> marca </th>
+            <td mat-cell *matCellDef="let element"> {{element.marca}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="peso">
+            <th mat-header-cell *matHeaderCellDef> peso </th>
+            <td mat-cell *matCellDef="let element"> {{element.peso}} </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row (click)="logs(row)" [class.demo-row-is-clicked]="clickedRows.has(row)"
+            *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+</div>
+>>>>>>> Stashed changes
