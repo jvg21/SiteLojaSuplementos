@@ -5,11 +5,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //angular materials
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatListModule} from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
 
 //components
 import { AppComponent } from './app.component';
@@ -33,7 +34,7 @@ import { FooterComponent } from './Components/Pages/Layout/footer/footer.compone
     CadastroComponent,
     NavbarComponent,
     FooterComponent,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -45,8 +46,9 @@ import { FooterComponent } from './Components/Pages/Layout/footer/footer.compone
     MatIconModule,
     MatButtonModule,
     FormsModule,
-    ReactiveFormsModule
-    
+    ReactiveFormsModule,
+    MatTableModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
