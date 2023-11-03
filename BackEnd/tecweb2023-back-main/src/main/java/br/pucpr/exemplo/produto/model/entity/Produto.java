@@ -29,5 +29,8 @@ public class Produto {
     @Column(name = "pesoProduto")
     private String peso;
 
+  @Column(name = "urlProduto")
+  private String url;
+
 
 }
