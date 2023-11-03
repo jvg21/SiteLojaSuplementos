@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './Components/Pages/Layout/layout/layout.component';
 import { HomePageComponent } from './Components/Pages/home-page/home-page.component';
 import { LoginComponent } from './Components/Pages/User/login/login.component';
-import { ErrorPageComponent } from './Components/Pages/error-page/error-page.component';
 import { CadastroComponent } from './Components/Pages/User/cadastro/cadastro.component';
 import { ProdutoListComponent } from './Components/Pages/Produto/produto-list/produto-list.component';
 
@@ -18,7 +17,6 @@ const routes: Routes = [
     {path:"produtos",component:ProdutoListComponent}
   ]},
 
-  {path:"PageNotFound",component:ErrorPageComponent},
   {path:'**' , pathMatch:'full', redirectTo:"PageNotFound"}
 
   
