@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //angular materials
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -43,6 +44,8 @@ import { FooterComponent } from './Components/Pages/Layout/footer/footer.compone
     MatListModule,
     MatIconModule,
     MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule
     
   ],
   providers: [],
