@@ -5,6 +5,8 @@ export class ProdutoModel{
     private marca?:string;
     private peso?:string;
 
-
+    public getNome(){
+        return this.nome;
+    }
 }
 

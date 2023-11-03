@@ -53,7 +53,7 @@ import { FooterComponent } from './Components/Pages/Layout/footer/footer.compone
     ReactiveFormsModule,
     MatTableModule,
     MatInputModule,
-    MatRadioModule
+    MatRadioModule,
 
   ],
   providers: [],

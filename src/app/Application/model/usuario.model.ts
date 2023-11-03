@@ -4,5 +4,4 @@ export class UsuarioModel{
     private cpfUsuario?:string;
     private emailUsuario?:string;
 
-
 }
