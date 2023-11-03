@@ -48,4 +48,9 @@ public class ProdutoControler {
       Produto produto = this.modelMapper.map(ProdutoDTO, Produto.class);
       return produtoService.atualizar(idProduto,produto);
     }
+
+//    @PutMapping("/produto/{idProduto}/ativar")
+//    public Produto desativar(@PathVariable int idProduto){
+//      return produtoService.desativar(idProduto);
+//    }
 }

@@ -17,4 +17,5 @@
 
 .demo-row-is-clicked {
     font-weight: bold;
+    background-color: lightgray;
 }
