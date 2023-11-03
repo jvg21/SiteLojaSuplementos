@@ -1,19 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import { ProdutoModel } from 'src/app/Application/model/produto.model';
 import { ProdutoService } from 'src/app/Application/service/produto.service';
 
 @Component({
   selector: 'app-produto-list',
   templateUrl: './produto-list.component.html',
-  styleUrls: ['./produto-list.component.css']
+  styleUrls: ['./produto-list.component.css'],
 })
-export class ProdutoListComponent {
+export class ProdutoListComponent  {
   displayedColumns: string[] = ['id','nome','valor','marca','peso'];
   dataSource: ProdutoModel[] = [];
   clickedRows = new Set<ProdutoModel>();
-
   constructor(private produtoService: ProdutoService) {}
-  
+
   logs(row:ProdutoModel){
     console.log(row);
     this.clickedRows.clear();

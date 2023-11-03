@@ -14,6 +14,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 
 //components
 import { AppComponent } from './app.component';
@@ -54,6 +56,7 @@ import { FooterComponent } from './Components/Pages/Layout/footer/footer.compone
     MatTableModule,
     MatInputModule,
     MatRadioModule,
+    MatPaginatorModule,
 
   ],
   providers: [],

@@ -58,4 +58,15 @@ public class ProdutoService {
     public void excluir(Integer id) {
         ProdutoRepository.deleteById(id);
     }
+
+//    public Produto desativar(Integer id){
+//      Produto user = null;
+//      if (ProdutoRepository.findById(id).isPresent()) {
+//        user = ProdutoRepository.findById(id).get();
+//        user.setAtivado(!user.isAtivado());
+//        ProdutoRepository.save(user);
+//      }
+//      return user;
+//
+//    }
 }
