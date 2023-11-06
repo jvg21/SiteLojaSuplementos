@@ -15,26 +15,31 @@ export class ProdutoListComponent {
   constructor(private produtoService: ProdutoService) { }
 
   adicionarControl = true;
+  
+  setAdiconarControll(foo:boolean){
+    
+    this.adicionarControl = foo;
+    this.controlModal();
 
+  }
+  controlModal() {
+    if (this.adicionarControl) {
+      this.produtoForm.controls['Id'].setValue('');
+      this.produtoForm.controls['Nome'].setValue('');
+      this.produtoForm.controls['Valor'].setValue(0);
+      this.produtoForm.controls['Peso'].setValue(1);
+      this.produtoForm.controls['Marca'].setValue('');
+    } else {
+      this.produtoForm.controls['Id'].setValue(String(this.selectedRow.id));
+      this.produtoForm.controls['Nome'].setValue(String(this.selectedRow.nome));
+      this.produtoForm.controls['Valor'].setValue(this.selectedRow.valor || 0);
+      this.produtoForm.controls['Peso'].setValue(this.selectedRow.peso || 1);
+      this.produtoForm.controls['MedidaPeso'].setValue(String(this.selectedRow.medidaPeso));
+      this.produtoForm.controls['Marca'].setValue(String(this.selectedRow.marca));
+      this.produtoForm.controls['Ativado'].setValue(this.selectedRow.ativado || true);
 
-  // controlModal() {
-  //   if (this.adicionarControl) {
-  //     this.produtoForm.controls['Id'].setValue('');
-  //     this.produtoForm.controls['Nome'].setValue('');
-  //     this.produtoForm.controls['Valor'].setValue(0);
-  //     this.produtoForm.controls['Peso'].setValue(1);
-  //     this.produtoForm.controls['Marca'].setValue('');
-  //   } else {
-  //     this.produtoForm.controls['Id'].setValue(String(this.selectedRow.id));
-  //     this.produtoForm.controls['Nome'].setValue(String(this.selectedRow.nome));
-  //     this.produtoForm.controls['Valor'].setValue(this.selectedRow.valor || 0);
-  //     this.produtoForm.controls['Peso'].setValue(this.selectedRow.peso || 1);
-  //     this.produtoForm.controls['MedidaPeso'].setValue(String(this.selectedRow.medidaPeso));
-  //     this.produtoForm.controls['Marca'].setValue(String(this.selectedRow.marca));
-  //     this.produtoForm.controls['Ativado'].setValue(this.selectedRow.ativado || true);
-
-  //   }
-  // }
+    }
+  }
 
   logs(row: ProdutoModel) {
     this.selectedRow = row;
@@ -51,7 +56,7 @@ export class ProdutoListComponent {
     Nome: new FormControl('', [Validators.required, Validators.minLength(3)]),
     Valor: new FormControl(0, [Validators.required, Validators.min(0)]),
     Peso: new FormControl(1, [Validators.required, Validators.min(0)]),
-    MedidaPeso: new FormControl(''),
+    MedidaPeso: new FormControl('',[Validators.required]),
     Marca: new FormControl('', [Validators.required]),
     Ativado: new FormControl(true, [Validators.required])
 
