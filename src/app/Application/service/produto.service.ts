@@ -15,7 +15,7 @@ export class ProdutoService {
     }
 
     listar(): Observable<ProdutoModel[]> {
-        let x =  this.http.get<ProdutoModel[]>('http://localhost:8080/produto');
+        let x =  this.http.get<ProdutoModel[]>('http://localhost:8080/produto/listar');
         // x.forEach((s)=>{
         //     s.map((w)=>{
         //         return console.log(w);
@@ -24,6 +24,11 @@ export class ProdutoService {
             
         // })
         return x;
+    }
+
+    alterar(produto: ProdutoModel): Observable<ProdutoModel> {
+        let url = 'http://localhost:8080/produto/atualizar/'+produto.id;
+        return this.http.post<ProdutoModel>(url, produto);
     }
 
 }

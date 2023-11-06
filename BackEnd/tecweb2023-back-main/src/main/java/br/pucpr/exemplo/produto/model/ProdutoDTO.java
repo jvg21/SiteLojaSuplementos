@@ -17,6 +17,8 @@ public class ProdutoDTO {
     private String nome;
     private Double valor;
     private String marca;
-    private String peso;
+    private Integer peso;
+    private String medidaPeso;
+    private boolean ativado;
     private String url;
 }

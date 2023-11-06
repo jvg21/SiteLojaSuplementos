@@ -16,19 +16,25 @@ public class Produto {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Integer id;
 
-  @Column(name = "nomeProduto")
+  @Column(name = "nome")
   private String nome;
 
-  @Column(name = "valorProduto")
+  @Column(name = "valor")
   private Double valor;
 
-  @Column(name = "marcaProduto")
+  @Column(name = "marca")
   private String marca;
 
-  @Column(name = "pesoProduto")
-  private String peso;
+  @Column(name = "peso")
+  private Integer peso;
 
-  @Column(name = "urlProduto")
+  @Column(name = "medidaPeso")
+  private String medidaPeso;
+
+  @Column(name = "ativado")
+  private boolean ativado;
+
+  @Column(name = "url")
   private String url;
 
 
