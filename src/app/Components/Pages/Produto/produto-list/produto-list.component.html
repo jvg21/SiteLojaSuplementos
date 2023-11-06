@@ -20,7 +20,7 @@
             </div>
             <div class="modal-body">
 
-                <form [formGroup]="produtoForm" (ngSubmit)="adicionar()">
+                <form [formGroup]="produtoForm" >
 
                     <div class="mb-3">
                         <label for="IdProduto" class="form-label">ID</label>
@@ -64,7 +64,7 @@
                     </div>
 
                     <label for="form-select" class="form-label">Ativado</label>
-                    <select class="form-select" aria-label="Default select example" id="ativadoProduto">
+                    <select class="form-select" aria-label="Default select example" id="ativadoProduto" formArrayName="Ativado">
                         <option value={{true}} selected>Ativado</option>
                         <option value={{false}}>Desativado</option>
                     </select>
@@ -74,7 +74,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
-                <button type="submit" class="btn btn-success" [disabled]="!produtoForm.valid">Salvar</button>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal" [disabled]="!produtoForm.valid" (click)="adicionar()">Salvar</button>
             </div>
         </div>
     </div>

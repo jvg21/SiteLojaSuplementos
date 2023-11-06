@@ -11,7 +11,7 @@ export class ProdutoService {
     constructor(private http: HttpClient) { }
 
     salvar(produto: ProdutoModel): Observable<ProdutoModel> {
-        return this.http.post<ProdutoModel>('http://localhost:8080/produto', produto);
+        return this.http.post<ProdutoModel>('http://localhost:8080/produto/criar', produto);
     }
 
     listar(): Observable<ProdutoModel[]> {

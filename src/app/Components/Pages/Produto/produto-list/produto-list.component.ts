@@ -17,24 +17,24 @@ export class ProdutoListComponent {
   adicionarControl = true;
 
 
-  controlModal() {
-    if (this.adicionarControl) {
-      this.produtoForm.controls['Id'].setValue('');
-      this.produtoForm.controls['Nome'].setValue('');
-      this.produtoForm.controls['Valor'].setValue(0);
-      this.produtoForm.controls['Peso'].setValue(1);
-      this.produtoForm.controls['Marca'].setValue('');
-    } else {
-      this.produtoForm.controls['Id'].setValue(String(this.selectedRow.id));
-      this.produtoForm.controls['Nome'].setValue(String(this.selectedRow.nome));
-      this.produtoForm.controls['Valor'].setValue(this.selectedRow.valor || 0);
-      this.produtoForm.controls['Peso'].setValue(this.selectedRow.peso || 1);
-      this.produtoForm.controls['MedidaPeso'].setValue(String(this.selectedRow.medidaPeso));
-      this.produtoForm.controls['Marca'].setValue(String(this.selectedRow.marca));
-      this.produtoForm.controls['Ativado'].setValue(this.selectedRow.ativado || true);
+  // controlModal() {
+  //   if (this.adicionarControl) {
+  //     this.produtoForm.controls['Id'].setValue('');
+  //     this.produtoForm.controls['Nome'].setValue('');
+  //     this.produtoForm.controls['Valor'].setValue(0);
+  //     this.produtoForm.controls['Peso'].setValue(1);
+  //     this.produtoForm.controls['Marca'].setValue('');
+  //   } else {
+  //     this.produtoForm.controls['Id'].setValue(String(this.selectedRow.id));
+  //     this.produtoForm.controls['Nome'].setValue(String(this.selectedRow.nome));
+  //     this.produtoForm.controls['Valor'].setValue(this.selectedRow.valor || 0);
+  //     this.produtoForm.controls['Peso'].setValue(this.selectedRow.peso || 1);
+  //     this.produtoForm.controls['MedidaPeso'].setValue(String(this.selectedRow.medidaPeso));
+  //     this.produtoForm.controls['Marca'].setValue(String(this.selectedRow.marca));
+  //     this.produtoForm.controls['Ativado'].setValue(this.selectedRow.ativado || true);
 
-    }
-  }
+  //   }
+  // }
 
   logs(row: ProdutoModel) {
     this.selectedRow = row;
@@ -47,7 +47,7 @@ export class ProdutoListComponent {
   }
 
   produtoForm = new FormGroup({
-    Id: new FormControl({ value: ' - ', disabled: true }),
+    Id: new FormControl({ value: '', disabled: true }),
     Nome: new FormControl('', [Validators.required, Validators.minLength(3)]),
     Valor: new FormControl(0, [Validators.required, Validators.min(0)]),
     Peso: new FormControl(1, [Validators.required, Validators.min(0)]),
@@ -58,22 +58,21 @@ export class ProdutoListComponent {
   })
 
   adicionar() {
-    console.log("oi");
     
-    // let produto = new ProdutoModel;
-    // produto.nome = this.produtoForm.controls['Id'].value || '';
-    // produto.marca = this.produtoForm.controls['Marca'].value || '';
-    // produto.peso = this.produtoForm.controls['Peso'].value || 1;
-    // produto.medidaPeso = this.produtoForm.controls['MedidaPeso'].value || '';
-    // produto.valor = this.produtoForm.controls['Valor'].value || 0;
-    // produto.ativado = this.produtoForm.controls['Ativado'].value || true;
+    let produto = new ProdutoModel;
+    produto.nome = this.produtoForm.controls['Nome'].value || '';
+    produto.marca = this.produtoForm.controls['Marca'].value || '';
+    produto.peso = this.produtoForm.controls['Peso'].value || 1;
+    produto.medidaPeso = this.produtoForm.controls['MedidaPeso'].value || '';
+    produto.valor = this.produtoForm.controls['Valor'].value || 0;
+    produto.ativado = this.produtoForm.controls['Ativado'].value || true;
 
-    // console.log(produto);
+    console.log(produto);
     
-    // this.produtoService.salvar(produto).subscribe(produto => {
-    //   this.listar()
-    //   alert(produto.nome + " Gravado Com sucesso");
-    // });
+    this.produtoService.salvar(produto).subscribe(produto => {
+      this.listar()
+      alert(produto.nome + " Gravado Com sucesso");
+    });
 
   }
 
