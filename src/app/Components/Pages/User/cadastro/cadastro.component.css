@@ -9,6 +9,8 @@ body {
 }
 
 .container {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
