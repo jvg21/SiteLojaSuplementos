@@ -43,7 +43,7 @@ export class ProdutoListComponent {
 
   logs(row: ProdutoModel) {
     this.selectedRow = row;
-    console.log(this.selectedRow);
+    // console.log(this.selectedRow);
 
   }
   ngOnInit(): void {
@@ -72,7 +72,7 @@ export class ProdutoListComponent {
     produto.valor = this.produtoForm.controls['Valor'].value || 0;
     produto.ativado = this.produtoForm.controls['Ativado'].value || true;
 
-    console.log(produto);
+    // console.log(produto);
     
     this.produtoService.salvar(produto).subscribe(produto => {
       this.listar()
@@ -89,7 +89,16 @@ export class ProdutoListComponent {
     });
   }
 
-  // alterar(){
-  //   this.produtoService.alterar(this.selectedRow)
-  // }
+  alterar(){
+    let produto = new ProdutoModel;
+    produto.id = Number(this.produtoForm.controls['Id'].value) || 0;
+    produto.nome = this.produtoForm.controls['Nome'].value || '';
+    produto.marca = this.produtoForm.controls['Marca'].value || '';
+    produto.peso = this.produtoForm.controls['Peso'].value || 1;
+    produto.medidaPeso = this.produtoForm.controls['MedidaPeso'].value || '';
+    produto.valor = this.produtoForm.controls['Valor'].value || 0;
+    produto.ativado = this.produtoForm.controls['Ativado'].value || true;
+
+    this.produtoService.alterar(produto)
+  }
 }

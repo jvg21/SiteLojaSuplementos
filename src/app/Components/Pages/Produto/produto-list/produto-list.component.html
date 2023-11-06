@@ -1,15 +1,17 @@
 <div class="opcoes">
-    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="setAdiconarControll(true)">
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        (click)="setAdiconarControll(true)">
         Adicionar Produto
     </button>
 
-    <button class="btn btn-warning" [disabled]="!selectedRow.id" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="setAdiconarControll(false)">Alterar Produto</button>
+    <button class="btn btn-warning" [disabled]="!selectedRow.id" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        (click)="setAdiconarControll(false)">Alterar Produto</button>
 </div>
 
 <!-- Button trigger modal -->
 
 <!-- Modal criação de produtos -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -75,8 +77,12 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal" [disabled]="!produtoForm.valid"
-                    (click)="adicionar()">Salvar</button>
+
+                <button *ngIf="adicionarControl" type="button" class="btn btn-success" data-bs-dismiss="modal" [disabled]="!produtoForm.valid"
+                    (click)="adicionar()">Criar Produto</button>
+
+                <button *ngIf="!adicionarControl" type="button" class="btn btn-success" data-bs-dismiss="modal" [disabled]="!produtoForm.valid"
+                    (click)="alterar()">Alterar Produto</button>
             </div>
         </div>
     </div>

@@ -28,7 +28,9 @@ export class ProdutoService {
 
     alterar(produto: ProdutoModel): Observable<ProdutoModel> {
         let url = 'http://localhost:8080/produto/atualizar/'+produto.id;
-        return this.http.post<ProdutoModel>(url, produto);
+        console.log(produto);
+        
+        return this.http.put<ProdutoModel>(url, produto);
     }
 
 }

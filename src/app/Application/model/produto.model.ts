@@ -7,6 +7,5 @@ export class ProdutoModel {
     medidaPeso?: string;
     ativado?: boolean;
 
-
 }
 
