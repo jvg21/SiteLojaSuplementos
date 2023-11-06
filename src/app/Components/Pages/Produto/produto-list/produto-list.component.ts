@@ -91,14 +91,27 @@ export class ProdutoListComponent {
 
   alterar(){
     let produto = new ProdutoModel;
-    produto.id = Number(this.produtoForm.controls['Id'].value) || 0;
+    produto.id = Number(this.produtoForm.controls['Id'].value);
     produto.nome = this.produtoForm.controls['Nome'].value || '';
     produto.marca = this.produtoForm.controls['Marca'].value || '';
     produto.peso = this.produtoForm.controls['Peso'].value || 1;
     produto.medidaPeso = this.produtoForm.controls['MedidaPeso'].value || '';
     produto.valor = this.produtoForm.controls['Valor'].value || 0;
     produto.ativado = this.produtoForm.controls['Ativado'].value || true;
+    // produto.id = 2;
+    // produto.nome = 'Whey';
+    // produto.marca = 'Soldier';
+    // produto.peso = 1;
+    // produto.medidaPeso = 'Kg';
+    // produto.valor = 50;
+    // produto.ativado = true;
 
-    this.produtoService.alterar(produto)
+    console.log(produto);
+    
+    this.produtoService.alterar(produto).subscribe(produto => {
+      this.listar()
+      alert(produto.nome + " Alterado Com sucesso");
+    });
+    
   }
 }
