@@ -1,0 +1,36 @@
+
+.ProdutoList {
+    margin: 30px 10px;
+}
+
+.demo-table {
+    width: 100%;
+}
+
+.mat-mdc-row .mat-mdc-cell {
+    cursor: pointer;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+    background-color: lightgray;
+
+}
+
+.demo-row-is-clicked {
+    font-weight: bold;
+    background-color: lightgray;
+}
+
+.opcoes {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: left;
+}
+
+.opcoes button {
+    border-style: solid;
+    border-width: 1px;
+    padding: 5px;
+    margin-left: 1rem;
+}
+
