@@ -16,17 +16,16 @@ public class Transportadora {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-
-    @Column(name = "cnpjTransportadora")
+    @Column(name = "cnpj")
     private String cnpj;
 
-    @Column(name = "nomeTransportadora")
+    @Column(name = "nome")
     private String nome;
 
-    @Column(name = "emailTransportadora")
+    @Column(name = "email")
     private String email;
 
-
-
+    @Column(name = "ativado")
+    private boolean ativado;
 
 }

@@ -37,7 +37,7 @@ public class ProdutoControler {
       public Produto selecionar(@PathVariable int idProduto){
       return produtoService.selecionar(idProduto);
     }
-    
+
     @DeleteMapping("/produto/excluir/{idProduto}")
     public String deletar(@PathVariable int idProduto){
       produtoService.excluir(idProduto);

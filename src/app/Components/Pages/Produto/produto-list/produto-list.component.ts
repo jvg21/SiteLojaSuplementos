@@ -106,7 +106,7 @@ export class ProdutoListComponent {
     // produto.valor = 50;
     // produto.ativado = true;
 
-    console.log(produto);
+    // console.log(produto);
     
     this.produtoService.alterar(produto).subscribe(produto => {
       this.listar()

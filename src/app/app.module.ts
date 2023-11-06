@@ -28,6 +28,7 @@ import { CadastroComponent } from './Components/Pages/User/cadastro/cadastro.com
 import { NavbarComponent } from './Components/Pages/Layout/navbar/navbar.component';
 import { FooterComponent } from './Components/Pages/Layout/footer/footer.component';
 import { ProdutoSpecComponent } from './Components/Pages/Produto/produto-spec/produto-spec.component';
+import { TransportadoraListComponent } from './Components/Pages/Transportadora/transportadora-list/transportadora-list.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { ProdutoSpecComponent } from './Components/Pages/Produto/produto-spec/pr
     NavbarComponent,
     FooterComponent,
     ProdutoSpecComponent,
+    TransportadoraListComponent,
 
   ],
   imports: [
