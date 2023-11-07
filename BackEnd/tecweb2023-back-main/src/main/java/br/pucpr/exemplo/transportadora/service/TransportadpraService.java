@@ -14,8 +14,8 @@ public class TransportadpraService {
     @Autowired
     private TransportadoraRepository TransportadoraRepository;
 
-    public Transportadora salvar(Transportadora usuario) {
-        return TransportadoraRepository.save(usuario);
+    public Transportadora salvar(Transportadora transportadora) {
+        return TransportadoraRepository.save(transportadora);
     }
 
     public List<Transportadora> listar() {
@@ -30,20 +30,21 @@ public class TransportadpraService {
       return user;
     }
 
-    public Transportadora atualizar(Integer id, Transportadora usuario){
+    public Transportadora atualizar(Integer id, Transportadora transportadora){
 
         if (TransportadoraRepository.findById(id).isPresent()){
           Transportadora user = TransportadoraRepository.findById(id).get();
 
-          if (Objects.nonNull(usuario.getCnpj()) && !"".equalsIgnoreCase(usuario.getCnpj())) {
-            user.setCnpj(usuario.getCnpj());
+          if (Objects.nonNull(transportadora.getCnpj()) && !"".equalsIgnoreCase(transportadora.getCnpj())) {
+            user.setCnpj(transportadora.getCnpj());
           }
-          if (Objects.nonNull(usuario.getEmail()) && !"".equalsIgnoreCase(usuario.getEmail())) {
-            user.setEmail(usuario.getEmail());
+          if (Objects.nonNull(transportadora.getEmail()) && !"".equalsIgnoreCase(transportadora.getEmail())) {
+            user.setEmail(transportadora.getEmail());
           }
-          if (Objects.nonNull(usuario.getNome()) && !"".equalsIgnoreCase(usuario.getNome())) {
-            user.setNome(usuario.getNome());
+          if (Objects.nonNull(transportadora.getNome()) && !"".equalsIgnoreCase(transportadora.getNome())) {
+            user.setNome(transportadora.getNome());
           }
+          user.setAtivado(transportadora.isAtivado());
 
 
           return TransportadoraRepository.save(user);

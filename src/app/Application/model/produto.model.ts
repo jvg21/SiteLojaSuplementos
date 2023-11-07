@@ -1,11 +1,11 @@
-export class ProdutoModel{
-    private id?:number;
-    private nome?:string;
-    private valor?:number;
-    private marca?:string;
-    private peso?:string;
-    private ativado?:boolean;
+export class ProdutoModel {
+    id?: number;
+    nome?: string;
+    valor?: number;
+    marca?: string;
+    peso?: number;
+    medidaPeso?: string;
+    ativado?: boolean;
 
-  
 }
 

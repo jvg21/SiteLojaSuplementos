@@ -17,4 +17,5 @@ public class TransportadoraDTO {
     private String cnpj;
     private String nomeFantasia;
     private String email;
+    private boolean ativado;
 }

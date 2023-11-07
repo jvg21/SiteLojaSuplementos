@@ -41,8 +41,8 @@ public class ProdutoService {
           if (Objects.nonNull(usuario.getMarca()) && !"".equalsIgnoreCase(usuario.getMarca())) {
             user.setMarca(usuario.getMarca());
           }
-          if (Objects.nonNull(usuario.getPeso()) && !"".equalsIgnoreCase(usuario.getPeso())) {
-            user.setPeso(usuario.getPeso());
+          if (Objects.nonNull(usuario.getMedidaPeso()) && !"".equalsIgnoreCase(usuario.getMedidaPeso())) {
+            user.setMedidaPeso(usuario.getMedidaPeso());
           }
           if (Objects.nonNull(usuario.getUrl()) && !"".equalsIgnoreCase(usuario.getUrl())) {
             user.setUrl(usuario.getUrl());
@@ -50,6 +50,8 @@ public class ProdutoService {
           if (Objects.nonNull(usuario.getValor())) {
             user.setValor(usuario.getValor());
           }
+          user.setPeso(usuario.getPeso());
+          user.setAtivado(usuario.isAtivado());
 
           return ProdutoRepository.save(user);
     }
@@ -58,6 +60,7 @@ public class ProdutoService {
     public void excluir(Integer id) {
         ProdutoRepository.deleteById(id);
     }
+
 
 //    public Produto desativar(Integer id){
 //      Produto user = null;

@@ -27,6 +27,8 @@ import { ProdutoListComponent } from './Components/Pages/Produto/produto-list/pr
 import { CadastroComponent } from './Components/Pages/User/cadastro/cadastro.component';
 import { NavbarComponent } from './Components/Pages/Layout/navbar/navbar.component';
 import { FooterComponent } from './Components/Pages/Layout/footer/footer.component';
+import { ProdutoSpecComponent } from './Components/Pages/Produto/produto-spec/produto-spec.component';
+import { TransportadoraListComponent } from './Components/Pages/Transportadora/transportadora-list/transportadora-list.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { FooterComponent } from './Components/Pages/Layout/footer/footer.compone
     CadastroComponent,
     NavbarComponent,
     FooterComponent,
+    ProdutoSpecComponent,
+    TransportadoraListComponent,
 
   ],
   imports: [

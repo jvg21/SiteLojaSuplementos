@@ -19,31 +19,31 @@ public class TransportadoraController {
     @Autowired
     private TransportadpraService transportadpraService;
     private ModelMapper modelMapper = new ModelMapper();;
-    @PostMapping("/transportadora")
+    @PostMapping("/transportadora/criar")
     public ResponseEntity<TransportadoraDTO> salvar(@Valid @RequestBody TransportadoraDTO TransportadoraDTO) {
         Transportadora transportadora = this.modelMapper.map(TransportadoraDTO, Transportadora.class);
         transportadpraService.salvar(transportadora);
         return new ResponseEntity(TransportadoraDTO, HttpStatus.CREATED);
     }
 
-    @GetMapping("/transportadora")
+    @GetMapping("/transportadora/listar")
     public List<TransportadoraDTO> listar() {
         List<Transportadora> transportadoras = transportadpraService.listar();
         return transportadoras.stream().map(transportadora -> modelMapper.map(transportadora, TransportadoraDTO.class)).
                 collect(Collectors.toList());
     }
 
-    @GetMapping("/transportadora/{idTransportadora}")
+    @GetMapping("/transportadora/selecionar/{idTransportadora}")
       public Transportadora selecionar(@PathVariable int idTransportadora){
       return transportadpraService.selecionar(idTransportadora);
     }
-    @DeleteMapping("/transportadora/{idTransportadora}")
+    @DeleteMapping("/transportadora/excluir/{idTransportadora}")
     public String deletar(@PathVariable int idTransportadora){
       transportadpraService.excluir(idTransportadora);
       return "Transportadora Deletada";
     }
 
-    @PutMapping("/transportadora/{idTransportadora}")
+    @PutMapping("/transportadora/atualizar/{idTransportadora}")
     public Transportadora atualizar(@PathVariable int idTransportadora, @Valid @RequestBody TransportadoraDTO TransportadoraDTO){
       Transportadora transportadora = this.modelMapper.map(TransportadoraDTO, Transportadora.class);
       return transportadpraService.atualizar(idTransportadora,transportadora);

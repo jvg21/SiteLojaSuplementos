@@ -19,31 +19,32 @@ public class ProdutoControler {
     @Autowired
     private ProdutoService produtoService;
     private ModelMapper modelMapper = new ModelMapper();;
-    @PostMapping("/produto")
+    @PostMapping("/produto/criar")
     public ResponseEntity<ProdutoDTO> salvar(@Valid @RequestBody ProdutoDTO ProdutoDTO) {
         Produto produto = this.modelMapper.map(ProdutoDTO, Produto.class);
         produtoService.salvar(produto);
         return new ResponseEntity(ProdutoDTO, HttpStatus.CREATED);
     }
 
-    @GetMapping("/produto")
+    @GetMapping("/produto/listar")
     public List<ProdutoDTO> listar() {
         List<Produto> produtos = produtoService.listar();
         return produtos.stream().map(produto -> modelMapper.map(produto, ProdutoDTO.class)).
                 collect(Collectors.toList());
     }
 
-    @GetMapping("/produto/{idProduto}")
+    @GetMapping("/produto/selecionar/{idProduto}")
       public Produto selecionar(@PathVariable int idProduto){
       return produtoService.selecionar(idProduto);
     }
-    @DeleteMapping("/produto/{idProduto}")
+
+    @DeleteMapping("/produto/excluir/{idProduto}")
     public String deletar(@PathVariable int idProduto){
       produtoService.excluir(idProduto);
       return "Produto Deletado";
     }
 
-    @PutMapping("/produto/{idProduto}")
+    @PutMapping("/produto/atualizar/{idProduto}")
     public Produto atualizar(@PathVariable int idProduto, @Valid @RequestBody ProdutoDTO ProdutoDTO){
       Produto produto = this.modelMapper.map(ProdutoDTO, Produto.class);
       return produtoService.atualizar(idProduto,produto);

@@ -9,12 +9,4 @@ export class ProdutoSpecComponent {
 
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const addToCartButton = document.getElementById("addToCart");
 
-  if (addToCartButton) {
-      addToCartButton.addEventListener("click", () => {
-          alert("Item added to the cart!");
-      });
-  }
-});

@@ -6,6 +6,8 @@ import { LoginComponent } from './Components/Pages/User/login/login.component';
 import { CadastroComponent } from './Components/Pages/User/cadastro/cadastro.component';
 import { ProdutoListComponent } from './Components/Pages/Produto/produto-list/produto-list.component';
 import { ProdutoSpecComponent } from './Components/Pages/Produto/produto-spec/produto-spec.component';
+import { TransportadoraListComponent } from './Components/Pages/Transportadora/transportadora-list/transportadora-list.component';
+
 
 const routes: Routes = [
   {path:"",redirectTo:"navegar",pathMatch: 'full'},
@@ -16,12 +18,11 @@ const routes: Routes = [
     {path:"produto-spec",component:ProdutoSpecComponent},
   ]},
   {path:"adm",component:LayoutComponent,children:[
-    {path:"produtos",component:ProdutoListComponent}
+    {path:"produtos",component:ProdutoListComponent},
+    {path:"transportadora",component:TransportadoraListComponent}
   ]},
 
   {path:'**' , pathMatch:'full', redirectTo:"PageNotFound"}
-
-  
  ];
 
 @NgModule({

@@ -1,7 +1,7 @@
-export class UsuarioModel{
-    private idUsuario?:number;
-    private nomeUsuario?:string;
-    private cpfUsuario?:string;
-    private emailUsuario?:string;
+export class UsuarioModel {
+    idUsuario?: number;
+    nomeUsuario?: string;
+    cpfUsuario?: string;
+    emailUsuario?: string;
 
 }
