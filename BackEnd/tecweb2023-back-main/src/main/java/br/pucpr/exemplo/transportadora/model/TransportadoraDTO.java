@@ -15,7 +15,7 @@ public class TransportadoraDTO {
     private Integer id;
     @NotBlank
     private String cnpj;
-    private String nomeFantasia;
+    private String nome;
     private String email;
     private boolean ativado;
 }

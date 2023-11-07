@@ -9,7 +9,7 @@ import { transportadoraService } from 'src/app/Application/service/transportador
   styleUrls: ['./transportadora-list.component.css']
 })
 export class TransportadoraListComponent {
-  displayedColumns: string[] = ['id', 'nomeFantasia', 'cnpj', 'email', 'ativado'];
+  displayedColumns: string[] = ['id', 'nome', 'cnpj', 'email', 'ativado'];
   dataSource: TransportadoraModel[] = [];
   selectedRow = new TransportadoraModel;
   constructor(private transportadoraService: transportadoraService) { }
@@ -25,14 +25,14 @@ export class TransportadoraListComponent {
   controlModal() {
     if (this.adicionarControl) {
       this.transportadoraForm.controls['Id'].setValue('');
-      this.transportadoraForm.controls['NomeFantasia'].setValue('');
+      this.transportadoraForm.controls['Nome'].setValue('');
       this.transportadoraForm.controls['Cnpj'].setValue('');
       this.transportadoraForm.controls['Email'].setValue('');
     } else {
       this.transportadoraForm.controls['Id'].setValue(String(this.selectedRow.id));
-      this.transportadoraForm.controls['NomeFantasia'].setValue(String(this.selectedRow.id));
-      this.transportadoraForm.controls['Cnpj'].setValue(String(this.selectedRow.id));
-      this.transportadoraForm.controls['Email'].setValue(String(this.selectedRow.id));
+      this.transportadoraForm.controls['Nome'].setValue(String(this.selectedRow.nome));
+      this.transportadoraForm.controls['Cnpj'].setValue(String(this.selectedRow.cnpj));
+      this.transportadoraForm.controls['Email'].setValue(String(this.selectedRow.email));
       this.transportadoraForm.controls['Ativado'].setValue(this.selectedRow.ativado||true);
 
     }
@@ -50,7 +50,7 @@ export class TransportadoraListComponent {
 
   transportadoraForm = new FormGroup({
     Id: new FormControl({ value: '', disabled: true }),
-    NomeFantasia: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    Nome: new FormControl('', [Validators.required, Validators.minLength(3)]),
     Cnpj: new FormControl('', [Validators.required, Validators.minLength(14)]),
     Email: new FormControl('', [Validators.required, Validators.email,Validators.minLength(3)]),
     Ativado: new FormControl(true, [Validators.required])
@@ -60,7 +60,7 @@ export class TransportadoraListComponent {
   adicionar() {
 
     let transportadora = new TransportadoraModel;
-    transportadora.nomeFantasia = this.transportadoraForm.controls['NomeFantasia'].value || '';
+    transportadora.nome = this.transportadoraForm.controls['Nome'].value || '';
     transportadora.cnpj = this.transportadoraForm.controls['Cnpj'].value || '';
     transportadora.email = this.transportadoraForm.controls['Email'].value || '';
     transportadora.ativado = this.transportadoraForm.controls['Ativado'].value || true;
@@ -69,7 +69,7 @@ export class TransportadoraListComponent {
 
     this.transportadoraService.salvar(transportadora).subscribe(transportadora => {
       this.listar()
-      alert(transportadora.nomeFantasia + " Gravado Com sucesso");
+      alert(transportadora.nome + " Gravado Com sucesso");
     });
 
   }
@@ -85,7 +85,7 @@ export class TransportadoraListComponent {
   alterar() {
     let transportadora = new TransportadoraModel;
     transportadora.id = Number(this.transportadoraForm.controls['Id'] || 0);
-    transportadora.nomeFantasia = this.transportadoraForm.controls['NomeFantasia'].value || '';
+    transportadora.nome = this.transportadoraForm.controls['Nome'].value || '';
     transportadora.cnpj = this.transportadoraForm.controls['Cnpj'].value || '';
     transportadora.email = this.transportadoraForm.controls['Email'].value || '';
     transportadora.ativado = this.transportadoraForm.controls['Ativado'].value || true;
@@ -94,7 +94,7 @@ export class TransportadoraListComponent {
 
     this.transportadoraService.alterar(transportadora).subscribe(transportadora => {
       this.listar()
-      alert(transportadora.nomeFantasia + " Alterado Com sucesso");
+      alert(transportadora.nome + " Alterado Com sucesso");
     });
 
   }
