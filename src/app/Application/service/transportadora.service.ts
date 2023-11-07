@@ -16,20 +16,11 @@ export class transportadoraService {
 
     listar(): Observable<TransportadoraModel[]> {
         let x =  this.http.get<TransportadoraModel[]>('http://localhost:8080/transportadora/listar');
-        x.forEach((s)=>{
-            s.map((w)=>{
-                return console.log(w);
-                
-            })
-            
-        })
         return x;
     }
 
     alterar(transportadora: TransportadoraModel): Observable<TransportadoraModel> {
         let url = 'http://localhost:8080/transportadora/atualizar/'+transportadora.id;
-        // console.log(transportadora,url);
-        
         return this.http.put<TransportadoraModel>(url,transportadora);
     }
 
