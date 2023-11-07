@@ -57,6 +57,15 @@ export class TransportadoraListComponent {
 
   })
 
+  // formatCnpj() {
+  //   // Remove qualquer caractere não numérico do CNPJ
+  //   this.cnpj = this.cnpj.replace(/\D/g, '');
+  
+  //   // Formata o CNPJ com pontos e traço
+  //   this.cnpj = this.cnpj.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
+  // }
+
+  
   adicionar() {
 
     let transportadora = new TransportadoraModel;
@@ -65,7 +74,6 @@ export class TransportadoraListComponent {
     transportadora.email = this.transportadoraForm.controls['Email'].value || '';
     transportadora.ativado = this.transportadoraForm.controls['Ativado'].value || true;
 
-    // console.log(produto);
 
     this.transportadoraService.salvar(transportadora).subscribe(transportadora => {
       this.listar()
@@ -84,13 +92,13 @@ export class TransportadoraListComponent {
 
   alterar() {
     let transportadora = new TransportadoraModel;
-    transportadora.id = Number(this.transportadoraForm.controls['Id'] || 0);
+    transportadora.id = Number(this.transportadoraForm.controls['Id'].value || 0);
     transportadora.nome = this.transportadoraForm.controls['Nome'].value || '';
     transportadora.cnpj = this.transportadoraForm.controls['Cnpj'].value || '';
     transportadora.email = this.transportadoraForm.controls['Email'].value || '';
     transportadora.ativado = this.transportadoraForm.controls['Ativado'].value || true;
 
-    // console.log(transportadora);
+    // console.log("tt!"+transportadora.id);
 
     this.transportadoraService.alterar(transportadora).subscribe(transportadora => {
       this.listar()
