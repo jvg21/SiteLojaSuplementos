@@ -1,44 +1,13 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-}
-
-main {
-    display: flex;
-    justify-content: center;
-    margin: 20px;
-}
-
 .product-details {
+    display: flex;
+    justify-content: space-around;
     height: 20rem;
     flex-wrap: wrap;
-    display: flex;
 }
 
 img {
     max-width: 100%;
     max-height: 100%;
-}
-
-
-h2 {
-    font-size: 1.5em;
-}
-
-button {
-    background-color: #0074d9;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
 }
 
 .center-content {
@@ -50,26 +19,35 @@ button {
     min-height: 80vh; 
 }
 
-.description button {
-    margin-top: 20px;
-}
-
 .botaoCart {
     background-color: rgb(156, 156, 3);
+    padding: 0.5rem;
+    border: none;
+    color: white;
 }
 
 .item {
     display: flex;
     flex-wrap: wrap;
-    margin-right: 15vw;
+}
+
+.texto {
+    margin-top: 3rem;
+    width: 80vh;
+    max-width: 80vh;
+    height: 7rem;
+}
+
+.imagem {
+    background-color: rgb(0, 255, 200);
+    width: 80vh;
+    margin-right: 5rem;
 }
 
 .descricao {
-    margin-left: 2rem;
-    float: left;
+    text-align: center;
 }
 
 .nome {
-    margin-left: 15rem;
+    margin-left: 5rem;
 }
-
