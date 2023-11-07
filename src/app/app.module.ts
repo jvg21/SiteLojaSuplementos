@@ -29,7 +29,7 @@ import { NavbarComponent } from './Components/Pages/Layout/navbar/navbar.compone
 import { FooterComponent } from './Components/Pages/Layout/footer/footer.component';
 import { ProdutoSpecComponent } from './Components/Pages/Produto/produto-spec/produto-spec.component';
 import { TransportadoraListComponent } from './Components/Pages/Transportadora/transportadora-list/transportadora-list.component';
-import { CarrinhoComponent } from './Components/carrinho/carrinho.component';
+import { CarrinhoComponent } from './Components/Pages/carrinho/carrinho.component';
 import { CardComponent } from './Components/card/card.component';
 
 @NgModule({

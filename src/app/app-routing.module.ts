@@ -7,6 +7,7 @@ import { CadastroComponent } from './Components/Pages/User/cadastro/cadastro.com
 import { ProdutoListComponent } from './Components/Pages/Produto/produto-list/produto-list.component';
 import { ProdutoSpecComponent } from './Components/Pages/Produto/produto-spec/produto-spec.component';
 import { TransportadoraListComponent } from './Components/Pages/Transportadora/transportadora-list/transportadora-list.component';
+import { CarrinhoComponent } from './Components/Pages/carrinho/carrinho.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
     {path:"login",component:LoginComponent},
     {path:"cadastro",component:CadastroComponent},
     {path:"produto-spec",component:ProdutoSpecComponent},
+    {path:"carrinho", component:CarrinhoComponent},
   ]},
   {path:"adm",component:LayoutComponent,children:[
     {path:"produtos",component:ProdutoListComponent},
