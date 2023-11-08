@@ -1,7 +1,14 @@
 export class UsuarioModel {
-    idUsuario?: number;
-    nomeUsuario?: string;
-    cpfUsuario?: string;
-    emailUsuario?: string;
+    id?: number;
+    nome?: string;
+    cpf?: string;
+    email?: string;
+    senha?: string;
+    cep?: string;
+    uf?: string;
+    cidade?: string;
+    endereco?: string;
+    numero?: number;
+    complemento?: string;
 
 }

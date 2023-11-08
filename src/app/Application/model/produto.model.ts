@@ -6,6 +6,7 @@ export class ProdutoModel {
     peso?: number;
     medidaPeso?: string;
     ativado?: boolean;
+    descricao?:string;
 
 }
 

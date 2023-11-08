@@ -37,6 +37,9 @@ public class Produto {
   @Column(name = "url")
   private String url;
 
+  @Column(name = "descricao")
+  private String descricao;
+
 
 
 }
