@@ -13,12 +13,12 @@
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
                 <div class="input-group">
-                    <input type={{inputType}} class="form-control" id="exampleInputPassword1" formControlName="PassWord" maxlength="26">
+                    <input type={{PasswordShow.getInputType()}} class="form-control" id="exampleInputPassword1" formControlName="PassWord" maxlength="26">
                 </div>
                     <div class="buttonEye">
 
-                    <button type="button" (click)="togglePasswordVisibility()" class="togglePasswordVisibility">
-                        <i [ngClass]="{'bi bi-eye-slash-fill': inputType == 'text', 'bi bi-eye': inputType == 'password'}"></i>
+                    <button type="button" (click)="PasswordShow.togglePasswordVisibility()" class="togglePasswordVisibility">
+                        <i [ngClass]="{'bi bi-eye-slash-fill': PasswordShow.getInputType() == 'text', 'bi bi-eye': PasswordShow.getInputType() == 'password'}"></i>
                     </button>
                     <span>Visualizar Senha</span>
                 </div>

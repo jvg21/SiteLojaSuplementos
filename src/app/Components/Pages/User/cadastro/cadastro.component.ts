@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup,FormControl, Validators } from '@angular/forms';
+import { PasswordShow } from 'src/app/Application/common/passwordShow';
+import { UsuarioModel } from 'src/app/Application/model/usuario.model';
 
 @Component({
   selector: 'app-cadastro',
@@ -7,9 +9,10 @@ import { FormGroup,FormControl, Validators } from '@angular/forms';
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent {
+  PasswordShow = new PasswordShow();
 
   cadastroForm = new FormGroup({
-    Id : new FormControl({value:'',disabled:true}),
+    Id : new FormControl(''),
     Nome : new FormControl('',[Validators.required]),
     Email : new FormControl('',[Validators.required]),
     Cpf : new FormControl('',[Validators.required]),
@@ -24,9 +27,21 @@ export class CadastroComponent {
 
   });
 
+
   adicionar(){
-    alert("oi")
-  }
+      let user = new UsuarioModel;
+      user.id = Number(this.cadastroForm.controls['Id'].value);
+      user.nome = this.cadastroForm.controls['Nome'].value || '';
+      user.email = this.cadastroForm.controls['Email'].value || '';
+      user.cpf = this.cadastroForm.controls['Cpf'].value || '';
+      user.senha = this.cadastroForm.controls['Senha'].value || '';
+      user.uf = this.cadastroForm.controls['Uf'].value || '';
+      user.cidade = this.cadastroForm.controls['Cidade'].value || '';
+      user.endereco = this.cadastroForm.controls['Endereco'].value || '';
+      user.complemento = this.cadastroForm.controls['Complemento'].value || '';
+      user.numero = this.cadastroForm.controls['Numero'].value || 0;
+      user.cep = this.cadastroForm.controls['Cep'].value || '';
+  } 
 }
 
 
