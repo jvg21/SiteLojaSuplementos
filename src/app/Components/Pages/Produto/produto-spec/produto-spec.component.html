@@ -7,20 +7,18 @@
             <img src="" alt="Product Image"> <!-- Imagem -->            
         </div>
         <div class="nome"   >
-            <h2 style="font-size: 3rem;">Creatina Soldiers 1kg</h2> <!-- Nome -->
+            <h2 style="font-size: 3rem;">{{this.dataSource.nome}}</h2> <!-- Nome -->
             <div class="texto">
                 <p>
-                    Creatina monohidratada 100% puro Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Quis facilis minima quas, pariatur eveniet voluptatem id quidem iste numquam accusamus officia 
-                    voluptates sunt reiciendis assumenda perspiciatis fugit modi amet soluta?
+                    {{this.dataSource.descricao}}
                 </p> <!-- Descrição -->           
             </div>
             
             <div class="descricao">
-                <p>Peso: 1kg</p> <!-- Peso + Medida Peso -->
-                <p>Marca: Soldier</p> <!-- Marca -->
+                <p>Peso:{{this.dataSource.peso+" "+this.dataSource.medidaPeso}}</p> <!-- Peso + Medida Peso -->
+                <p>Marca: {{this.dataSource.marca}}</p> <!-- Marca -->
     
-                <h2>Preço: R$250,00</h2> <!-- Preço -->
+                <h2>Preço: R${{this.dataSource.valor}}</h2> <!-- Preço -->
                 <button class="botaoCart" id="addToCart">Adicionar ao carrinho</button>                    
             </div>
 
