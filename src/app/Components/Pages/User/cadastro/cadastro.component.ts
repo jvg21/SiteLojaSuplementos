@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup,FormControl, Validators } from '@angular/forms';
 import { PasswordShow } from 'src/app/Application/common/passwordShow';
 import { UsuarioModel } from 'src/app/Application/model/usuario.model';
+import { UsuarioService } from 'src/app/Application/service/usuario.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -9,6 +10,7 @@ import { UsuarioModel } from 'src/app/Application/model/usuario.model';
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent {
+  constructor(private usuarioService: UsuarioService) { }
   PasswordShow = new PasswordShow();
 
   cadastroForm = new FormGroup({
@@ -27,7 +29,6 @@ export class CadastroComponent {
 
   });
 
-
   adicionar(){
       let user = new UsuarioModel;
       user.id = Number(this.cadastroForm.controls['Id'].value);
@@ -41,6 +42,10 @@ export class CadastroComponent {
       user.complemento = this.cadastroForm.controls['Complemento'].value || '';
       user.numero = this.cadastroForm.controls['Numero'].value || 0;
       user.cep = this.cadastroForm.controls['Cep'].value || '';
+
+      this.usuarioService.salvar(user).subscribe(produto => {
+        alert(user.nome + ", Bem Vindo");
+      });
   } 
 }
 
