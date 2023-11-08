@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup,FormControl,Validators } from '@angular/forms';
+import { PasswordShow } from 'src/app/Application/common/passwordShow';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +8,7 @@ import { FormGroup,FormControl,Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  public inputType: string = "password";
+  PasswordShow = new PasswordShow();
 
   loginForm = new FormGroup({
     Email: new FormControl('',
@@ -21,9 +22,6 @@ export class LoginComponent {
       ])
   })
 
-  togglePasswordVisibility() {
-    this.inputType == 'text' ? this.inputType = 'password' : this.inputType = 'text'
-  }
 
   login() {
     console.log(this.loginForm.controls['Email'].value);
