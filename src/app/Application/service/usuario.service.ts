@@ -25,6 +25,12 @@ export class UsuarioService {
         return this.http.put<UsuarioModel>(url,usuario);
     }
 
+    logar(usuario:UsuarioModel): Observable<UsuarioModel>{
+        let url = 'http://localhost:8080/produto/selecionar/'+usuario.email+'/'+usuario.senha;
+        
+        return this.http.get<UsuarioModel>(url);
+    }
+
     
 
 }
