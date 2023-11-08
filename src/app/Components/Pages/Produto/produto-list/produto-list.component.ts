@@ -16,6 +16,18 @@ export class ProdutoListComponent {
 
   adicionarControl = true;
   
+  produtoForm = new FormGroup({
+    Id: new FormControl({ value: '', disabled: true }),
+    Nome: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    Valor: new FormControl(0, [Validators.required, Validators.min(0)]),
+    Peso: new FormControl(1, [Validators.required, Validators.min(0)]),
+    MedidaPeso: new FormControl('',[Validators.required]),
+    Marca: new FormControl('', [Validators.required]),
+    Ativado: new FormControl(true, [Validators.required]),
+    Descricao: new FormControl('', [Validators.required, Validators.minLength(3),Validators.maxLength(200)]),
+
+  })
+
   setAdiconarControll(foo:boolean){
     
     this.adicionarControl = foo;
@@ -52,18 +64,6 @@ export class ProdutoListComponent {
     this.listar();
     // console.log(this.dataSource)
   }
-
-  produtoForm = new FormGroup({
-    Id: new FormControl({ value: '', disabled: true }),
-    Nome: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    Valor: new FormControl(0, [Validators.required, Validators.min(0)]),
-    Peso: new FormControl(1, [Validators.required, Validators.min(0)]),
-    MedidaPeso: new FormControl('',[Validators.required]),
-    Marca: new FormControl('', [Validators.required]),
-    Ativado: new FormControl(true, [Validators.required]),
-    Descricao: new FormControl('', [Validators.required, Validators.minLength(3),Validators.maxLength(200)]),
-
-  })
 
   adicionar() {
     
