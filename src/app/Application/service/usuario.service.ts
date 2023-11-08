@@ -25,4 +25,6 @@ export class UsuarioService {
         return this.http.put<UsuarioModel>(url,usuario);
     }
 
+    
+
 }
