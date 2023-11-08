@@ -31,6 +31,7 @@ import { ProdutoSpecComponent } from './Components/Pages/Produto/produto-spec/pr
 import { TransportadoraListComponent } from './Components/Pages/Transportadora/transportadora-list/transportadora-list.component';
 import { CarrinhoComponent } from './Components/Pages/carrinho/carrinho.component';
 import { CardComponent } from './Components/card/card.component';
+import { ProdutoSearchComponent } from './Components/Pages/Produto/produto-search/produto-search.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { CardComponent } from './Components/card/card.component';
     TransportadoraListComponent,
     CarrinhoComponent,
     CardComponent,
+    ProdutoSearchComponent,
 
   ],
   imports: [

@@ -20,5 +20,7 @@ public class UsuarioDTO {
     private String uf;
     private String cidade;
     private String endereco;
+    private Integer numero;
+    private String complemento;
 
 }

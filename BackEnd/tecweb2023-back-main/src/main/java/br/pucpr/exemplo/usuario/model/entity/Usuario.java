@@ -15,14 +15,29 @@ public class Usuario {
     private Integer id;
 
 
-    @Column(name = "nomeUsuario")
+    @Column(name = "nome")
     private String nome;
 
-    @Column(name = "cpfUsuario")
+    @Column(name = "cpf")
+    private String cpf;
+
+    @Column(name = "email")
     private String email;
 
-    @Column(name = "emailUsuario")
-    private String cpf;
+    @Column(name = "senha")
+    private String senha;
+    @Column(name = "cep")
+    private String cep;
+    @Column(name = "uf")
+    private String uf;
+    @Column(name = "cidade")
+    private String cidade;
+    @Column(name = "endereco")
+    private String endereco;
+    @Column(name = "numero")
+    private Integer numero;
+    @Column(name = "complemento")
+    private String complemento;
 
 
 }

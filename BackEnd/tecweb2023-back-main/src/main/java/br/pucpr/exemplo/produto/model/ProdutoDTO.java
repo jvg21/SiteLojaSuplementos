@@ -21,4 +21,5 @@ public class ProdutoDTO {
     private String medidaPeso;
     private boolean ativado;
     private String url;
+    private String descricao;
 }
