@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup,FormControl } from '@angular/forms';
+import { FormGroup,FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-cadastro',
@@ -7,25 +7,25 @@ import { FormGroup,FormControl } from '@angular/forms';
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent {
+
   cadastroForm = new FormGroup({
-    FirstName : new FormControl(''),
-    LastName : new FormControl(''),
-    Email : new FormControl(''),
-    Contact : new FormControl(''),
-    Cpf : new FormControl(''),
-    PassWord : new FormControl(''),
-    CpassWord : new FormControl(''),
-    UF : new FormControl(''),
-    City : new FormControl(''),
-    Address : new FormControl(''),
-    AddressNumber : new FormControl(''),
-    Complement : new FormControl(''),
-    Cep : new FormControl(''),
+    Id : new FormControl({value:'',disabled:true}),
+    Nome : new FormControl('',[Validators.required]),
+    Email : new FormControl('',[Validators.required]),
+    Cpf : new FormControl('',[Validators.required]),
+    Senha : new FormControl('',[Validators.required]),
+    Csenha : new FormControl('',[Validators.required]),
+    Uf : new FormControl('',[Validators.required]),
+    Cidade : new FormControl('',[Validators.required]),
+    Endereco : new FormControl('',[Validators.required]),
+    Numero : new FormControl(null,[Validators.required]),
+    Complemento : new FormControl(''),
+    Cep : new FormControl('',[Validators.required]),
 
-  })
+  });
 
-  cadastrar(){
-    
+  adicionar(){
+    alert("oi")
   }
 }
 
