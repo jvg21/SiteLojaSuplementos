@@ -8,6 +8,7 @@ import { ProdutoListComponent } from './Components/Pages/Produto/produto-list/pr
 import { ProdutoSpecComponent } from './Components/Pages/Produto/produto-spec/produto-spec.component';
 import { TransportadoraListComponent } from './Components/Pages/Transportadora/transportadora-list/transportadora-list.component';
 import { CarrinhoComponent } from './Components/Pages/carrinho/carrinho.component';
+import { ProdutoSearchComponent } from './Components/Pages/Produto/produto-search/produto-search.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
     {path:"cadastro",component:CadastroComponent},
     {path:"produto-spec",component:ProdutoSpecComponent},
     {path:"carrinho", component:CarrinhoComponent},
+    {path:"produto-search", component:ProdutoSearchComponent}
   ]},
   {path:"adm",component:LayoutComponent,children:[
     {path:"produtos",component:ProdutoListComponent},
