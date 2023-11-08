@@ -64,6 +64,11 @@
                         <div *ngIf="produtoForm.controls['Valor'].invalid &&produtoForm.controls['Valor'].dirty"
                             style="color: red;" id="nomeHelp" class="form-text">Valor Inválido</div>
                     </div>
+                    <div class="mb-3">
+                        <label for="descricao" class="form-label">Descricao</label>
+                        <textarea class="form-control" id="descricao" rows="3" formControlName="Descricao"></textarea>
+                      </div>
+
 
                     <label for="form-select" class="form-label">Ativado</label>
                     <select class="form-select" aria-label="Default select example" id="ativadoProduto"
@@ -126,6 +131,11 @@
         <ng-container matColumnDef="ativado">
             <th mat-header-cell *matHeaderCellDef> Ativado </th>
             <td mat-cell *matCellDef="let element"> {{(element.ativado)?'Sim':'Não'}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="descricao">
+            <th mat-header-cell *matHeaderCellDef> Tem Descricao? </th>
+            <td mat-cell *matCellDef="let element" title={{element.descricao}}> {{(element.descricao)?'Sim':'Não'}} </td>
         </ng-container>
 
 

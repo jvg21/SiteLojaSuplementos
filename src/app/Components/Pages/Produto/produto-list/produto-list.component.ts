@@ -9,7 +9,7 @@ import { ProdutoService } from 'src/app/Application/service/produto.service';
   styleUrls: ['./produto-list.component.css'],
 })
 export class ProdutoListComponent {
-  displayedColumns: string[] = ['id', 'nome', 'valor', 'marca', 'peso','medidaPeso','ativado'];
+  displayedColumns: string[] = ['id', 'nome', 'valor', 'marca', 'peso','medidaPeso','ativado','descricao'];
   dataSource: ProdutoModel[] = [];
   selectedRow = new ProdutoModel;
   constructor(private produtoService: ProdutoService) { }
@@ -29,6 +29,7 @@ export class ProdutoListComponent {
       this.produtoForm.controls['Valor'].setValue(0);
       this.produtoForm.controls['Peso'].setValue(1);
       this.produtoForm.controls['Marca'].setValue('');
+      this.produtoForm.controls['Descricao'].setValue('');
     } else {
       this.produtoForm.controls['Id'].setValue(String(this.selectedRow.id));
       this.produtoForm.controls['Nome'].setValue(String(this.selectedRow.nome));
@@ -37,6 +38,7 @@ export class ProdutoListComponent {
       this.produtoForm.controls['MedidaPeso'].setValue(String(this.selectedRow.medidaPeso));
       this.produtoForm.controls['Marca'].setValue(String(this.selectedRow.marca));
       this.produtoForm.controls['Ativado'].setValue(this.selectedRow.ativado || true);
+      this.produtoForm.controls['Descricao'].setValue(this.selectedRow.descricao || '');
 
     }
   }
@@ -58,7 +60,8 @@ export class ProdutoListComponent {
     Peso: new FormControl(1, [Validators.required, Validators.min(0)]),
     MedidaPeso: new FormControl('',[Validators.required]),
     Marca: new FormControl('', [Validators.required]),
-    Ativado: new FormControl(true, [Validators.required])
+    Ativado: new FormControl(true, [Validators.required]),
+    Descricao: new FormControl('', [Validators.required, Validators.minLength(3),Validators.maxLength(200)]),
 
   })
 
@@ -71,6 +74,7 @@ export class ProdutoListComponent {
     produto.medidaPeso = this.produtoForm.controls['MedidaPeso'].value || '';
     produto.valor = this.produtoForm.controls['Valor'].value || 0;
     produto.ativado = this.produtoForm.controls['Ativado'].value || true;
+    produto.descricao = this.produtoForm.controls['Descricao'].value || '';
 
     // console.log(produto);
     
@@ -98,6 +102,7 @@ export class ProdutoListComponent {
     produto.medidaPeso = this.produtoForm.controls['MedidaPeso'].value || '';
     produto.valor = this.produtoForm.controls['Valor'].value || 0;
     produto.ativado = this.produtoForm.controls['Ativado'].value || true;
+    produto.descricao = this.produtoForm.controls['Descricao'].value || this.produtoForm.controls['Nome'].value || '';
     // produto.id = 2;
     // produto.nome = 'Whey';
     // produto.marca = 'Soldier';

@@ -10,7 +10,6 @@
         </div>
         <div class="input-group">
             <input type="email" id="email" placeholder="Email" required>
-            <input type="tel" id="contato" placeholder="Contato" required>
         </div>
         <div class="input-group">
             <input type="text" id="cpf" placeholder="CPF" required>
@@ -22,8 +21,9 @@
         <div class="separator"></div>
         <h2 style="text-align: left;">Endereço</h2>
         <div class="input-group">
+            <input type="text" id="cep" placeholder="CEP" required>
             <select class="form-control" id="uf">
-                        <option value="" disabled selected hidden>UF</option>
+                        <option value="" disabled selected hidden>Estado</option>
                         <option value="">AC</option>
                         <option value="">AL</option>
                         <option value="">AP</option>
@@ -60,7 +60,6 @@
         </div>
         <div class="input-group">
             <input type="text" id="complemento" placeholder="Complemento">
-            <input type="text" id="cep" placeholder="CEP" required>
         </div>
         <button type="submit">Cadastrar</button>
     </form>

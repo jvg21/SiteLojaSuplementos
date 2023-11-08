@@ -15,5 +15,12 @@ public class UsuarioDTO {
     private String nome;
     private String email;
     private String cpf;
+    private String senha;
+    private String cep;
+    private String uf;
+    private String cidade;
+    private String endereco;
+    private Integer numero;
+    private String complemento;
 
 }

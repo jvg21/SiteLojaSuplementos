@@ -47,6 +47,10 @@ public class ProdutoService {
           if (Objects.nonNull(usuario.getUrl()) && !"".equalsIgnoreCase(usuario.getUrl())) {
             user.setUrl(usuario.getUrl());
           }
+          if (Objects.nonNull(usuario.getDescricao()) && !"".equalsIgnoreCase(usuario.getDescricao())) {
+            user.setDescricao(usuario.getDescricao());
+          }
+
           if (Objects.nonNull(usuario.getValor())) {
             user.setValor(usuario.getValor());
           }

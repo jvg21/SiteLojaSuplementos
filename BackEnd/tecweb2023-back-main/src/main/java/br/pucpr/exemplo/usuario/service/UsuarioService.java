@@ -43,7 +43,24 @@ public class UsuarioService {
           if (Objects.nonNull(usuario.getCpf()) && !"".equalsIgnoreCase(usuario.getCpf())) {
             user.setCpf(usuario.getCpf());
           }
-
+          if (Objects.nonNull(usuario.getCep()) && !"".equalsIgnoreCase(usuario.getCep())) {
+            user.setCep(usuario.getCep());
+          }
+          if (Objects.nonNull(usuario.getEndereco()) && !"".equalsIgnoreCase(usuario.getEndereco())) {
+            user.setEndereco(usuario.getEndereco());
+          }
+          if (Objects.nonNull(usuario.getComplemento()) && !"".equalsIgnoreCase(usuario.getComplemento())) {
+            user.setComplemento(usuario.getComplemento());
+          }
+          if (Objects.nonNull(usuario.getUf()) && !"".equalsIgnoreCase(usuario.getUf())) {
+            user.setUf(usuario.getUf());
+          }
+          if (Objects.nonNull(usuario.getCidade()) && !"".equalsIgnoreCase(usuario.getCidade())) {
+            user.setCidade(usuario.getCidade());
+          }
+          if (Objects.nonNull(usuario.getNumero()) ) {
+            user.setNumero(usuario.getNumero());
+          }
           return usuarioRepository.save(user);
     }
       return null;
