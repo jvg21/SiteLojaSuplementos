@@ -19,6 +19,6 @@ public class UsuarioDTO {
     private String cep;
     private String uf;
     private String cidade;
-    private String endereco
+    private String endereco;
 
 }
