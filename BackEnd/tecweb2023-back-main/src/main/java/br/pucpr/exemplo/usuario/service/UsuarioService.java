@@ -68,4 +68,14 @@ public class UsuarioService {
     public void excluir(Integer id) {
         usuarioRepository.deleteById(id);
     }
+
+    public Usuario logar(String email,String senha){
+      List<Usuario> lista = listar();
+      for (int i = 0;i<lista.size();i++){
+        if (email.equals(lista.get(i).getEmail()) && senha.equals(lista.get(i).getSenha()) ){
+          return lista.get(i);
+        }
+      }
+      return new Usuario();
+    }
 }

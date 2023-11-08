@@ -31,10 +31,12 @@ public class UsuarioController {
                 collect(Collectors.toList());
     }
 
-    @GetMapping("/usuario/selecionar/{idUsuario}")
-      public Usuario selecionar(@PathVariable int idUsuario){
-      return usuarioService.selecionar(idUsuario);
+    @GetMapping("/usuario/selecionar/{emailUsuario}")
+      public String logar(@PathVariable String emailUsuario){
+      return "email "+emailUsuario+" senha ";
+//      return usuarioService.logar(emailUsuario,senha);
     }
+
     @DeleteMapping("/usuario/excluir/{idUsuario}")
     public String deletar(@PathVariable int idUsuario){
       usuarioService.excluir(idUsuario);
