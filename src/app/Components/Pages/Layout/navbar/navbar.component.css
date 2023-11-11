@@ -1,0 +1,18 @@
+#navBar{
+    padding: 15px;
+    position: relative;
+    background: cadetblue;
+}
+.nav-link{
+    color: white;
+    font-size: 16px;
+}
+
+.offcanvas{
+    background: cadetblue;
+    font-size: 16px;
+}
+.offcanvas-title,.navbar-brand{
+    color: white;
+}
+

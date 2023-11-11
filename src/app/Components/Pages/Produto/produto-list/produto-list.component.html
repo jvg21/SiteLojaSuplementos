@@ -1,0 +1,148 @@
+<div class="opcoes">
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        (click)="setAdiconarControll(true)">
+        Adicionar Produto
+    </button>
+
+    <button class="btn btn-warning" [disabled]="!selectedRow.id" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        (click)="setAdiconarControll(false)">Alterar Produto</button>
+</div>
+
+<!-- Button trigger modal -->
+
+<!-- Modal criação de produtos -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Produto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form [formGroup]="produtoForm">
+
+                    <div class="mb-3">
+                        <label for="IdProduto" class="form-label">ID</label>
+                        <input type="number" class="form-control" id="IdProduto" formControlName="Id">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="nomeProduto" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="nomeProduto" formControlName="Nome">
+                        <div *ngIf="produtoForm.controls['Nome'].invalid &&produtoForm.controls['Nome'].dirty"
+                            style="color: red;" id="nomeHelp" class="form-text">Nome Inválido</div>
+                    </div>
+
+                    <label for="form-select" class="form-label">Marca</label>
+                    <select class="form-select " aria-label="Default select example" formControlName="Marca"
+                        id="marcaProduto">
+                        <option value="Growth" selected>Growth</option>
+                        <option value="Soldier">Soldier</option>
+                        <option value="Max Titanium">Max Titanium</option>
+                    </select>
+
+                    <label for="pesoProduto" class="form-label"><br />Peso</label>
+                    <div class="input-group mb-3">
+                        <input type="number" class="form-control" id="pesoProduto" formControlName="Peso">
+                        <span class="input-group-text"></span>
+
+                        <select class="form-select" aria-label="Default select example" id="medidaPesoProduto"
+                            formControlName="MedidaPeso">
+                            <option value="Kg">Kg</option>
+                            <option value="G" selected>G</option>
+                            <option value="Mg">Mg</option>
+                            <option value="L">L</option>
+                            <option value="Ml">Ml</option>
+                        </select>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="valorProduto" class="form-label">Valor</label>
+                        <input type="number" class="form-control" id="valorProduto" formControlName="Valor">
+                        <div *ngIf="produtoForm.controls['Valor'].invalid &&produtoForm.controls['Valor'].dirty"
+                            style="color: red;" id="nomeHelp" class="form-text">Valor Inválido</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="descricao" class="form-label">Descricao</label>
+                        <textarea class="form-control" id="descricao" rows="3" formControlName="Descricao"></textarea>
+                      </div>
+
+
+                    <label for="form-select" class="form-label">Ativado</label>
+                    <select class="form-select" aria-label="Default select example" id="ativadoProduto"
+                        formControlName="Ativado">
+                        <option value={{true}} selected>Ativado</option>
+                        <option value={{false}}>Desativado</option>
+                    </select>
+
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+
+                <button *ngIf="adicionarControl" type="button" class="btn btn-success" data-bs-dismiss="modal" [disabled]="!produtoForm.valid"
+                    (click)="adicionar()">Criar Produto</button>
+
+                <button *ngIf="!adicionarControl" type="button" class="btn btn-success" data-bs-dismiss="modal" [disabled]="!produtoForm.valid"
+                    (click)="alterar()">Alterar Produto</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="ProdutoList">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="nome">
+            <th mat-header-cell *matHeaderCellDef> Nome </th>
+            <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="valor">
+            <th mat-header-cell *matHeaderCellDef> Preço </th>
+            <td mat-cell *matCellDef="let element"> {{element.valor}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="marca">
+            <th mat-header-cell *matHeaderCellDef> Marca </th>
+            <td mat-cell *matCellDef="let element"> {{element.marca}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="peso">
+            <th mat-header-cell *matHeaderCellDef> Peso </th>
+            <td mat-cell *matCellDef="let element"> {{element.peso}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="medidaPeso">
+            <th mat-header-cell *matHeaderCellDef> Medida Peso </th>
+            <td mat-cell *matCellDef="let element"> {{element.medidaPeso}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="ativado">
+            <th mat-header-cell *matHeaderCellDef> Ativado </th>
+            <td mat-cell *matCellDef="let element"> {{(element.ativado)?'Sim':'Não'}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="descricao">
+            <th mat-header-cell *matHeaderCellDef> Tem Descricao? </th>
+            <td mat-cell *matCellDef="let element" title={{element.descricao}}> {{(element.descricao)?'Sim':'Não'}} </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row (click)="logs(row)" [class.demo-row-is-clicked]="selectedRow == row"
+            *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+</div>

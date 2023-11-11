@@ -1,0 +1,35 @@
+<div class="LoginPageContent">
+    <div class="LoginFormContent">
+
+        <form class="LoginForm" [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    formControlName="Email" maxlength="80">
+            </div>
+            <div *ngIf="loginForm.controls['Email'].invalid && loginForm.controls['Email'].dirty">
+                <p style="color: red;">Email Inválido</p>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <div class="input-group">
+                    <input type={{PasswordShow.getInputType()}} class="form-control" id="exampleInputPassword1" formControlName="PassWord" maxlength="26">
+                </div>
+                    <div class="buttonEye">
+
+                    <button type="button" (click)="PasswordShow.togglePasswordVisibility()" class="togglePasswordVisibility">
+                        <i [ngClass]="{'bi bi-eye-slash-fill': PasswordShow.getInputType() == 'text', 'bi bi-eye': PasswordShow.getInputType() == 'password'}"></i>
+                    </button>
+                    <span>Visualizar Senha</span>
+                </div>
+             
+                <div *ngIf="loginForm.controls['PassWord'].invalid &&loginForm.controls['PassWord'].dirty">
+                    <br />
+                    <p style="color: red;">A senha deve conter: <br /> - Letra Maiuscula<br /> - Número<br /> - Caracteres Especiais</p>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Enviar</button>
+        </form>
+
+    </div>
+</div>
