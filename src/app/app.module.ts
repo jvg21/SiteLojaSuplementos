@@ -34,6 +34,7 @@ import { CardComponent } from './Components/card/card.component';
 import { ProdutoSearchComponent } from './Components/Pages/Produto/produto-search/produto-search.component';
 import { PedidoComponent } from './Components/Pages/pedido/pedido.component';
 import { UserListComponent } from './Components/Pages/User/user-list/user-list.component';
+import { LayoutAdmComponent } from './Components/Pages/layout-adm/layout-adm.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { UserListComponent } from './Components/Pages/User/user-list/user-list.c
     ProdutoSearchComponent,
     PedidoComponent,
     UserListComponent,
+    LayoutAdmComponent,
   ],
   imports: [
     HttpClientModule,
