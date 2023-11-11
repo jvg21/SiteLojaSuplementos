@@ -22,7 +22,7 @@
 
                     <div class="mb-3">
                         <label for="IdUsuario" class="form-label">ID</label>
-                        <input type="number" class="form-control" id="IdUsuario" formControlName="Id"/>
+                        <input type="number" class="form-control" id="IdUsuario" formControlName="Id" />
                     </div>
 
                     <div class="mb-3">
@@ -55,79 +55,78 @@
 
 
                     <label for="form-select" class="form-label">Uf</label>
-                        <select class="form-select" aria-label="Default select example" id="Uf"
-                            formControlName="Uf">
-                            <option value="" disabled selected hidden>Estado</option>
-                            <option value="AC">AC</option>
-                            <option value="AL">AL</option>
-                            <option value="AP">AP</option>
-                            <option value="AM">AM</option>
-                            <option value="BA">BA</option>
-                            <option value="CE">CE</option>
-                            <option value="ES">ES</option>
-                            <option value="GO">GO</option>
-                            <option value="MA">MA</option>
-                            <option value="MT">MT</option>
-                            <option value="MS">MS</option>
-                            <option value="MG">MG</option>
-                            <option value="PA">PA</option>
-                            <option value="PB">PB</option>
-                            <option value="PR">PR</option>
-                            <option value="PE">PE</option>
-                            <option value="PI">PI</option>
-                            <option value="RJ">RJ</option>
-                            <option value="RN">RN</option>
-                            <option value="RS">RS</option>
-                            <option value="RO">RO</option>
-                            <option value="RR">RR</option>
-                            <option value="SC">SC</option>
-                            <option value="SP">SP</option>
-                            <option value="SE">SE</option>
-                            <option value="TO">TO</option>
-                            <option value="DF">DF</option>
-                        </select>
+                    <select class="form-select" aria-label="Default select example" id="Uf" formControlName="Uf">
+                        <option value="" disabled selected hidden>Estado</option>
+                        <option value="AC">AC</option>
+                        <option value="AL">AL</option>
+                        <option value="AP">AP</option>
+                        <option value="AM">AM</option>
+                        <option value="BA">BA</option>
+                        <option value="CE">CE</option>
+                        <option value="ES">ES</option>
+                        <option value="GO">GO</option>
+                        <option value="MA">MA</option>
+                        <option value="MT">MT</option>
+                        <option value="MS">MS</option>
+                        <option value="MG">MG</option>
+                        <option value="PA">PA</option>
+                        <option value="PB">PB</option>
+                        <option value="PR">PR</option>
+                        <option value="PE">PE</option>
+                        <option value="PI">PI</option>
+                        <option value="RJ">RJ</option>
+                        <option value="RN">RN</option>
+                        <option value="RS">RS</option>
+                        <option value="RO">RO</option>
+                        <option value="RR">RR</option>
+                        <option value="SC">SC</option>
+                        <option value="SP">SP</option>
+                        <option value="SE">SE</option>
+                        <option value="TO">TO</option>
+                        <option value="DF">DF</option>
+                    </select>
 
-                        <div class="mb-3">
-                            <label for="Cidade" class="form-label"><br/>Cidade</label>
-                            <input type="text" class="form-control" id="Cidade" formControlName="Cidade">
-                            <div *ngIf="cadastroForm.controls['Cidade'].invalid &&cadastroForm.controls['Cidade'].dirty"
-                                style="color: red;" id="nomeHelp" class="form-text">Cidade Inválido</div>
-                        </div>
+                    <div class="mb-3">
+                        <label for="Cidade" class="form-label"><br />Cidade</label>
+                        <input type="text" class="form-control" id="Cidade" formControlName="Cidade">
+                        <div *ngIf="cadastroForm.controls['Cidade'].invalid &&cadastroForm.controls['Cidade'].dirty"
+                            style="color: red;" id="nomeHelp" class="form-text">Cidade Inválido</div>
+                    </div>
 
-                        <div class="mb-3">
-                            <label for="Endereco" class="form-label">Endereco</label>
-                            <input type="text" class="form-control" id="cpf" formControlName="Endereco">
-                            <div *ngIf="cadastroForm.controls['Endereco'].invalid &&cadastroForm.controls['Endereco'].dirty"
-                                style="color: red;" id="nomeHelp" class="form-text">Endereco Inválido</div>
-                        </div>
+                    <div class="mb-3">
+                        <label for="Endereco" class="form-label">Endereco</label>
+                        <input type="text" class="form-control" id="cpf" formControlName="Endereco">
+                        <div *ngIf="cadastroForm.controls['Endereco'].invalid &&cadastroForm.controls['Endereco'].dirty"
+                            style="color: red;" id="nomeHelp" class="form-text">Endereco Inválido</div>
+                    </div>
 
-                        <div class="mb-3">
-                            <label for="Numero" class="form-label">Numero</label>
-                            <input type="number" class="form-control" id="cpf" formControlName="Numero">
-                            <div *ngIf="cadastroForm.controls['Numero'].invalid &&cadastroForm.controls['Numero'].dirty"
-                                style="color: red;" id="nomeHelp" class="form-text">Numero Inválido</div>
-                        </div>
+                    <div class="mb-3">
+                        <label for="Numero" class="form-label">Numero</label>
+                        <input type="number" class="form-control" id="cpf" formControlName="Numero">
+                        <div *ngIf="cadastroForm.controls['Numero'].invalid &&cadastroForm.controls['Numero'].dirty"
+                            style="color: red;" id="nomeHelp" class="form-text">Numero Inválido</div>
+                    </div>
 
-                        <div class="mb-3">
-                            <label for="Complemento" class="form-label">Complemento</label>
-                            <input type="text" class="form-control" id="Complemento" formControlName="Complemento">
-                            <div *ngIf="cadastroForm.controls['Complemento'].invalid &&cadastroForm.controls['Complemento'].dirty"
-                                style="color: red;" id="nomeHelp" class="form-text">Complemento Inválido</div>
-                        </div>
+                    <div class="mb-3">
+                        <label for="Complemento" class="form-label">Complemento</label>
+                        <input type="text" class="form-control" id="Complemento" formControlName="Complemento">
+                        <div *ngIf="cadastroForm.controls['Complemento'].invalid &&cadastroForm.controls['Complemento'].dirty"
+                            style="color: red;" id="nomeHelp" class="form-text">Complemento Inválido</div>
+                    </div>
 
-                        <div class="mb-3" *ngIf="adicionarControl">
-                            <label for="Senha" class="form-label">Senha</label>
-                            <input type="text" class="form-control" id="Senha" formControlName="Senha">
-                            <div *ngIf="cadastroForm.controls['Senha'].invalid &&cadastroForm.controls['Senha'].dirty"
-                                style="color: red;" id="nomeHelp" class="form-text">Complemento Inválido</div>
-                        </div>
+                    <div class="mb-3">
+                        <label for="Senha" class="form-label">Senha</label>
+                        <input type="text" class="form-control" id="Senha" formControlName="Senha">
+                        <div *ngIf="cadastroForm.controls['Senha'].invalid &&cadastroForm.controls['Senha'].dirty"
+                            style="color: red;" id="nomeHelp" class="form-text">Senha Inválida</div>
+                    </div>
 
-                        <div class="mb-3"  *ngIf="adicionarControl">
-                            <label for="CSenha" class="form-label">Confirmar Senha</label>
-                            <input type="text" class="form-control" id="CSenha" formControlName="Csenha">
-                            <div *ngIf="cadastroForm.controls['Csenha'].invalid &&cadastroForm.controls['Csenha'].dirty"
-                                style="color: red;" id="nomeHelp" class="form-text">Complemento Inválido</div>
-                        </div>
+                    <div class="mb-3" *ngIf="adicionarControl">
+                        <label for="CSenha" class="form-label">Confirmar Senha</label>
+                        <input type="text" class="form-control" id="CSenha" formControlName="Csenha">
+                        <div *ngIf="cadastroForm.controls['Csenha'].invalid &&cadastroForm.controls['Csenha'].dirty"
+                            style="color: red;" id="nomeHelp" class="form-text">Complemento Inválido</div>
+                    </div>
 
 
                     <label for="form-select" class="form-label">Acesso</label>
@@ -136,15 +135,13 @@
                         <option value="Usuario" selected>Usuario</option>
                         <option value="Adm">Adm</option>
                     </select>
-
                 </form>
-
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
 
                 <button *ngIf="adicionarControl" type="button" class="btn btn-success" data-bs-dismiss="modal"
-                     (click)="adicionar()">Criar Usuario</button>
+                    [disabled]="!cadastroForm.valid" (click)="adicionar()">Criar Usuario</button>
 
                 <button *ngIf="!adicionarControl" type="button" class="btn btn-success" data-bs-dismiss="modal"
                     [disabled]="!cadastroForm.valid" (click)="alterar()">Alterar Usuario</button>

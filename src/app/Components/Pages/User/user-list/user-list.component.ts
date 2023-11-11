@@ -22,7 +22,7 @@ export class UserListComponent {
     Nome : new FormControl('',[Validators.required]),
     Email : new FormControl('',[Validators.required]),
     Cpf : new FormControl('',[Validators.required]),
-    Senha : new FormControl(''),
+    Senha : new FormControl('',[Validators.required]),
     Csenha : new FormControl(''),
     Uf : new FormControl('',[Validators.required]),
     Cidade : new FormControl('',[Validators.required]),
