@@ -53,7 +53,6 @@ import { UserListComponent } from './Components/Pages/User/user-list/user-list.c
     ProdutoSearchComponent,
     PedidoComponent,
     UserListComponent,
-
   ],
   imports: [
     HttpClientModule,
