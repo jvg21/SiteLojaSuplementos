@@ -23,10 +23,10 @@
                     <span>Visualizar Senha</span>
                 </div>
              
-                <div *ngIf="loginForm.controls['PassWord'].invalid &&loginForm.controls['PassWord'].dirty">
+                <!-- <div *ngIf="loginForm.controls['PassWord'].invalid &&loginForm.controls['PassWord'].dirty">
                     <br />
                     <p style="color: red;">A senha deve conter: <br /> - Letra Maiuscula<br /> - Número<br /> - Caracteres Especiais</p>
-                </div>
+                </div> -->
             </div>
             <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Enviar</button>
         </form>

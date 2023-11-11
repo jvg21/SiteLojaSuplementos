@@ -20,13 +20,13 @@ export class UsuarioService {
     }
 
     alterar(usuario: UsuarioModel): Observable<UsuarioModel> {
-        let url = 'http://localhost:8080/produto/atualizar/'+usuario.id;
+        let url = 'http://localhost:8080/usuario/atualizar/'+usuario.id;
         
         return this.http.put<UsuarioModel>(url,usuario);
     }
 
-    logar(usuario:UsuarioModel): Observable<UsuarioModel>{
-        let url = 'http://localhost:8080/produto/selecionar/'+usuario.email+'/'+usuario.senha;
+    logar(email:string,senha:string): Observable<UsuarioModel>{
+        let url = 'http://localhost:8080/usuario/selecionar/'+email+'/'+senha;
         
         return this.http.get<UsuarioModel>(url);
     }
