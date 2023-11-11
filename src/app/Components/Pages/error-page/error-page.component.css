@@ -1,0 +1,14 @@
+.ErrorPageContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: black;
+}
+.ErrorPageContent h2{
+    font-size: 80px;
+}
+.ErrorPageContent p{
+    font-size: 30px;
+}

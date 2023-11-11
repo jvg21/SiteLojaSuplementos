@@ -1,0 +1,222 @@
+<div class="opcoes">
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        (click)="setAdiconarControll(true)">
+        Adicionar Usuario
+    </button>
+
+    <button class="btn btn-warning" [disabled]="!selectedRow.id" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        (click)="setAdiconarControll(false)">Alterar Usuario</button>
+</div>
+
+<!-- Modal criação de Usuarios -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Usuario</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form [formGroup]="cadastroForm">
+
+                    <div class="mb-3">
+                        <label for="IdUsuario" class="form-label">ID</label>
+                        <input type="number" class="form-control" id="IdUsuario" formControlName="Id"/>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="nomeUsuario" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="nomeUsuario" formControlName="Nome">
+                        <div *ngIf="cadastroForm.controls['Nome'].invalid &&cadastroForm.controls['Nome'].dirty"
+                            style="color: red;" id="nomeHelp" class="form-text">Nome Inválido</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="emailUsuario" class="form-label">Email</label>
+                        <input type="text" class="form-control" id="emailUsuario" formControlName="Email">
+                        <div *ngIf="cadastroForm.controls['Email'].invalid &&cadastroForm.controls['Email'].dirty"
+                            style="color: red;" id="nomeHelp" class="form-text">Email Inválido</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="cpf" class="form-label">Cpf</label>
+                        <input type="text" class="form-control" id="cpf" formControlName="Cpf">
+                        <div *ngIf="cadastroForm.controls['Cpf'].invalid &&cadastroForm.controls['Cpf'].dirty"
+                            style="color: red;" id="nomeHelp" class="form-text">Cpf Inválido</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Cep" class="form-label">Cep</label>
+                        <input type="text" class="form-control" id="Cep" formControlName="Cep">
+                        <div *ngIf="cadastroForm.controls['Cep'].invalid &&cadastroForm.controls['Cep'].dirty"
+                            style="color: red;" id="nomeHelp" class="form-text">Cep Inválido</div>
+                    </div>
+
+
+                    <label for="form-select" class="form-label">Uf</label>
+                        <select class="form-select" aria-label="Default select example" id="Uf"
+                            formControlName="Uf">
+                            <option value="" disabled selected hidden>Estado</option>
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MT">MT</option>
+                            <option value="MS">MS</option>
+                            <option value="MG">MG</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PR">PR</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS">RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SC">SC</option>
+                            <option value="SP">SP</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
+                            <option value="DF">DF</option>
+                        </select>
+
+                        <div class="mb-3">
+                            <label for="Cidade" class="form-label"><br/>Cidade</label>
+                            <input type="text" class="form-control" id="Cidade" formControlName="Cidade">
+                            <div *ngIf="cadastroForm.controls['Cidade'].invalid &&cadastroForm.controls['Cidade'].dirty"
+                                style="color: red;" id="nomeHelp" class="form-text">Cidade Inválido</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="Endereco" class="form-label">Endereco</label>
+                            <input type="text" class="form-control" id="cpf" formControlName="Endereco">
+                            <div *ngIf="cadastroForm.controls['Endereco'].invalid &&cadastroForm.controls['Endereco'].dirty"
+                                style="color: red;" id="nomeHelp" class="form-text">Endereco Inválido</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="Numero" class="form-label">Numero</label>
+                            <input type="number" class="form-control" id="cpf" formControlName="Numero">
+                            <div *ngIf="cadastroForm.controls['Numero'].invalid &&cadastroForm.controls['Numero'].dirty"
+                                style="color: red;" id="nomeHelp" class="form-text">Numero Inválido</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="Complemento" class="form-label">Complemento</label>
+                            <input type="text" class="form-control" id="Complemento" formControlName="Complemento">
+                            <div *ngIf="cadastroForm.controls['Complemento'].invalid &&cadastroForm.controls['Complemento'].dirty"
+                                style="color: red;" id="nomeHelp" class="form-text">Complemento Inválido</div>
+                        </div>
+
+                        <div class="mb-3" *ngIf="adicionarControl">
+                            <label for="Senha" class="form-label">Senha</label>
+                            <input type="text" class="form-control" id="Senha" formControlName="Senha">
+                            <div *ngIf="cadastroForm.controls['Senha'].invalid &&cadastroForm.controls['Senha'].dirty"
+                                style="color: red;" id="nomeHelp" class="form-text">Complemento Inválido</div>
+                        </div>
+
+                        <div class="mb-3"  *ngIf="adicionarControl">
+                            <label for="CSenha" class="form-label">Confirmar Senha</label>
+                            <input type="text" class="form-control" id="CSenha" formControlName="Csenha">
+                            <div *ngIf="cadastroForm.controls['Csenha'].invalid &&cadastroForm.controls['Csenha'].dirty"
+                                style="color: red;" id="nomeHelp" class="form-text">Complemento Inválido</div>
+                        </div>
+
+
+                    <label for="form-select" class="form-label">Acesso</label>
+                    <select class="form-select " aria-label="Default select example" formControlName="Acesso"
+                        id="Acesso">
+                        <option value="Usuario" selected>Usuario</option>
+                        <option value="Adm">Adm</option>
+                    </select>
+
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+
+                <button *ngIf="adicionarControl" type="button" class="btn btn-success" data-bs-dismiss="modal"
+                     (click)="adicionar()">Criar Usuario</button>
+
+                <button *ngIf="!adicionarControl" type="button" class="btn btn-success" data-bs-dismiss="modal"
+                    [disabled]="!cadastroForm.valid" (click)="alterar()">Alterar Usuario</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="UsuarioList">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="nome">
+            <th mat-header-cell *matHeaderCellDef> Nome </th>
+            <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef> Email </th>
+            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="cpf">
+            <th mat-header-cell *matHeaderCellDef> Cpf </th>
+            <td mat-cell *matCellDef="let element"> {{element.cpf}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="cep">
+            <th mat-header-cell *matHeaderCellDef> Cep </th>
+            <td mat-cell *matCellDef="let element"> {{element.cep}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="uf">
+            <th mat-header-cell *matHeaderCellDef> Uf </th>
+            <td mat-cell *matCellDef="let element"> {{element.uf}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="cidade">
+            <th mat-header-cell *matHeaderCellDef> Cidade </th>
+            <td mat-cell *matCellDef="let element"> {{element.cidade}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="endereco">
+            <th mat-header-cell *matHeaderCellDef> Endereco </th>
+            <td mat-cell *matCellDef="let element"> {{element.endereco}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="numero">
+            <th mat-header-cell *matHeaderCellDef> Numero </th>
+            <td mat-cell *matCellDef="let element"> {{element.numero}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="complemento">
+            <th mat-header-cell *matHeaderCellDef> Complemento </th>
+            <td mat-cell *matCellDef="let element"> {{element.complemento}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="acesso">
+            <th mat-header-cell *matHeaderCellDef> Acesso </th>
+            <td mat-cell *matCellDef="let element"> {{element.acesso}} </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row (click)="logs(row)" [class.demo-row-is-clicked]="selectedRow == row"
+            *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+</div>

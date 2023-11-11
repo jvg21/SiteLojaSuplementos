@@ -1,0 +1,8 @@
+.imageContainer{
+    width: 100vw;
+}
+.imageContainer img{
+    height: 98vh;
+    width: 100%;
+    background-color: aqua;
+}
