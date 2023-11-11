@@ -10,5 +10,6 @@ export class UsuarioModel {
     endereco?: string;
     numero?: number;
     complemento?: string;
+    acesso?:string;
 
 }

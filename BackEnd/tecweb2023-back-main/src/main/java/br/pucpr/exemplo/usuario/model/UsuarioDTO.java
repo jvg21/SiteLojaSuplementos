@@ -22,5 +22,6 @@ public class UsuarioDTO {
     private String endereco;
     private Integer numero;
     private String complemento;
+    private String acesso;
 
 }

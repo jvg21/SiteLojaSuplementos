@@ -55,6 +55,9 @@ public class UsuarioService {
           if (Objects.nonNull(usuario.getUf()) && !"".equalsIgnoreCase(usuario.getUf())) {
             user.setUf(usuario.getUf());
           }
+          if (Objects.nonNull(usuario.getAcesso()) && !"".equalsIgnoreCase(usuario.getAcesso())) {
+            user.setAcesso(usuario.getAcesso());
+          }
           if (Objects.nonNull(usuario.getCidade()) && !"".equalsIgnoreCase(usuario.getCidade())) {
             user.setCidade(usuario.getCidade());
           }

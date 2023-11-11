@@ -33,6 +33,7 @@ import { CarrinhoComponent } from './Components/Pages/carrinho/carrinho.componen
 import { CardComponent } from './Components/card/card.component';
 import { ProdutoSearchComponent } from './Components/Pages/Produto/produto-search/produto-search.component';
 import { PedidoComponent } from './Components/Pages/pedido/pedido.component';
+import { UserListComponent } from './Components/Pages/User/user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { PedidoComponent } from './Components/Pages/pedido/pedido.component';
     CardComponent,
     ProdutoSearchComponent,
     PedidoComponent,
+    UserListComponent,
 
   ],
   imports: [

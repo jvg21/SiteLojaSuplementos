@@ -10,6 +10,7 @@ import { TransportadoraListComponent } from './Components/Pages/Transportadora/t
 import { CarrinhoComponent } from './Components/Pages/carrinho/carrinho.component';
 import { ProdutoSearchComponent } from './Components/Pages/Produto/produto-search/produto-search.component';
 import { ErrorPageComponent } from './Components/Pages/error-page/error-page.component';
+import { UserListComponent } from './Components/Pages/User/user-list/user-list.component';
 
 
 const routes: Routes = [
@@ -23,8 +24,9 @@ const routes: Routes = [
     {path:"produto-search", component:ProdutoSearchComponent}
   ]},
   {path:"adm",component:LayoutComponent,children:[
-    {path:"produtos",component:ProdutoListComponent},
-    {path:"transportadora",component:TransportadoraListComponent}
+    {path:"produto",component:ProdutoListComponent},
+    {path:"transportadora",component:TransportadoraListComponent},
+    {path:"usuario",component:UserListComponent}
   ]},
 
   {path:'PageNotFound' , component:ErrorPageComponent},
