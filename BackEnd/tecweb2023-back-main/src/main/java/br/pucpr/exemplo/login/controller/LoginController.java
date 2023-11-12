@@ -16,8 +16,6 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
     private ModelMapper modelMapper = new ModelMapper();;
-
-
     @PostMapping("/login/setlogin")
     public ResponseEntity<LoginDTO> salvar(@Valid @RequestBody LoginDTO loginDTO) {
         Login usuario = this.modelMapper.map(loginDTO, Login.class);

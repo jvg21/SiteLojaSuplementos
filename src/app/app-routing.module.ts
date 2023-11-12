@@ -11,6 +11,7 @@ import { CarrinhoComponent } from './Components/Pages/carrinho/carrinho.componen
 import { ProdutoSearchComponent } from './Components/Pages/Produto/produto-search/produto-search.component';
 import { ErrorPageComponent } from './Components/Pages/error-page/error-page.component';
 import { UserListComponent } from './Components/Pages/User/user-list/user-list.component';
+import { PedidoComponent } from './Components/Pages/pedido/pedido.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,8 @@ const routes: Routes = [
     {path:"cadastro",component:CadastroComponent},
     {path:"produto-spec/:id",component:ProdutoSpecComponent},
     {path:"carrinho", component:CarrinhoComponent},
-    {path:"produto-search", component:ProdutoSearchComponent}
+    {path:"produto-search", component:ProdutoSearchComponent},
+    {path:"pedidos",component:PedidoComponent}
   ]},
   {path:"adm",component:LayoutComponent,children:[
     {path:"produto",component:ProdutoListComponent},

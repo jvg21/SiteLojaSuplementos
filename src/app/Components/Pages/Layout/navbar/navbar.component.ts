@@ -9,18 +9,19 @@ import { UsuarioService } from 'src/app/Application/service/usuario.service';
 })
 export class NavbarComponent  {
   public LoginStatus = false; 
+  public LoginAcess = 'Usuario';
+
   constructor(private usuarioService: UsuarioService,private router: Router){
-
   }
-
   ngOnInit(): void {
     // console.log(this.LoginStatus);
 
     this.usuarioService.getLogin().forEach(x=>{
+  
       if(x.id!=null|| x!= undefined){
         this.LoginStatus = true;
+        this.LoginAcess = x.acesso || 'Usuario';
       }
-      
     })
   
   }

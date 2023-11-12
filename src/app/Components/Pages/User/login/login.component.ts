@@ -35,15 +35,7 @@ export class LoginComponent {
       if (usuario.id != null) {
         this.usuarioService.setLogin(usuario).subscribe(logado => {
           alert("Seja Bem Vindo, " + logado.nome);
-
-          if (logado.acesso == 'Adm') {
-            window.location.href = '/adm';
-
-          } else {
-            window.location.href = '/';
-          }
-          // this.router.navigate(['/', '/']);
-
+          window.location.href = '/';
         })
 
       } else {
