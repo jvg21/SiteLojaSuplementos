@@ -9,17 +9,19 @@ import { UsuarioService } from 'src/app/Application/service/usuario.service';
 })
 export class LayoutAdmComponent {
 
-  constructor(private usuarioService: UsuarioService,private router: Router){
+  constructor(private usuarioService: UsuarioService, private router: Router) {
   }
   ngOnInit(): void {
-    this.usuarioService.getLogin().forEach(x=>{
-  
-      if(x.id!=null|| x!= undefined){
-        if(x.acesso != 'Adm')
-        window.location.href = '/';
+    this.usuarioService.getLogin().forEach(x => {
+
+      if (x.id != null || x != undefined) {
+        if (x.acesso != 'Adm')
+          window.location.href = '/';
       }
     })
-  
+
+
+
   }
 
 }

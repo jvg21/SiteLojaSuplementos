@@ -62,7 +62,7 @@ export class ProdutoListComponent {
   }
   ngOnInit(): void {
     this.listar();
-    // console.log(this.dataSource)
+    console.log(this.dataSource)
   }
 
   adicionar() {
@@ -82,7 +82,6 @@ export class ProdutoListComponent {
       this.listar()
       alert(produto.nome + " Gravado Com sucesso");
     });
-
   }
 
   listar() {
@@ -103,15 +102,6 @@ export class ProdutoListComponent {
     produto.valor = this.produtoForm.controls['Valor'].value || 0;
     produto.ativado = this.produtoForm.controls['Ativado'].value || true;
     produto.descricao = this.produtoForm.controls['Descricao'].value || this.produtoForm.controls['Nome'].value || '';
-    // produto.id = 2;
-    // produto.nome = 'Whey';
-    // produto.marca = 'Soldier';
-    // produto.peso = 1;
-    // produto.medidaPeso = 'Kg';
-    // produto.valor = 50;
-    // produto.ativado = true;
-
-    // console.log(produto);
     
     this.produtoService.alterar(produto).subscribe(produto => {
       this.listar()

@@ -14,7 +14,19 @@
         <div class="offcanvas-body">
 
             <ul class="navbar-nav justify-content-end nav-underline flex-grow-1 pe-3">
+
                 <!-------Logado--------->
+                <!--------adm-------->  
+                <li class="nav-item" *ngIf="LoginStatus == true && LoginAcess== 'Adm' ">
+                    <a class="nav-link" aria-current="page" routerLink="/adm/usuario">Usuarios</a>
+                </li>
+                <li class="nav-item" *ngIf="LoginStatus == true && LoginAcess== 'Adm' ">
+                    <a class="nav-link" aria-current="page" routerLink="/adm/transportadora">Transportadoras</a>
+                </li>
+                <li class="nav-item" *ngIf="LoginStatus == true && LoginAcess== 'Adm' ">
+                    <a class="nav-link" aria-current="page" routerLink="/adm/produto">Produtos</a>
+                </li>
+                <!---------usuario------------->
 
                 <li class="nav-item" *ngIf="LoginStatus == true && LoginAcess== 'Usuario' ">
                     <a class="nav-link" aria-current="page" routerLink="/navegar/produto-search">Produtos</a>
@@ -23,6 +35,11 @@
                 <li class="nav-item" *ngIf="LoginStatus == true && LoginAcess== 'Usuario'">
                     <a class="nav-link" routerLink="/navegar/pedidos">Pedidos</a>
                 </li>
+
+                <li class="nav-item" *ngIf="LoginStatus == true && LoginAcess== 'Usuario' ">
+                    <a class="nav-link" aria-current="page" routerLink="/navegar/carrinho">Carrinho</a>
+                </li>
+
 
                 <ul class="navbar-nav" *ngIf="LoginStatus == true ">
                     <li class="nav-item dropdown">
