@@ -15,6 +15,7 @@
 
             <ul class="navbar-nav justify-content-end nav-underline flex-grow-1 pe-3">
                 <!-------Logado--------->
+
                 <li class="nav-item" *ngIf="LoginStatus == true">
                     <a class="nav-link" aria-current="page" routerLink="/home">Pesquisar</a>
                 </li>
@@ -22,20 +23,20 @@
                 <li class="nav-item" *ngIf="LoginStatus == true">
                     <a class="nav-link" routerLink="/produtoView">Pedidos</a>
                 </li>
-                
-                  <div class=" navbar-collapse" id="navbarNavDarkDropdown" *ngIf="LoginStatus == true">
-                    <ul class="navbar-nav">
-                      <li class="nav-item dropdown">
-                        <button class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
+
+                <ul class="navbar-nav" *ngIf="LoginStatus == true">
+                    <li class="nav-item dropdown">
+                        <button class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+                            style="color: white;">
                             Minha Conta
                         </button>
                         <ul class="dropdown-menu dropdown-menu-white dropdown-menu-lg-end">
-                          <li><a class="dropdown-item" routerLink="/meusdados">Meus Dados</a></li>
-                          <li><a class="dropdown-item" routerLink="/logout">Logout</a></li>
+                            <li><a class="dropdown-item" routerLink="/meusdados">Meus Dados</a></li>
+                            <li><a class="dropdown-item" routerLink="/logout">Logout</a></li>
                         </ul>
-                      </li>
-                    </ul>
-                  </div>
+                    </li>
+                </ul>
+
 
                 <!--------Não logado----------->
                 <li class="nav-item" *ngIf="LoginStatus == false">
