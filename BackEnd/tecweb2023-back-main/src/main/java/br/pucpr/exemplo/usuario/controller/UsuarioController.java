@@ -30,7 +30,7 @@ public class UsuarioController {
                 collect(Collectors.toList());
     }
 
-    @GetMapping("/usuario/selecionar/{emailUsuario}/{senhaUsuario}")
+    @GetMapping("/usuario/{emailUsuario}/{senhaUsuario}")
       public Usuario logar(@PathVariable String emailUsuario,@PathVariable String senhaUsuario){
 //      return "email "+emailUsuario+" senha "+senhaUsuario;
       return usuarioService.logar(emailUsuario,senhaUsuario);

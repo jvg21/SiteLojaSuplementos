@@ -26,10 +26,20 @@ export class UsuarioService {
     }
 
     logar(email:string,senha:string): Observable<UsuarioModel>{
-        let url = 'http://localhost:8080/usuario/selecionar/'+email+'/'+senha;
+        let url = 'http://localhost:8080/usuario/'+email+'/'+senha;
         
         return this.http.get<UsuarioModel>(url);
     }
+
+    setLogin(usuario: UsuarioModel) :Observable<UsuarioModel>{
+        return this.http.post<UsuarioModel>('http://localhost:8080/login/setlogin', usuario);
+    }
+    getLogin() :Observable<UsuarioModel>{
+        return this.http.get<UsuarioModel>('http://localhost:8080/login/listar');
+    }
+    deleteLogin():Observable<UsuarioModel>{
+        return this.http.delete<UsuarioModel>('http://localhost:8080/login/excluir');
+    };
 
     
 

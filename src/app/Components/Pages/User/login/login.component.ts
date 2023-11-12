@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup,FormControl,Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PasswordShow } from 'src/app/Application/common/passwordShow';
 import { UsuarioService } from 'src/app/Application/service/usuario.service';
@@ -10,8 +10,8 @@ import { UsuarioService } from 'src/app/Application/service/usuario.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  router:Router;
-  constructor(private usuarioService: UsuarioService,router: Router) { 
+  router: Router;
+  constructor(private usuarioService: UsuarioService, router: Router) {
     this.router = router;
   }
   PasswordShow = new PasswordShow();
@@ -32,11 +32,14 @@ export class LoginComponent {
   login() {
     let email = this.loginForm.controls['Email'].value || "";
     let senha = this.loginForm.controls['PassWord'].value || "";
-    this.usuarioService.logar(email,senha).subscribe(usuario =>{
-      if(usuario.id!=null){ 
-        alert("Seja Bem Vindo, "+usuario.nome);
-        this.router.navigate(['/', '/']);
-      }else{
+    this.usuarioService.logar(email, senha).subscribe(usuario => {
+      if (usuario.id != null) {
+        this.usuarioService.setLogin(usuario).subscribe(logado => {
+          alert("Seja Bem Vindo, " + logado.nome);
+          this.router.navigate(['/', '/']);
+        })
+
+      } else {
         alert("Usuário e/ou Senha Incorreto(s)")
       }
     });
