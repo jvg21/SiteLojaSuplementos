@@ -11,8 +11,8 @@ public class CarrinhoDTO {
 
     @Id
     private Integer id;
-    @NotBlank
+    
     private Integer idCliente;
     private Integer idProduto;
-    
+
 }
