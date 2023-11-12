@@ -17,11 +17,11 @@
                 <!-------Logado--------->
 
                 <li class="nav-item" *ngIf="LoginStatus == true && LoginAcess== 'Usuario' ">
-                    <a class="nav-link" aria-current="page" routerLink="/produto-search">Produtos</a>
+                    <a class="nav-link" aria-current="page" routerLink="/navegar/produto-search">Produtos</a>
                 </li>
 
                 <li class="nav-item" *ngIf="LoginStatus == true && LoginAcess== 'Usuario'">
-                    <a class="nav-link" routerLink="/pedidos">Pedidos</a>
+                    <a class="nav-link" routerLink="/navegar/pedidos">Pedidos</a>
                 </li>
 
                 <ul class="navbar-nav" *ngIf="LoginStatus == true ">

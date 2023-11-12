@@ -34,6 +34,7 @@ import { ProdutoSearchComponent } from './Components/Pages/Produto/produto-searc
 import { PedidoComponent } from './Components/Pages/pedido/pedido.component';
 import { UserListComponent } from './Components/Pages/User/user-list/user-list.component';
 import { UpdateCadastroComponent } from './Components/Pages/User/update-cadastro/update-cadastro.component';
+import { LayoutAdmComponent } from './Components/Pages/Layout/layout-adm/layout-adm.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { UpdateCadastroComponent } from './Components/Pages/User/update-cadastro
     PedidoComponent,
     UserListComponent,
     UpdateCadastroComponent,
+    LayoutAdmComponent,
   ],
   imports: [
     HttpClientModule,

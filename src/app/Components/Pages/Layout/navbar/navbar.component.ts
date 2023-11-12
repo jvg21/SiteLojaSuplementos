@@ -29,7 +29,6 @@ export class NavbarComponent  {
     this.usuarioService.deleteLogin().subscribe();
     alert("Deslogando ...")
     window.location.href = '/';
-
   }
 
   

@@ -12,6 +12,7 @@ import { ProdutoSearchComponent } from './Components/Pages/Produto/produto-searc
 import { ErrorPageComponent } from './Components/Pages/error-page/error-page.component';
 import { UserListComponent } from './Components/Pages/User/user-list/user-list.component';
 import { PedidoComponent } from './Components/Pages/pedido/pedido.component';
+import { LayoutAdmComponent } from './Components/Pages/Layout/layout-adm/layout-adm.component';
 
 
 const routes: Routes = [
@@ -25,7 +26,7 @@ const routes: Routes = [
     {path:"produto-search", component:ProdutoSearchComponent},
     {path:"pedidos",component:PedidoComponent}
   ]},
-  {path:"adm",component:LayoutComponent,children:[
+  {path:"adm",component:LayoutAdmComponent,children:[
     {path:"produto",component:ProdutoListComponent},
     {path:"transportadora",component:TransportadoraListComponent},
     {path:"usuario",component:UserListComponent}
