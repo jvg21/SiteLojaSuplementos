@@ -10,10 +10,11 @@ import { UsuarioService } from 'src/app/Application/service/usuario.service';
 export class NavbarComponent  {
   public LoginStatus = false; 
   constructor(private usuarioService: UsuarioService,private router: Router){
+
   }
 
   ngOnInit(): void {
-    console.log(this.LoginStatus);
+    // console.log(this.LoginStatus);
 
     this.usuarioService.getLogin().forEach(x=>{
       if(x.id!=null|| x!= undefined){
@@ -27,6 +28,8 @@ export class NavbarComponent  {
     this.usuarioService.deleteLogin().subscribe();
     alert("Deslogando ...")
     this.router.navigate(['/', '/']);
+    window.location.reload();
+
   }
 
   

@@ -11,7 +11,8 @@ import { UsuarioService } from 'src/app/Application/service/usuario.service';
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent {
-  constructor(private usuarioService: UsuarioService,private router: Router) { }
+  constructor(private usuarioService: UsuarioService,private router: Router) { 
+  }
   PasswordShow = new PasswordShow();
 
   cadastroForm = new FormGroup({
@@ -43,11 +44,13 @@ export class CadastroComponent {
       user.complemento = this.cadastroForm.controls['Complemento'].value || '';
       user.numero = this.cadastroForm.controls['Numero'].value || 0;
       user.cep = this.cadastroForm.controls['Cep'].value || '';
+      user.acesso = 'Usuario';
 
       this.usuarioService.salvar(user).subscribe(usuario => {
         this.usuarioService.setLogin(usuario).subscribe(logado => {
           alert("Seja Bem Vindo, " + logado.nome);
-          this.router.navigate(['/', '/']);
+          window.location.href = '/';
+
         })
       });
   } 

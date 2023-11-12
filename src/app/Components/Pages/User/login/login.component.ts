@@ -10,7 +10,7 @@ import { UsuarioService } from 'src/app/Application/service/usuario.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private usuarioService: UsuarioService,private router: Router) {
+  constructor(private usuarioService: UsuarioService, private router: Router) {
     this.router = router;
   }
   PasswordShow = new PasswordShow();
@@ -35,7 +35,9 @@ export class LoginComponent {
       if (usuario.id != null) {
         this.usuarioService.setLogin(usuario).subscribe(logado => {
           alert("Seja Bem Vindo, " + logado.nome);
-          this.router.navigate(['/', '/']);
+          window.location.href = '/';
+          // this.router.navigate(['/', '/']);
+
         })
 
       } else {
