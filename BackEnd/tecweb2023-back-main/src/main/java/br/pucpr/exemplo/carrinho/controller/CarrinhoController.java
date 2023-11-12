@@ -26,7 +26,7 @@ public class CarrinhoController {
     }
 
     @GetMapping("/carrinho/listar/{idUsuario}")
-    public List<CarrinhoDTO> listar(@PathVariable int idUsuario) {
+    public List<CarrinhoDTO> listar(@PathVariable Integer idUsuario) {
         List<Carrinho> usuarios = carrinhoService.listar(idUsuario);
         return usuarios.stream().map(usuario -> modelMapper.map(usuario, CarrinhoDTO.class)).
                 collect(Collectors.toList());

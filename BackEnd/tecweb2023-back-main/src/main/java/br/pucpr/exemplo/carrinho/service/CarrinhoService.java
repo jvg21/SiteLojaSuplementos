@@ -19,12 +19,13 @@ public class CarrinhoService {
 
     public List<Carrinho> listar(Integer idUsuario) {
         List<Carrinho> lista = carrinhoRepository.findAll();
-        List<Carrinho> listaReturn = new ArrayList<>();
-        for(int i = 0;i<lista.size();i++){
-          if(lista.get(i).getIdCliente() == idUsuario){
-            listaReturn.add(lista.get(i));
-          }
-        }
+         List<Carrinho> listaReturn = new ArrayList<>();
+
+         for(int i = 0; i<lista.size(); i++){
+           if(lista.get(i).getIdCliente().equals(idUsuario) ){
+                listaReturn.add(lista.get(i));
+           }
+         }
 
         return listaReturn;
     }
@@ -37,7 +38,6 @@ public class CarrinhoService {
       return user;
     }
 
-
     public void excluir(Integer id) {
         carrinhoRepository.deleteById(id);
     }
@@ -49,5 +49,5 @@ public class CarrinhoService {
       }
     }
 
-  
+
 }

@@ -9,7 +9,6 @@ import lombok.*;
 @Entity
 @Table(name = "CARRINHO")
 public class Carrinho {
-
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Integer id;

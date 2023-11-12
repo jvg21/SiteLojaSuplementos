@@ -6,11 +6,11 @@
 
 <section class="product-list" >
     
-    <div class="product" *ngFor="let users of this.dataSource;">
-        <h2>{{users.nome+" "+users.marca+" "+users.peso +" "+users.medidaPeso}}</h2>
+    <div class="product" *ngFor="let produtos of this.dataSource;">
+        <h2>{{produtos.nome+" "+produtos.marca+" "+produtos.peso +" "+produtos.medidaPeso}}</h2>
         <img src='https://placehold.co/200' alt="Imagem">
-        <p>Preço: R${{users.valor}}</p>
-        <button class="add-to-cart" (click)="adicionarCarrinho(users.id || 0)"><a>Adicionar ao Carrinho</a></button>
+        <p>Preço: R${{produtos.valor}}</p>
+        <button class="add-to-cart" (click)="adicionarCarrinho(produtos.id || 0)"><a>Adicionar ao Carrinho</a></button>
     </div>
     
 </section>
