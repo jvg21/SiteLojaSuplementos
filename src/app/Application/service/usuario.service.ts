@@ -37,8 +37,8 @@ export class UsuarioService {
     getLogin() :Observable<UsuarioModel>{
         return this.http.get<UsuarioModel>('http://localhost:8080/login/listar');
     }
-    deleteLogin():Observable<UsuarioModel>{
-        return this.http.delete<UsuarioModel>('http://localhost:8080/login/excluir');
+    deleteLogin():Observable<String>{
+        return this.http.delete<String>('http://localhost:8080/login/excluir');
     };
 
     

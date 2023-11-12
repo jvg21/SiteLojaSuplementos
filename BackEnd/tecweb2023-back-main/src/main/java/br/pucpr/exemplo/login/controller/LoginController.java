@@ -34,9 +34,9 @@ public class LoginController {
     }
 
     @DeleteMapping("/login/excluir")
-    public String deletar(){
+    public void deletar(){
       loginService.excluir();
-      return "Usuário Deletado";
+//      return "Usuário Deletado";
     }
 
 }

@@ -10,8 +10,7 @@ import { UsuarioService } from 'src/app/Application/service/usuario.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  router: Router;
-  constructor(private usuarioService: UsuarioService, router: Router) {
+  constructor(private usuarioService: UsuarioService,private router: Router) {
     this.router = router;
   }
   PasswordShow = new PasswordShow();
