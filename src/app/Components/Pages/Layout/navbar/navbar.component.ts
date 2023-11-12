@@ -27,8 +27,7 @@ export class NavbarComponent  {
   logout(){
     this.usuarioService.deleteLogin().subscribe();
     alert("Deslogando ...")
-    this.router.navigate(['/', '/']);
-    window.location.reload();
+    window.location.href = '/';
 
   }
 
