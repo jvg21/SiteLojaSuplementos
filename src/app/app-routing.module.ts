@@ -9,6 +9,10 @@ import { ProdutoSpecComponent } from './Components/Pages/Produto/produto-spec/pr
 import { TransportadoraListComponent } from './Components/Pages/Transportadora/transportadora-list/transportadora-list.component';
 import { CarrinhoComponent } from './Components/Pages/carrinho/carrinho.component';
 import { ProdutoSearchComponent } from './Components/Pages/Produto/produto-search/produto-search.component';
+import { ErrorPageComponent } from './Components/Pages/error-page/error-page.component';
+import { UserListComponent } from './Components/Pages/User/user-list/user-list.component';
+import { PedidoComponent } from './Components/Pages/pedido/pedido.component';
+import { LayoutAdmComponent } from './Components/Pages/Layout/layout-adm/layout-adm.component';
 
 
 const routes: Routes = [
@@ -17,15 +21,18 @@ const routes: Routes = [
     {path:"",component:HomePageComponent},
     {path:"login",component:LoginComponent},
     {path:"cadastro",component:CadastroComponent},
-    {path:"produto-spec",component:ProdutoSpecComponent},
+    {path:"produto-spec/:id",component:ProdutoSpecComponent},
     {path:"carrinho", component:CarrinhoComponent},
-    {path:"produto-search", component:ProdutoSearchComponent}
+    {path:"produto-search", component:ProdutoSearchComponent},
+    {path:"pedidos",component:PedidoComponent}
   ]},
-  {path:"adm",component:LayoutComponent,children:[
-    {path:"produtos",component:ProdutoListComponent},
-    {path:"transportadora",component:TransportadoraListComponent}
+  {path:"adm",component:LayoutAdmComponent,children:[
+    {path:"produto",component:ProdutoListComponent},
+    {path:"transportadora",component:TransportadoraListComponent},
+    {path:"usuario",component:UserListComponent}
   ]},
 
+  {path:'PageNotFound' , component:ErrorPageComponent},
   {path:'**' , pathMatch:'full', redirectTo:"PageNotFound"}
  ];
 

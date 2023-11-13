@@ -39,5 +39,8 @@ public class Usuario {
     @Column(name = "complemento")
     private String complemento;
 
+  @Column(name = "acesso")
+  private String acesso;
+
 
 }

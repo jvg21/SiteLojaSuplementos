@@ -46,19 +46,11 @@ input {
     outline: none;
 }
 
-button {
+.btn {
     width: 100%;
     padding: 10px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
 }
 
-button:hover {
-    background-color: #0056b3;
-}
 
 .separator {
     width: 100%;
@@ -70,4 +62,17 @@ button:hover {
 h2 {
     font-weight: lighter;
 }
-
+.buttonEye{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.togglePasswordVisibility{
+    height: 40px;
+    width: 30px;
+    background-color: transparent;
+    border: 1px gray;
+}
+.togglePasswordVisibility i {
+    font-size: 22px;
+}

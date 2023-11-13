@@ -33,4 +33,8 @@ export class ProdutoService {
         return this.http.put<ProdutoModel>(url,produto);
     }
 
+    selecionar(id:number){
+        let url = 'http://localhost:8080/produto/selecionar/'+id;
+        return this.http.get<ProdutoModel>(url);
+    }
 }

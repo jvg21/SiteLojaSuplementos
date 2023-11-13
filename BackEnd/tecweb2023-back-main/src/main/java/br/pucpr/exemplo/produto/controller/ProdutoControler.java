@@ -50,6 +50,7 @@ public class ProdutoControler {
       return produtoService.atualizar(idProduto,produto);
     }
 
+
 //    @PutMapping("/produto/{idProduto}/ativar")
 //    public Produto desativar(@PathVariable int idProduto){
 //      return produtoService.desativar(idProduto);

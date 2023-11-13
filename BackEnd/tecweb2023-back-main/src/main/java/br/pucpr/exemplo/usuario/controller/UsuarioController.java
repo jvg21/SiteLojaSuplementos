@@ -13,7 +13,6 @@ import java.util.*;
 import java.util.stream.*;
 @RestController
 public class UsuarioController {
-
     @Autowired
     private UsuarioService usuarioService;
     private ModelMapper modelMapper = new ModelMapper();;
@@ -31,10 +30,12 @@ public class UsuarioController {
                 collect(Collectors.toList());
     }
 
-    @GetMapping("/usuario/selecionar/{idUsuario}")
-      public Usuario selecionar(@PathVariable int idUsuario){
-      return usuarioService.selecionar(idUsuario);
+    @GetMapping("/usuario/{emailUsuario}/{senhaUsuario}")
+      public Usuario logar(@PathVariable String emailUsuario,@PathVariable String senhaUsuario){
+//      return "email "+emailUsuario+" senha "+senhaUsuario;
+      return usuarioService.logar(emailUsuario,senhaUsuario);
     }
+
     @DeleteMapping("/usuario/excluir/{idUsuario}")
     public String deletar(@PathVariable int idUsuario){
       usuarioService.excluir(idUsuario);

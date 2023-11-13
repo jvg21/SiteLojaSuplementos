@@ -16,6 +16,18 @@ export class ProdutoListComponent {
 
   adicionarControl = true;
   
+  produtoForm = new FormGroup({
+    Id: new FormControl({ value: '', disabled: true }),
+    Nome: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    Valor: new FormControl(0, [Validators.required, Validators.min(0)]),
+    Peso: new FormControl(1, [Validators.required, Validators.min(0)]),
+    MedidaPeso: new FormControl('',[Validators.required]),
+    Marca: new FormControl('', [Validators.required]),
+    Ativado: new FormControl(true, [Validators.required]),
+    Descricao: new FormControl('', [Validators.required, Validators.minLength(3),Validators.maxLength(200)]),
+
+  })
+
   setAdiconarControll(foo:boolean){
     
     this.adicionarControl = foo;
@@ -53,18 +65,6 @@ export class ProdutoListComponent {
     // console.log(this.dataSource)
   }
 
-  produtoForm = new FormGroup({
-    Id: new FormControl({ value: '', disabled: true }),
-    Nome: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    Valor: new FormControl(0, [Validators.required, Validators.min(0)]),
-    Peso: new FormControl(1, [Validators.required, Validators.min(0)]),
-    MedidaPeso: new FormControl('',[Validators.required]),
-    Marca: new FormControl('', [Validators.required]),
-    Ativado: new FormControl(true, [Validators.required]),
-    Descricao: new FormControl('', [Validators.required, Validators.minLength(3),Validators.maxLength(200)]),
-
-  })
-
   adicionar() {
     
     let produto = new ProdutoModel;
@@ -82,7 +82,6 @@ export class ProdutoListComponent {
       this.listar()
       alert(produto.nome + " Gravado Com sucesso");
     });
-
   }
 
   listar() {
@@ -103,15 +102,6 @@ export class ProdutoListComponent {
     produto.valor = this.produtoForm.controls['Valor'].value || 0;
     produto.ativado = this.produtoForm.controls['Ativado'].value || true;
     produto.descricao = this.produtoForm.controls['Descricao'].value || this.produtoForm.controls['Nome'].value || '';
-    // produto.id = 2;
-    // produto.nome = 'Whey';
-    // produto.marca = 'Soldier';
-    // produto.peso = 1;
-    // produto.medidaPeso = 'Kg';
-    // produto.valor = 50;
-    // produto.ativado = true;
-
-    // console.log(produto);
     
     this.produtoService.alterar(produto).subscribe(produto => {
       this.listar()

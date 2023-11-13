@@ -1,41 +1,70 @@
-
 <nav class="navbar navbar-expand-lg  fixed-top" id="navBar">
     <a class="navbar-brand" href="#">SUPLEMENTIN</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg"
+        aria-controls="navbarOffcanvasLg" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
-            <div class="offcanvas-header">
-                <h2 class="offcanvas-title" id="offcanvasNavbarLabel">SUPLEMENTIN</h2>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title" id="offcanvasNavbarLabel">SUPLEMENTIN</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
 
-            <div class="offcanvas-body">
+        <div class="offcanvas-body">
 
-                <ul class="navbar-nav justify-content-end nav-underline flex-grow-1 pe-3">
-                    <!-------Logado--------->
-                    <li class="nav-item" *ngIf="LoginStatus == true">
-                        <a class="nav-link" aria-current="page" routerLink="/home">Pesquisar</a>
-                    </li>
+            <ul class="navbar-nav justify-content-end nav-underline flex-grow-1 pe-3">
 
-                    <li class="nav-item" *ngIf="LoginStatus == true">
-                        <a class="nav-link" routerLink="/produtoView">Pedidos</a>
-                    </li>
-                    <li class="nav-item"*ngIf="LoginStatus == true">
-                        <a class="nav-link" routerLink="/produtoView">Minha Conta</a>
-                    </li>
+                <!-------Logado--------->
+                <!--------adm-------->  
+                <li class="nav-item" *ngIf="LoginStatus == true && LoginAcess== 'Adm' ">
+                    <a class="nav-link" aria-current="page" routerLink="/adm/usuario">Usuarios</a>
+                </li>
+                <li class="nav-item" *ngIf="LoginStatus == true && LoginAcess== 'Adm' ">
+                    <a class="nav-link" aria-current="page" routerLink="/adm/transportadora">Transportadoras</a>
+                </li>
+                <li class="nav-item" *ngIf="LoginStatus == true && LoginAcess== 'Adm' ">
+                    <a class="nav-link" aria-current="page" routerLink="/adm/produto">Produtos</a>
+                </li>
+                <!---------usuario------------->
 
-                    <!--------Não logado----------->
-                    <li class="nav-item" *ngIf="LoginStatus == false">
-                        <a class="nav-link" routerLink="/navegar/login">Login</a>
+                <li class="nav-item" *ngIf="LoginStatus == true && LoginAcess== 'Usuario' ">
+                    <a class="nav-link" aria-current="page" routerLink="/navegar/produto-search">Produtos</a>
+                </li>
+
+                <li class="nav-item" *ngIf="LoginStatus == true && LoginAcess== 'Usuario'">
+                    <a class="nav-link" routerLink="/navegar/pedidos">Pedidos</a>
+                </li>
+
+                <li class="nav-item" *ngIf="LoginStatus == true && LoginAcess== 'Usuario' ">
+                    <a class="nav-link" aria-current="page" routerLink="/navegar/carrinho">Carrinho</a>
+                </li>
+
+
+                <ul class="navbar-nav" *ngIf="LoginStatus == true ">
+                    <li class="nav-item dropdown">
+                        <button class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+                            style="color: white;">
+                            Minha Conta
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-white dropdown-menu-lg-end">
+                            <li><a class="dropdown-item" routerLink="/meusdados">Meus Dados</a></li>
+                            <li><button class="dropdown-item" (click)="logout()">Logout</button></li>
+                        </ul>
                     </li>
-                    <li class="nav-item" *ngIf="LoginStatus == false">
-                        <a class="nav-link" routerLink="/navegar/cadastro">Cadastrar</a>
-                    </li>
-                  
                 </ul>
 
-            </div>
+
+                <!--------Não logado----------->
+                <li class="nav-item" *ngIf="LoginStatus == false">
+                    <a class="nav-link" routerLink="/navegar/login">Login</a>
+                </li>
+                <li class="nav-item" *ngIf="LoginStatus == false">
+                    <a class="nav-link" routerLink="/navegar/cadastro">Cadastrar</a>
+                </li>
+
+            </ul>
+
         </div>
+    </div>
 </nav>

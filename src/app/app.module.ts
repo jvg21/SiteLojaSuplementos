@@ -14,7 +14,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
-import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 //components
@@ -26,12 +26,15 @@ import { LoginComponent } from './Components/Pages/User/login/login.component';
 import { ProdutoListComponent } from './Components/Pages/Produto/produto-list/produto-list.component';
 import { CadastroComponent } from './Components/Pages/User/cadastro/cadastro.component';
 import { NavbarComponent } from './Components/Pages/Layout/navbar/navbar.component';
-import { FooterComponent } from './Components/Pages/Layout/footer/footer.component';
 import { ProdutoSpecComponent } from './Components/Pages/Produto/produto-spec/produto-spec.component';
 import { TransportadoraListComponent } from './Components/Pages/Transportadora/transportadora-list/transportadora-list.component';
 import { CarrinhoComponent } from './Components/Pages/carrinho/carrinho.component';
 import { CardComponent } from './Components/card/card.component';
 import { ProdutoSearchComponent } from './Components/Pages/Produto/produto-search/produto-search.component';
+import { PedidoComponent } from './Components/Pages/pedido/pedido.component';
+import { UserListComponent } from './Components/Pages/User/user-list/user-list.component';
+import { UpdateCadastroComponent } from './Components/Pages/User/update-cadastro/update-cadastro.component';
+import { LayoutAdmComponent } from './Components/Pages/Layout/layout-adm/layout-adm.component';
 
 @NgModule({
   declarations: [
@@ -43,13 +46,15 @@ import { ProdutoSearchComponent } from './Components/Pages/Produto/produto-searc
     ProdutoListComponent,
     CadastroComponent,
     NavbarComponent,
-    FooterComponent,
     ProdutoSpecComponent,
     TransportadoraListComponent,
     CarrinhoComponent,
     CardComponent,
     ProdutoSearchComponent,
-
+    PedidoComponent,
+    UserListComponent,
+    UpdateCadastroComponent,
+    LayoutAdmComponent,
   ],
   imports: [
     HttpClientModule,
