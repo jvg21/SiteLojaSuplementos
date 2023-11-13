@@ -8,49 +8,54 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-
-                <form id="formPagamento" [formGroup]="pagamentoForm">
+              <form id="formPagamento" [formGroup]="pagamentoForm">
+                <div class="form-group">
+                    <label for="tipoPagamento">Selecione o Método de Pagamento:</label>
+                    <select class="form-control" id="tipoPagamento" formControlName="Metodo" (change)="setMetodo()">
+                        <option value="pix">Pix</option>
+                        <option value="cartao">Cartão de Crédito</option>
+                        <option value="boleto">Boleto Bancário</option>
+                    </select>
+                </div>
+            
+                <!-- Campos específicos para Pix -->
+                <div id="pixCampos" [style.display]="pixStyle">
                     <div class="form-group">
-                      <label for="tipoPagamento">Selecione o Método de Pagamento:</label>
-                      <select class="form-control" id="tipoPagamento" formControlName="Metodo" (change)="setMetodo()">
-                        <option value="pix" >Pix</option>
-                        <option value="cartao" >Cartão de Crédito</option>
-                        <option value="boleto" >Boleto Bancário</option>
-                      </select>
-                    </div>
-          
-                    <!-- Campos específicos para Pix -->
-                    <div id="pixCampos" [style.display]="this.pixStyle">
-                      <div class="form-group">
                         <label for="chavePix">Chave Pix:</label>
-                        <input type="text" class="form-control" id="chavePix">
-                      </div>
+                        <br />
+                        <img src="../../../../assets/qrCode.png" alt="" width="100" height="100">
                     </div>
-          
-                    <!-- Campos específicos para Cartão -->
-                    <div id="cartaoCampos" [style.display]="this.cartaoStyle">
-                      <div class="form-group">
+                </div>
+            
+                <!-- Campos específicos para Cartão -->
+                <div id="cartaoCampos" [style.display]="cartaoStyle">
+                    <div class="form-group">
                         <label for="numeroCartao">Número do Cartão:</label>
-                        <input type="text" class="form-control" id="numeroCartao">
-                      </div>
-
-                      <div class="form-group">
-                        <label for="dataValidade">Data de Validade:</label>
-                        <input type="text" class="form-control" id="dataValidade">
-                      </div>
-                      <!-- Adicione outros campos necessários para cartão -->
+                        <input type="text" class="form-control" id="numeroCartao" placeholder="**** **** **** ****" maxlength="16">
                     </div>
-          
-                    <!-- Campos específicos para Boleto -->
-                    <div id="boletoCampos" [style.display]="this.boletoStyle">
-                      <div class="form-group">
+            
+                    <div class="form-group">
+                        <label for="dataValidade">Data de Validade:</label>
+                        <input type="text" class="form-control" id="dataValidade" placeholder="MM/AA" maxlength="4">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="CVC">CVC:</label>
+                      <input type="text" class="form-control" id="CVC" placeholder="***" maxlength="3">
+                  </div>
+                    <!-- Adicione outros campos necessários para cartão -->
+                </div>
+            
+                <!-- Campos específicos para Boleto -->
+                <div id="boletoCampos" [style.display]="boletoStyle">
+                    <div class="form-group">
                         <label for="cpfBoleto">CPF do Pagador:</label>
                         <input type="text" class="form-control" id="cpfBoleto">
-                      </div>
-                      <!-- Adicione outros campos necessários para boleto -->
                     </div>
-                  </form>
-
+                    <!-- Adicione outros campos necessários para boleto -->
+                </div>
+            </form>
+            
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="realizarPagamento()">Finalizar Compra</button>

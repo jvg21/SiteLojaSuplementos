@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { CarrinhoModel } from 'src/app/Application/model/carrinho.model';
 import { ProdutoModel } from 'src/app/Application/model/produto.model';
+import { UsuarioModel } from 'src/app/Application/model/usuario.model';
+import { CarrinhoService } from 'src/app/Application/service/carrinho.service';
 import { ProdutoService } from 'src/app/Application/service/produto.service';
 
 @Component({
@@ -12,7 +15,8 @@ import { ProdutoService } from 'src/app/Application/service/produto.service';
 export class ProdutoSpecComponent {
   private routeSub = new Subscription;
   dataSource: ProdutoModel = new ProdutoModel;
-  constructor(private route: ActivatedRoute, private produtoService: ProdutoService) { }
+  userData = new UsuarioModel;
+  constructor(private route: ActivatedRoute, private produtoService: ProdutoService, private carrinhoService:CarrinhoService) { }
 
   ngOnInit() {
     this.routeSub = this.route.params.subscribe(params => {
@@ -26,10 +30,19 @@ export class ProdutoSpecComponent {
     });
   }
 
-  ngOnDestroy() {
-    this.routeSub.unsubscribe();
-  }
+  adicionarCarrinho(id:number){
 
+    let carrinho = new CarrinhoModel;
+    carrinho.idCliente = this.userData.id;
+    carrinho.idProduto = id;
+    this.carrinhoService.salvar(carrinho).subscribe(carrinho=>{
+      alert("Produto Acionado ao Carrinho");
+      
+    });
+
+
+
+}
 }
 
 

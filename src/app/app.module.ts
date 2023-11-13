@@ -35,7 +35,6 @@ import { PedidoComponent } from './Components/Pages/pedido/pedido.component';
 import { UserListComponent } from './Components/Pages/User/user-list/user-list.component';
 import { UpdateCadastroComponent } from './Components/Pages/User/update-cadastro/update-cadastro.component';
 import { LayoutAdmComponent } from './Components/Pages/Layout/layout-adm/layout-adm.component';
-import { CompraComponent } from './Components/Pages/compra/compra.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +55,6 @@ import { CompraComponent } from './Components/Pages/compra/compra.component';
     UserListComponent,
     UpdateCadastroComponent,
     LayoutAdmComponent,
-    CompraComponent,
   ],
   imports: [
     HttpClientModule,

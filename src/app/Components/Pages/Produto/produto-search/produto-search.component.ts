@@ -14,7 +14,6 @@ import { UsuarioService } from 'src/app/Application/service/usuario.service';
 export class ProdutoSearchComponent {
   dataSource: ProdutoModel[] = [];
   userData = new UsuarioModel;
-  urlPlaceholer = 'https://placehold.co/400';
 
   constructor(private produtoService: ProdutoService,private carrinhoService:CarrinhoService,private usuarioService:UsuarioService) { }
 
@@ -52,5 +51,12 @@ export class ProdutoSearchComponent {
       
     });
     
+  }
+
+  redirectTo(id:number){
+    if(id !=0){
+    window.location.href = '/navegar/produto-spec/'+id;
+
+    }
   }
 }
