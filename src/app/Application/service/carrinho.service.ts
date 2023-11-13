@@ -15,7 +15,7 @@ export class CarrinhoService {
     }
 
     listar(idCliente:number): Observable<CarrinhoModel[]> {
-        let x =  this.http.get<CarrinhoModel[]>('http://localhost:8080/produto/listar/'+idCliente);
+        let x =  this.http.get<CarrinhoModel[]>('http://localhost:8080/carrinho/listar/'+idCliente);
         return x;
     }
     

@@ -11,12 +11,12 @@
                 <th>Apagar</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>Creatina Monohidratada 100% puro</td> <!-- Nome -->
-                <td>Soldiers</td> <!-- Marca -->
-                <td>1 kg</td> <!-- Peso + Medida Peso -->
-                <td>R$250,00</td> <!-- Preço -->
+        <tbody *ngFor="let produtos of this.produtosCarrinho">
+            <tr >
+                <td>{{produtos.nome}}</td> <!-- Nome -->
+                <td>{{produtos.marca}}</td> <!-- Marca -->
+                <td>{{produtos.peso+" "+produtos.medidaPeso}}</td> <!-- Peso + Medida Peso -->
+                <td>R${{produtos.valor}}</td> <!-- Preço -->
                 <td class="remover"><button class="remove-button">Apagar</button></td>
             </tr>
 

@@ -11,7 +11,7 @@ public class CarrinhoDTO {
 
     @Id
     private Integer id;
-    
+
     private Integer idCliente;
     private Integer idProduto;
 

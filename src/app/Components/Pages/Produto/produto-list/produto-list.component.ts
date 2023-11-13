@@ -62,7 +62,7 @@ export class ProdutoListComponent {
   }
   ngOnInit(): void {
     this.listar();
-    console.log(this.dataSource)
+    // console.log(this.dataSource)
   }
 
   adicionar() {
