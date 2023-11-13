@@ -14,6 +14,7 @@ import { UsuarioService } from 'src/app/Application/service/usuario.service';
 export class ProdutoSearchComponent {
   dataSource: ProdutoModel[] = [];
   userData = new UsuarioModel;
+  urlPlaceholer = 'https://placehold.co/400';
 
   constructor(private produtoService: ProdutoService,private carrinhoService:CarrinhoService,private usuarioService:UsuarioService) { }
 
@@ -26,7 +27,7 @@ export class ProdutoSearchComponent {
   listar(){
     this.produtoService.listar().subscribe({
       next: (produto) => produto.map((x)=>{
-        x.url = '/../../../../../assets/'+ x.url;
+
         console.log(x.url);
         
         this.dataSource.push(x);
