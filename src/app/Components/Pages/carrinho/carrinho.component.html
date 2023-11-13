@@ -17,7 +17,7 @@
                 <td>{{produtos.marca}}</td> <!-- Marca -->
                 <td>{{produtos.peso+" "+produtos.medidaPeso}}</td> <!-- Peso + Medida Peso -->
                 <td>R${{produtos.valor}}</td> <!-- Preço -->
-                <td class="remover"><button class="remove-button">Apagar</button></td>
+                <td class="remover"><button class="remove-button" (click)="removerProduto(produtos.id||0)">Apagar</button></td>
             </tr>
 
         </tbody>

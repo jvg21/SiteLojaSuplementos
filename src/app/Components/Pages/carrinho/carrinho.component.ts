@@ -16,14 +16,24 @@ export class CarrinhoComponent {
   produtosCarrinho: ProdutoModel[] = [];
   carrinhoSource: CarrinhoModel[] = [];
   userData = new UsuarioModel;
-  private idCliente = 0;
+  idCliente = 0;
   constructor(private produtoService: ProdutoService, private carrinhoService: CarrinhoService, private usuarioService: UsuarioService) { }
 
   ngOnInit(): void {
+    this.getProduto();
     this.getCarrinho();
   }
 
-  getCarrinho() {
+  removerProduto(idProduto:number){
+    console.log(idProduto);
+    this.carrinhoService.delete(idProduto).subscribe(()=>{
+      alert('Produto Removido');
+      this.getCarrinho();
+      window.location.reload();
+    })
+  }
+
+  getProduto(){
     this.produtoService.listar().subscribe({
       next: (produto) => produto.map((x) => {
         this.dataSource.push(x);
@@ -32,10 +42,15 @@ export class CarrinhoComponent {
       complete: () => console.info('complete')
     });
 
+  }
+
+  getCarrinho() {
+    
 
 
     this.usuarioService.getLogin().subscribe(usuario => {
       if(usuario.id!=undefined || usuario.id !=null){
+        // this.idCliente = usuario.id;
         this.carrinhoService.listar(usuario.id).subscribe({
           next: (carrinho) => carrinho.map((x)=>{
             this.carrinhoSource.push(x);
