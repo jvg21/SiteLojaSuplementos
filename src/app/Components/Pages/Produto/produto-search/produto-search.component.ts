@@ -26,6 +26,7 @@ export class ProdutoSearchComponent {
   listar(){
     this.produtoService.listar().subscribe({
       next: (produto) => produto.map((x)=>{
+        x.url = '../../../../../assets/'+x.url;
         this.dataSource.push(x);
       }),
       error: (e) => console.error(e),
