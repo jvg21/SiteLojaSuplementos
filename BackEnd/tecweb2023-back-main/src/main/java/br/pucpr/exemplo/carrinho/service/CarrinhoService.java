@@ -22,9 +22,12 @@ public class CarrinhoService {
          List<Carrinho> listaReturn = new ArrayList<>();
 
          for(int i = 0; i<lista.size(); i++){
-           if(lista.get(i).getIdCliente().equals(idUsuario) ){
-                listaReturn.add(lista.get(i));
+           if (lista.get(i).getIdCliente() !=null){
+             if(lista.get(i).getIdCliente().equals(idUsuario) ){
+               listaReturn.add(lista.get(i));
+             }
            }
+
          }
 
         return listaReturn;
@@ -41,15 +44,11 @@ public class CarrinhoService {
     public void excluir(Integer id) {
 
       List<Carrinho> lista = carrinhoRepository.findAll();
-      List<Carrinho> listaReturn = new ArrayList<>();
-
       for(int i = 0; i<lista.size(); i++){
         if(lista.get(i).getIdProduto().equals(id)){
           carrinhoRepository.deleteById(lista.get(i).getId());
         }
       }
-
-
     }
 
     public void limpar(Integer idUsuario) {

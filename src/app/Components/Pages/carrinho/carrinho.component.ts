@@ -110,6 +110,14 @@ export class CarrinhoComponent {
     this.boletoStyle ="block";
   }
   realizarPagamento() {
+    this.usuarioService.getLogin().subscribe(usuario => {
+      if (usuario.id != undefined || usuario.id != null) {
+        this.carrinhoService.deleteAll(usuario.id).subscribe({
+      
+        });
+      }}
+      )
+    
     
   }
 }

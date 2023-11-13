@@ -5,5 +5,6 @@ export class PedidoModel {
     dataEntrega?: String;
     valor?: number;
     entrega?: boolean;
+    metodo?:String;
 }
 

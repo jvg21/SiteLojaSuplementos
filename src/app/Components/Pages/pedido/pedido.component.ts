@@ -39,7 +39,6 @@ export class PedidoComponent {
   getPedido() {
     this.usuarioService.getLogin().subscribe(usuario => {
       if (usuario.id != undefined || usuario.id != null) {
-        // this.idCliente = usuario.id;
         this.carrinhoService.listar(usuario.id).subscribe({
           next: (carrinho) => carrinho.map((x) => {
             this.pedidoSource.push(x);
@@ -56,24 +55,6 @@ export class PedidoComponent {
       }
 
     });
-
-    console.log(this.produtosPedido);
-
-
-    // this.carrinhoSource.map((i)=>{
-
-    //   
-    // })
-
-
-    // for(let i = 0;i<this.carrinhoSource.length;i++){
-    //   for(let j = 0; j<this.dataSource.length;j++){ 
-    //     if(this.carrinhoSource[i].idProduto == this.dataSource[j].id){
-    //       this.produtosPedido.push(this.carrinhoSource[j]);
-    //     }
-    //   }
-    // }
-    // console.log(this.produtosPedido);
 
   }
 
