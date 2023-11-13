@@ -12,7 +12,7 @@ import { UsuarioService } from 'src/app/Application/service/usuario.service';
   styleUrls: ['./produto-search.component.css']
 })
 export class ProdutoSearchComponent {
-   dataSource: ProdutoModel[] = [];
+  dataSource: ProdutoModel[] = [];
   userData = new UsuarioModel;
 
   constructor(private produtoService: ProdutoService,private carrinhoService:CarrinhoService,private usuarioService:UsuarioService) { }
@@ -26,7 +26,9 @@ export class ProdutoSearchComponent {
   listar(){
     this.produtoService.listar().subscribe({
       next: (produto) => produto.map((x)=>{
-        x.url = '/../../../../../assets/'+x.url;
+        x.url = '/../../../../../assets/'+ x.url;
+        console.log(x.url);
+        
         this.dataSource.push(x);
       }),
       error: (e) => console.error(e),

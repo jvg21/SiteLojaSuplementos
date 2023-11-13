@@ -4,14 +4,15 @@
     <button class="search-button">Pesquisar</button>
 </div> -->
 
-<section class="product-list" >
-    
-    <div class="product" *ngFor="let produtos of this.dataSource;">
-        <h2>{{produtos.nome+" "+produtos.marca+" "+produtos.peso +" "+produtos.medidaPeso}}</h2>
-        <img src={{produtos.url?.valueOf}} alt="{{produtos.url || produtos.nome}}" height="120" width="120">
-        <p>Preço: R${{produtos.valor}}</p>
-        <button class="add-to-cart" (click)="adicionarCarrinho(produtos.id || 0)"><a>Adicionar ao Carrinho</a></button>
-    </div>
-    
-</section>
+<section class="product-list">
 
+    <div class="product" *ngFor="let produto of dataSource;">
+        <h2>{{produto.nome + ' ' + produto.marca + ' ' + produto.peso + ' ' + produto.medidaPeso}}</h2>
+        <img [src]="produto.url" [alt]="produto.url ? produto.nome : 'Imagem Indisponível'" height="120" width="120">
+        <p>Preço: R$ {{produto.valor}}</p>
+        <button class="add-to-cart" (click)="adicionarCarrinho(produto.id || 0)">
+            <a>Adicionar ao Carrinho</a>
+        </button>
+    </div>
+
+</section>

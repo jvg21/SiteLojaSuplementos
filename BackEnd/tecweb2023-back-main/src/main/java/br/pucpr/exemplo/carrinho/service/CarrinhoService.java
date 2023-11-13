@@ -39,7 +39,17 @@ public class CarrinhoService {
     }
 
     public void excluir(Integer id) {
-        carrinhoRepository.deleteById(id);
+
+      List<Carrinho> lista = carrinhoRepository.findAll();
+      List<Carrinho> listaReturn = new ArrayList<>();
+
+      for(int i = 0; i<lista.size(); i++){
+        if(lista.get(i).getIdProduto().equals(id)){
+          carrinhoRepository.deleteById(lista.get(i).getId());
+        }
+      }
+
+
     }
 
     public void limpar(Integer idUsuario) {
