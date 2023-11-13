@@ -12,9 +12,10 @@ public class PedidoDTO {
     private Integer id;
 
     private Integer idCliente;
-    private Integer idProduto;
+    private String produto;
     private String dataEntrega;
     private Double valor;
     private boolean entrega;
+    private boolean metodo;
 
 }

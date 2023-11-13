@@ -17,6 +17,7 @@ export class CarrinhoComponent {
   dataSource: ProdutoModel[] = [];
   produtosCarrinho: ProdutoModel[] = [];
   carrinhoSource: CarrinhoModel[] = [];
+  pedidoSource = new PedidoModel;
   userData = new UsuarioModel;
   idCliente = 0;
   total = 0;
@@ -110,6 +111,12 @@ export class CarrinhoComponent {
     this.boletoStyle ="block";
   }
   realizarPagamento() {
+    let date: Date = new Date();  
+
+    this.pedidoSource.metodo = this.pagamentoForm.controls['Metodo'].value || 'cartao';
+    this.pedidoSource.dataEntrega = date.getDate.toString();
+    console.log(date.getDate.toString());
+    
     this.usuarioService.getLogin().subscribe(usuario => {
       if (usuario.id != undefined || usuario.id != null) {
         this.carrinhoService.deleteAll(usuario.id).subscribe({

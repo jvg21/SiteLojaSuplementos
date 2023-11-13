@@ -16,8 +16,8 @@ public class Pedido {
   @Column(name = "idCliente")
   private Integer idCliente;
 
-  @Column(name = "idProduto")
-  private Integer idProduto;
+  @Column(name = "produto")
+  private String produto;
 
   @Column(name = "dataEntrega")
   private String dataEntrega;
@@ -27,6 +27,9 @@ public class Pedido {
 
   @Column(name = "entrega")
   private boolean entrega;
+
+  @Column(name = "metodo")
+  private boolean metodo;
 
 
 }

@@ -1,7 +1,7 @@
 export class PedidoModel {
     id?: number;
     idCliente?: number;
-    idProduto?: number;
+    produto?: String;
     dataEntrega?: String;
     valor?: number;
     entrega?: boolean;
