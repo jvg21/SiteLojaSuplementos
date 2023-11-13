@@ -1,46 +1,45 @@
-package br.pucpr.exemplo.carrinho.controller;
+package br.pucpr.exemplo.pedido.controller;
 
+import br.pucpr.exemplo.pedido.model.PedidoDTO;
+import br.pucpr.exemplo.pedido.model.entity.Pedido;
+import br.pucpr.exemplo.pedido.service.PedidoService;
 import jakarta.validation.*;
 import org.modelmapper.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
-import br.pucpr.exemplo.carrinho.model.CarrinhoDTO;
-import br.pucpr.exemplo.carrinho.model.entity.Carrinho;
-import br.pucpr.exemplo.carrinho.service.CarrinhoService;
-
 import java.util.*;
 import java.util.stream.*;
 @RestController
-public class CarrinhoController {
+public class PedidoController {
     @Autowired
-    private CarrinhoService carrinhoService;
+    private PedidoService pedidoService;
     private ModelMapper modelMapper = new ModelMapper();;
 
-    @PostMapping("/carrinho/criar")
-    public ResponseEntity<CarrinhoDTO> salvar(@Valid @RequestBody CarrinhoDTO carrinhoDTO) {
-        Carrinho usuario = this.modelMapper.map(carrinhoDTO, Carrinho.class);
-        carrinhoService.salvar(usuario);
-        return new ResponseEntity(carrinhoDTO, HttpStatus.CREATED);
+    @PostMapping("/pedido/criar")
+    public ResponseEntity<PedidoDTO> salvar(@Valid @RequestBody PedidoDTO pedidoDTO) {
+        Pedido usuario = this.modelMapper.map(pedidoDTO, Pedido.class);
+        pedidoService.salvar(usuario);
+        return new ResponseEntity(pedidoDTO, HttpStatus.CREATED);
     }
 
-    @GetMapping("/carrinho/listar/{idUsuario}")
-    public List<CarrinhoDTO> listar(@PathVariable Integer idUsuario) {
-        List<Carrinho> usuarios = carrinhoService.listar(idUsuario);
-        return usuarios.stream().map(usuario -> modelMapper.map(usuario, CarrinhoDTO.class)).
+    @GetMapping("/pedido/listar/{idUsuario}")
+    public List<PedidoDTO> listar(@PathVariable Integer idUsuario) {
+        List<Pedido> usuarios = pedidoService.listar(idUsuario);
+        return usuarios.stream().map(usuario -> modelMapper.map(usuario, PedidoDTO.class)).
                 collect(Collectors.toList());
     }
 
 
-    @DeleteMapping("/carrinho/limpar/{idUsuario}")
+    @DeleteMapping("/pedido/limpar/{idUsuario}")
     public void limpar(@PathVariable int idUsuario){
-      carrinhoService.limpar(idUsuario);
+      pedidoService.limpar(idUsuario);
     }
 
-    @DeleteMapping("/carrinho/excluir/{id}")
+    @DeleteMapping("/pedido/excluir/{id}")
     public void deletar(@PathVariable int id){
-      carrinhoService.excluir(id);
+      pedidoService.excluir(id);
     }
 
 }

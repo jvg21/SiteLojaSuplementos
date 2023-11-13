@@ -1,4 +1,4 @@
-package br.pucpr.exemplo.carrinho.model.entity;
+package br.pucpr.exemplo.pedido.model.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -8,7 +8,7 @@ import lombok.*;
 @Setter
 @Entity
 @Table(name = "CARRINHO")
-public class Carrinho {
+public class Pedido {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Integer id;

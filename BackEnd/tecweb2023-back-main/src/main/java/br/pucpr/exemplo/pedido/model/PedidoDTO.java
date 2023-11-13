@@ -1,13 +1,12 @@
-package br.pucpr.exemplo.carrinho.model;
+package br.pucpr.exemplo.pedido.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
 import lombok.*;
 
 @Data
 @Getter
 @Setter
-public class CarrinhoDTO {
+public class PedidoDTO {
 
     @Id
     private Integer id;
