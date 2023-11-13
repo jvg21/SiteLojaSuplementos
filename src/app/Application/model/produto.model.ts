@@ -5,6 +5,7 @@ export class ProdutoModel {
     marca?: string;
     peso?: number;
     medidaPeso?: string;
+    url?: string;
     ativado?: boolean;
     descricao?:string;
 

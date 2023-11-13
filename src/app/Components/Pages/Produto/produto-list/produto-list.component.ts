@@ -9,7 +9,7 @@ import { ProdutoService } from 'src/app/Application/service/produto.service';
   styleUrls: ['./produto-list.component.css'],
 })
 export class ProdutoListComponent {
-  displayedColumns: string[] = ['id', 'nome', 'valor', 'marca', 'peso','medidaPeso','ativado','descricao'];
+  displayedColumns: string[] = ['id', 'nome', 'valor', 'marca', 'peso','medidaPeso','ativado','descricao','url'];
   dataSource: ProdutoModel[] = [];
   selectedRow = new ProdutoModel;
   constructor(private produtoService: ProdutoService) { }
@@ -24,6 +24,7 @@ export class ProdutoListComponent {
     MedidaPeso: new FormControl('',[Validators.required]),
     Marca: new FormControl('', [Validators.required]),
     Ativado: new FormControl(true, [Validators.required]),
+    Url: new FormControl('', [Validators.required]),
     Descricao: new FormControl('', [Validators.required, Validators.minLength(3),Validators.maxLength(200)]),
 
   })
@@ -42,6 +43,7 @@ export class ProdutoListComponent {
       this.produtoForm.controls['Peso'].setValue(1);
       this.produtoForm.controls['Marca'].setValue('');
       this.produtoForm.controls['Descricao'].setValue('');
+      this.produtoForm.controls['Url'].setValue('');
     } else {
       this.produtoForm.controls['Id'].setValue(String(this.selectedRow.id));
       this.produtoForm.controls['Nome'].setValue(String(this.selectedRow.nome));
@@ -51,6 +53,7 @@ export class ProdutoListComponent {
       this.produtoForm.controls['Marca'].setValue(String(this.selectedRow.marca));
       this.produtoForm.controls['Ativado'].setValue(this.selectedRow.ativado || true);
       this.produtoForm.controls['Descricao'].setValue(this.selectedRow.descricao || '');
+      this.produtoForm.controls['Url'].setValue(this.selectedRow.url || '');
 
     }
   }
@@ -75,6 +78,7 @@ export class ProdutoListComponent {
     produto.valor = this.produtoForm.controls['Valor'].value || 0;
     produto.ativado = this.produtoForm.controls['Ativado'].value || true;
     produto.descricao = this.produtoForm.controls['Descricao'].value || '';
+    produto.url = this.produtoForm.controls['Url'].value || '';
 
     // console.log(produto);
     
@@ -99,6 +103,7 @@ export class ProdutoListComponent {
     produto.marca = this.produtoForm.controls['Marca'].value || '';
     produto.peso = this.produtoForm.controls['Peso'].value || 1;
     produto.medidaPeso = this.produtoForm.controls['MedidaPeso'].value || '';
+    produto.url = this.produtoForm.controls['Url'].value || '';
     produto.valor = this.produtoForm.controls['Valor'].value || 0;
     produto.ativado = this.produtoForm.controls['Ativado'].value || true;
     produto.descricao = this.produtoForm.controls['Descricao'].value || this.produtoForm.controls['Nome'].value || '';

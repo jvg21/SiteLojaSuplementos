@@ -28,7 +28,6 @@ export class CarrinhoComponent {
     console.log(idProduto);
     this.carrinhoService.delete(idProduto).subscribe(()=>{
       alert('Produto Removido');
-      this.getCarrinho();
       window.location.reload();
     })
   }

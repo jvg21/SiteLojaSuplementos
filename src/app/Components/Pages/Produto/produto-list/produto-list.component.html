@@ -69,6 +69,12 @@
                         <textarea class="form-control" id="descricao" rows="3" formControlName="Descricao"></textarea>
                       </div>
 
+                      <!-- <div class="mb-3">
+                        <label for="Url" class="form-label">Url</label>
+                        <input type="text" class="form-control" id="Url" formControlName="Url">
+                        <div *ngIf="produtoForm.controls['Url'].invalid &&produtoForm.controls['Url'].dirty"
+                            style="color: red;" id="nomeHelp" class="form-text">Url Inválido</div>
+                    </div> -->
 
                     <label for="form-select" class="form-label">Ativado</label>
                     <select class="form-select" aria-label="Default select example" id="ativadoProduto"
@@ -136,6 +142,11 @@
         <ng-container matColumnDef="descricao">
             <th mat-header-cell *matHeaderCellDef> Tem Descricao? </th>
             <td mat-cell *matCellDef="let element" title={{element.descricao}}> {{(element.descricao)?'Sim':'Não'}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="url">
+            <th mat-header-cell *matHeaderCellDef> Url </th>
+            <td mat-cell *matCellDef="let element" >{{element.url}} </td>
         </ng-container>
 
 
