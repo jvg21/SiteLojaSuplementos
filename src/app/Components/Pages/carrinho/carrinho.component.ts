@@ -45,9 +45,6 @@ export class CarrinhoComponent {
   }
 
   getCarrinho() {
-    
-
-
     this.usuarioService.getLogin().subscribe(usuario => {
       if(usuario.id!=undefined || usuario.id !=null){
         // this.idCliente = usuario.id;

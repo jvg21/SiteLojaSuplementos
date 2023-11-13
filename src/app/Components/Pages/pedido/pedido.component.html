@@ -9,26 +9,20 @@
             <th>Itens</th>
             <th>Preço</th>
             <th>Data</th>
-            <th>Apagar</th>
         </tr>
     </thead>
     <tbody>
-        <tr >
+        <tr *ngFor="let pedido of this.produtosPedido">
             <td><a href="">1</a></td> <!-- id -->
 
             <td>
-                Creatina Soldiers Monohidratada 100% pura 
-                <br>Whey Protein Growth 1kg
-                <br>Multivitamínico Growth 30g
-                <br>Pílulas de cafeína Growth 30g
-                <br>Glutamina Soldiers 500g
             </td> <!-- produtos -->
 
-            <td>R$560,00</td> <!-- preço -->
+            <td></td> <!-- preço -->
 
             <td>21/12/2023</td> <!-- data -->
 
-            <td><button class="remove-button" >Apagar</button></td>
+            
         </tr>
 
     </tbody>

@@ -19,12 +19,12 @@ export class CarrinhoService {
         return x;
     }
     
-    deleteAll(idCliente:number):Observable<String>{
-        return this.http.delete<String>('http://localhost:8080/carrinho/limpar/'+idCliente);
+    deleteAll(idCliente:number){
+        return this.http.delete('http://localhost:8080/carrinho/limpar/'+idCliente);
     };
     
-    delete(id:number):Observable<String>{
-        return this.http.delete<String>('http://localhost:8080/carrinho/excluir/'+id);
+    delete(id:number){
+        return this.http.delete('http://localhost:8080/carrinho/excluir/'+id);
     };
     
 
