@@ -4,22 +4,24 @@
 
 <table class="cart">
     <thead>
-        <tr>
+        <tr>    
+            <th>Id</th>
             <th>Itens</th>
             <th>Preço</th>
             <th>Data</th>
+            <th>Método de Pagamento</th>
+            <th>Status</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let pedido of this.produtosPedido">
+        <tr *ngFor="let pedido of this.pedidoSource">
 
-            <td>
-            </td> <!-- produtos -->
-
-            <td></td> <!-- preço -->
-
-            <td>21/12/2023</td> <!-- data -->
-
+            <td>{{pedido.id}}</td>
+            <td>{{pedido.produto}}</td>
+            <td>{{pedido.valor}}</td>
+            <td>{{pedido.dataEntrega}}</td>
+            <td>{{pedido.metodo}}</td>
+            <td>{{pedido.entrega}}</td>
             
         </tr>
 
