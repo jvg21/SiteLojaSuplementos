@@ -24,8 +24,9 @@ export class CarrinhoComponent {
   pixStyle = 'none';
   cartaoStyle = 'none';
   boletoStyle = 'none';
+  produtoList = "";
 
-  constructor(private produtoService: ProdutoService, private carrinhoService: CarrinhoService, private usuarioService: UsuarioService) { }
+  constructor(private produtoService: ProdutoService, private carrinhoService: CarrinhoService, private usuarioService: UsuarioService,private pedidoService:ProdutoService) { }
 
   ngOnInit(): void {
     this.getProduto();
@@ -78,7 +79,6 @@ export class CarrinhoComponent {
                 this.produtosCarrinho.push(j);
                 if (j.valor != undefined) {
                   this.total += j.valor;
-
                 }
               }
             })
@@ -114,14 +114,23 @@ export class CarrinhoComponent {
     let date: Date = new Date();  
 
     this.pedidoSource.metodo = this.pagamentoForm.controls['Metodo'].value || 'cartao';
-    this.pedidoSource.dataEntrega = date.getDate.toString();
-    console.log(date.getDate.toString());
+    this.pedidoSource.dataEntrega = '13/11/2023';
+    this.pedidoSource.entrega = false;
+
+    this.produtosCarrinho.map(x=>{
+      this.produtoList += " "+x.nome+" "+ x.marca+" "+x.peso +" "+x.medidaPeso+",";
+    })
+
+    this.pedidoSource.produto = this.produtoList;
+    this.pedidoSource.valor = this.total;    
     
     this.usuarioService.getLogin().subscribe(usuario => {
-      if (usuario.id != undefined || usuario.id != null) {
-        this.carrinhoService.deleteAll(usuario.id).subscribe({
+      this.pedidoSource.idCliente = usuario.id;
+
+      this.pedidoService.salvar(this.pedidoSource).subscribe({});
       
-        });
+      if (usuario.id != undefined || usuario.id != null) {
+        this.carrinhoService.deleteAll(usuario.id).subscribe({});
       }}
       )
     
