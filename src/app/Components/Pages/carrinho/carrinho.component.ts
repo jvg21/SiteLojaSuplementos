@@ -127,12 +127,14 @@ export class CarrinhoComponent {
     this.usuarioService.getLogin().subscribe(usuario => {
       this.pedidoSource.idCliente = usuario.id;
 
+      // console.log(this.pedidoSource);
+      
       this.pedidoService.salvar(this.pedidoSource).subscribe({});
       
       if (usuario.id != undefined || usuario.id != null) {
         this.carrinhoService.deleteAll(usuario.id).subscribe({});
       }}
-      )
+    )
     
     
   }

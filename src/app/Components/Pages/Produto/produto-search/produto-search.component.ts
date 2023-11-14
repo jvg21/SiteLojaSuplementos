@@ -52,7 +52,6 @@ export class ProdutoSearchComponent {
     });
     
   }
-
   redirectTo(id:number){
     if(id !=0){
     window.location.href = '/navegar/produto-spec/'+id;
