@@ -13,6 +13,7 @@ import { ErrorPageComponent } from './Components/Pages/error-page/error-page.com
 import { UserListComponent } from './Components/Pages/User/user-list/user-list.component';
 import { PedidoComponent } from './Components/Pages/pedido/pedido.component';
 import { LayoutAdmComponent } from './Components/Pages/Layout/layout-adm/layout-adm.component';
+import { UpdateCadastroComponent } from './Components/Pages/User/update-cadastro/update-cadastro.component';
 
 
 const routes: Routes = [
@@ -24,7 +25,8 @@ const routes: Routes = [
     {path:"produto-spec/:id",component:ProdutoSpecComponent},
     {path:"carrinho", component:CarrinhoComponent},
     {path:"produto-search", component:ProdutoSearchComponent},
-    {path:"pedidos",component:PedidoComponent}
+    {path:"pedidos",component:PedidoComponent},
+    {path:"updatecadastro",component:UpdateCadastroComponent}
   ]},
   {path:"adm",component:LayoutAdmComponent,children:[
     {path:"produto",component:ProdutoListComponent},
