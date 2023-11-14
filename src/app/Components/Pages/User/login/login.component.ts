@@ -22,8 +22,8 @@ export class LoginComponent {
       ]),
     PassWord: new FormControl('',
       [
-        Validators.required
-        //Validators.pattern(/^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Z]).{8,16}$/) // a senha deve conter um numero, uma letra maiuscula e um caractere especial
+        Validators.required,Validators.maxLength(30)
+        //,Validators.pattern(/^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Z]).{8,16}$/) // a senha deve conter um numero, uma letra maiuscula e um caractere especial
       ])
   })
 

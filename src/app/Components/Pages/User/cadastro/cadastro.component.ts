@@ -18,8 +18,8 @@ export class CadastroComponent {
   cadastroForm = new FormGroup({
     Id : new FormControl(''),
     Nome : new FormControl('',[Validators.required]),
-    Email : new FormControl('',[Validators.required]),
-    Cpf : new FormControl('',[Validators.required]),
+    Email : new FormControl('',[Validators.required,Validators.email,Validators.maxLength(80)]),
+    Cpf : new FormControl('',[Validators.required,Validators.maxLength(14)]),
     Senha : new FormControl('',[Validators.required]),
     Csenha : new FormControl('',[Validators.required]),
     Uf : new FormControl('',[Validators.required]),
@@ -28,7 +28,6 @@ export class CadastroComponent {
     Numero : new FormControl(null,[Validators.required]),
     Complemento : new FormControl(''),
     Cep : new FormControl('',[Validators.required]),
-
   });
 
   adicionar(){
