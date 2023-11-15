@@ -5,6 +5,7 @@ import { PedidoModel } from 'src/app/Application/model/pedido.model';
 import { ProdutoModel } from 'src/app/Application/model/produto.model';
 import { UsuarioModel } from 'src/app/Application/model/usuario.model';
 import { CarrinhoService } from 'src/app/Application/service/carrinho.service';
+import { PedidoService } from 'src/app/Application/service/pedido.service';
 import { ProdutoService } from 'src/app/Application/service/produto.service';
 import { UsuarioService } from 'src/app/Application/service/usuario.service';
 
@@ -26,7 +27,7 @@ export class CarrinhoComponent {
   boletoStyle = 'none';
   produtoList = "";
 
-  constructor(private produtoService: ProdutoService, private carrinhoService: CarrinhoService, private usuarioService: UsuarioService,private pedidoService:ProdutoService) { }
+  constructor(private produtoService: ProdutoService, private carrinhoService: CarrinhoService, private usuarioService: UsuarioService,private pedidoService:PedidoService) { }
 
   ngOnInit(): void {
     this.getProduto();
@@ -134,7 +135,10 @@ export class CarrinhoComponent {
       this.pedidoService.salvar(this.pedidoSource).subscribe({});
       
       if (usuario.id != undefined || usuario.id != null) {
-        this.carrinhoService.deleteAll(usuario.id).subscribe({});
+        this.carrinhoService.deleteAll(usuario.id).subscribe({
+          
+        });
+        //window.location.reload();
       }
     }
     )

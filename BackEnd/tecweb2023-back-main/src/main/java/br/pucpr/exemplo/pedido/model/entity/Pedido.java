@@ -7,7 +7,7 @@ import lombok.*;
 @Getter
 @Setter
 @Entity
-@Table(name = "CARRINHO")
+@Table(name = "Pedido")
 public class Pedido {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
