@@ -4,7 +4,7 @@ export class PedidoModel {
     produto?: String;
     dataEntrega?: String;
     valor?: number;
-    entrega?: boolean;
+    entrega?: String;
     metodo?:String;
 }
 

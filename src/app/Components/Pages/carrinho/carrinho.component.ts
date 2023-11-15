@@ -34,7 +34,7 @@ export class CarrinhoComponent {
   }
 
   removerProduto(idProduto: number) {
-    console.log(idProduto);
+    // console.log(idProduto);
     this.carrinhoService.delete(idProduto).subscribe(() => {
       alert('Produto Removido');
       window.location.reload();
@@ -91,7 +91,7 @@ export class CarrinhoComponent {
 
     });
 
-    console.log(this.produtosCarrinho);
+    // console.log(this.produtosCarrinho);
 
   }
 
@@ -114,8 +114,10 @@ export class CarrinhoComponent {
     let date: Date = new Date();  
 
     this.pedidoSource.metodo = this.pagamentoForm.controls['Metodo'].value || 'cartao';
-    this.pedidoSource.dataEntrega = '13/11/2023';
-    this.pedidoSource.entrega = false;
+    this.pedidoSource.dataEntrega = date.getDate().toString()+"/"+(date.getMonth()+1).toString()+"/"+date.getFullYear().toString();
+
+    
+    this.pedidoSource.entrega = "Pedido a caminho";
 
     this.produtosCarrinho.map(x=>{
       this.produtoList += " "+x.nome+" "+ x.marca+" "+x.peso +" "+x.medidaPeso+",";
@@ -127,13 +129,14 @@ export class CarrinhoComponent {
     this.usuarioService.getLogin().subscribe(usuario => {
       this.pedidoSource.idCliente = usuario.id;
 
-      // console.log(this.pedidoSource);
+       console.log(this.pedidoSource);
       
       this.pedidoService.salvar(this.pedidoSource).subscribe({});
       
       if (usuario.id != undefined || usuario.id != null) {
         this.carrinhoService.deleteAll(usuario.id).subscribe({});
-      }}
+      }
+    }
     )
     
     

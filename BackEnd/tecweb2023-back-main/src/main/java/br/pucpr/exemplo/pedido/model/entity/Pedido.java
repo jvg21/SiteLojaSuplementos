@@ -26,10 +26,10 @@ public class Pedido {
   private Double valor;
 
   @Column(name = "entrega")
-  private boolean entrega;
+  private String entrega;
 
   @Column(name = "metodo")
-  private boolean metodo;
+  private String metodo;
 
 
 }

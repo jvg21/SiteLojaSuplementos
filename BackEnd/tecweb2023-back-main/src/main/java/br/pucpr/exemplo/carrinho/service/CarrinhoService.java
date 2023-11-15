@@ -45,9 +45,12 @@ public class CarrinhoService {
 
       List<Carrinho> lista = carrinhoRepository.findAll();
       for(int i = 0; i<lista.size(); i++){
-        if(lista.get(i).getIdProduto().equals(id)){
-          carrinhoRepository.deleteById(lista.get(i).getId());
+        if (lista.get(i).getIdProduto()!=null){
+          if(lista.get(i).getIdProduto().equals(id)){
+            carrinhoRepository.deleteById(lista.get(i).getId());
+          }
         }
+
       }
     }
 

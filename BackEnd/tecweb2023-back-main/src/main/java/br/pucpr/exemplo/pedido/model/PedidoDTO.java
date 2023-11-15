@@ -15,7 +15,7 @@ public class PedidoDTO {
     private String produto;
     private String dataEntrega;
     private Double valor;
-    private boolean entrega;
-    private boolean metodo;
+    private String entrega;
+    private String metodo;
 
 }

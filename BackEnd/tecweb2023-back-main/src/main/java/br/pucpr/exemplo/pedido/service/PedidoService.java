@@ -20,11 +20,13 @@ public class PedidoService {
     public List<Pedido> listar(Integer idUsuario) {
         List<Pedido> lista = pedidoRepository.findAll();
          List<Pedido> listaReturn = new ArrayList<>();
-
          for(int i = 0; i<lista.size(); i++){
-           if(lista.get(i).getIdCliente().equals(idUsuario) ){
-                listaReturn.add(lista.get(i));
+           if (lista.get(i).getIdCliente()!=null){
+             if(lista.get(i).getIdCliente().equals(idUsuario) ){
+               listaReturn.add(lista.get(i));
+             }
            }
+
          }
 
         return listaReturn;
