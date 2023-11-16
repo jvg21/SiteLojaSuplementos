@@ -11,12 +11,7 @@
         <div class="input-group">
             <input type="text" id="nome" placeholder="Nome" formControlName="Nome">
         </div>
-        <div class="input-group">
-            <input type="email" id="email" placeholder="Email" formControlName="Email">
-        </div>
-        <div class="input-group">
-            <input type="text" id="cpf" placeholder="CPF" formControlName="Cpf">
-        </div>
+   
         <div class="input-group">
             <input type={{PasswordShow.getInputType()}} id="senha" placeholder="Senha" formControlName="Senha">
             
@@ -73,6 +68,6 @@
             <input type="text" id="complemento" placeholder="Complemento" formControlName="Complemento">
         </div>
         <button type="button" class="btn btn-success" [disabled]="!cadastroForm.valid"
-            (click)="adicionar()">Cadastrar</button>
+            (click)="alterar()">Concluir</button>
     </form>
 </div>

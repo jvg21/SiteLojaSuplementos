@@ -29,7 +29,6 @@ import { NavbarComponent } from './Components/Pages/Layout/navbar/navbar.compone
 import { ProdutoSpecComponent } from './Components/Pages/Produto/produto-spec/produto-spec.component';
 import { TransportadoraListComponent } from './Components/Pages/Transportadora/transportadora-list/transportadora-list.component';
 import { CarrinhoComponent } from './Components/Pages/carrinho/carrinho.component';
-import { CardComponent } from './Components/card/card.component';
 import { ProdutoSearchComponent } from './Components/Pages/Produto/produto-search/produto-search.component';
 import { PedidoComponent } from './Components/Pages/pedido/pedido.component';
 import { UserListComponent } from './Components/Pages/User/user-list/user-list.component';
@@ -49,7 +48,6 @@ import { LayoutAdmComponent } from './Components/Pages/Layout/layout-adm/layout-
     ProdutoSpecComponent,
     TransportadoraListComponent,
     CarrinhoComponent,
-    CardComponent,
     ProdutoSearchComponent,
     PedidoComponent,
     UserListComponent,
