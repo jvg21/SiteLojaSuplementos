@@ -20,17 +20,16 @@ export class LoginComponent {
       [
         Validators.required, Validators.email, Validators.maxLength(80),
       ]),
-    PassWord: new FormControl('',
+    Password: new FormControl('',
       [
         Validators.required,Validators.maxLength(30)
-        //,Validators.pattern(/^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Z]).{8,16}$/) // a senha deve conter um numero, uma letra maiuscula e um caractere especial
       ])
   })
 
 
   login() {
     let email = this.loginForm.controls['Email'].value || "";
-    let senha = this.loginForm.controls['PassWord'].value || "";
+    let senha = this.loginForm.controls['Password'].value || "";
     this.usuarioService.logar(email, senha).subscribe(usuario => {
       if (usuario.id != null) {
         this.usuarioService.setLogin(usuario).subscribe(logado => {
