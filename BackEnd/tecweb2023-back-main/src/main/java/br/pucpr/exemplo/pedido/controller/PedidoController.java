@@ -30,6 +30,14 @@ public class PedidoController {
         return usuarios.stream().map(usuario -> modelMapper.map(usuario, PedidoDTO.class)).
                 collect(Collectors.toList());
     }
+
+    @GetMapping("/pedido/listarAll")
+    public List<PedidoDTO> listar() {
+        List<Pedido> usuarios = pedidoService.listarAll();
+        return usuarios.stream().map(usuario -> modelMapper.map(usuario, PedidoDTO.class)).
+                collect(Collectors.toList());
+    }
+
     @DeleteMapping("/pedido/limpar/{idUsuario}")
     public void limpar(@PathVariable int idUsuario){
       pedidoService.limpar(idUsuario);

@@ -26,19 +26,14 @@ public class PedidoService {
                listaReturn.add(lista.get(i));
              }
            }
-
          }
 
         return listaReturn;
     }
 
-    // public Pedido selecionar(Integer id) {
-    //   Pedido user = null;
-    //   if (pedidoRepository.findById(id).isPresent()) {
-    //     user = pedidoRepository.findById(id).get();
-    //   }
-    //   return user;
-    // }
+    public List<Pedido> listarAll(Integer idUsuario) {
+        return  pedidoRepository.findAll();;
+    } 
 
     public void excluir(Integer id) {
         pedidoRepository.deleteById(id);

@@ -18,6 +18,11 @@ export class PedidoService {
         let x =  this.http.get<PedidoModel[]>('http://localhost:8080/pedido/listar/'+idCliente);
         return x;
     }
+
+    listarAll(): Observable<PedidoModel[]> {
+        let x =  this.http.get<PedidoModel[]>('http://localhost:8080/pedido/listarAll');
+        return x;
+    }
     
     deleteAll(idCliente:number){
         return this.http.delete('http://localhost:8080/pedido/limpar/'+idCliente);
