@@ -58,7 +58,7 @@
             
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal"(click)="realizarPagamento()">Finalizar Compra</button>
+                <button type="button" class="btn btn-success" [disabled]="pagamentoForm.controls['Metodo'].invalid" data-bs-dismiss="modal"(click)="realizarPagamento()">Finalizar Compra</button>
 
              
             </div>
@@ -107,6 +107,6 @@
     </tbody>
 </table>
 
-<div class="botao"><button id="checkout" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Finalizar Compra</button></div>
+<div class="botao"><button id="checkout" [disabled]="produtosCarrinho.length===0" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Finalizar Compra</button></div>
 
 

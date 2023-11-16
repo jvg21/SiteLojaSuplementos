@@ -28,7 +28,6 @@ export class UpdateCadastroComponent {
     Numero : new FormControl(null,[Validators.required]),
     Complemento : new FormControl(''),
     Cep : new FormControl('',[Validators.required]),
-
   });
 
   adicionar(){

@@ -36,6 +36,11 @@ public class UsuarioController {
       return usuarioService.logar(emailUsuario,senhaUsuario);
     }
 
+  @GetMapping("/usuario/selecionar/{idUsuario}")
+  public Usuario selecionar(@PathVariable int idUsuario){
+    return usuarioService.selecionar(idUsuario);
+  }
+
     @DeleteMapping("/usuario/excluir/{idUsuario}")
     public String deletar(@PathVariable int idUsuario){
       usuarioService.excluir(idUsuario);

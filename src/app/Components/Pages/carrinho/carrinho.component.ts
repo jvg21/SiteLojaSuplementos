@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CarrinhoModel } from 'src/app/Application/model/carrinho.model';
 import { PedidoModel } from 'src/app/Application/model/pedido.model';
 import { ProdutoModel } from 'src/app/Application/model/produto.model';
@@ -35,7 +35,6 @@ export class CarrinhoComponent {
   }
 
   removerProduto(idProduto: number) {
-    // console.log(idProduto);
     this.carrinhoService.delete(idProduto).subscribe(() => {
       alert('Produto Removido');
       window.location.reload();
@@ -43,7 +42,7 @@ export class CarrinhoComponent {
   }
 
   pagamentoForm = new FormGroup({
-    Metodo: new FormControl(''),
+    Metodo: new FormControl('',[Validators.required]),
   })
 
 
@@ -65,7 +64,6 @@ export class CarrinhoComponent {
       error: (e) => console.error(e),
       complete: () => console.info('complete')
     });
-
   }
 
   getCarrinho() {
@@ -91,9 +89,6 @@ export class CarrinhoComponent {
       }
 
     });
-
-    // console.log(this.produtosCarrinho);
-
   }
 
   setarPix(){
@@ -138,7 +133,7 @@ export class CarrinhoComponent {
         this.carrinhoService.deleteAll(usuario.id).subscribe({
           
         });
-        //window.location.reload();
+        window.location.reload();
       }
     }
     )
