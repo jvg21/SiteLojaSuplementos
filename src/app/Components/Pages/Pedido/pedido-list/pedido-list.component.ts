@@ -38,8 +38,8 @@ export class PedidoListComponent {
     ///alterar o status
 
     let pedido = new PedidoModel;
-    pedido.id = Number(this.produtoForm.controls['Id'].value);
-    pedido.nome = this.produtoForm.controls['Nome'].value || '';
+    pedido.id = Number(this.selectedRow.dataEntrega);
+    pedido.entrega = 'Entregue';
     
     this.pedidoService.alterar(pedido).subscribe(produto => {
       this.listar()
