@@ -9,7 +9,7 @@ import { PedidoService } from 'src/app/Application/service/pedido.service';
   styleUrls: ['./pedido-list.component.css']
 })
 export class PedidoListComponent {
-  displayedColumns: string[] = ['id', 'nome', 'valor', 'marca', 'peso','medidaPeso','ativado','descricao','url'];
+  displayedColumns: string[] = ['id', 'idCliente', 'produto', 'dataEntrega', 'valor','entrega','metodo'];
   dataSource: PedidoModel[] = [];
   selectedRow = new PedidoModel;
   listaPedidos: PedidoModel[] = [];
@@ -24,11 +24,10 @@ export class PedidoListComponent {
 
   }
   
-
   listar() {
 
     ////listar todos os pedidos
-    this.pedidoService.listar().subscribe({
+    this.pedidoService.listarAll().subscribe({
       next: (pedido) => this.listaPedidos = pedido,
       error: (e) => console.error(e),
       complete: () => console.info('complete')
