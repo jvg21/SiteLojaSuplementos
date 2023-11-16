@@ -41,9 +41,8 @@ export class PedidoListComponent {
     pedido.id = Number(this.selectedRow.dataEntrega);
     pedido.entrega = 'Entregue';
     
-    this.pedidoService.alterar(pedido).subscribe(produto => {
-      this.listar()
-      alert(produto.nome + " Alterado Com sucesso");
+    this.pedidoService.entregar(pedido.id).subscribe(pedido => {
+      this.listar();
     });
     
   }

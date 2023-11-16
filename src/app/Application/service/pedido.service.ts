@@ -31,6 +31,10 @@ export class PedidoService {
     delete(id:number){
         return this.http.delete('http://localhost:8080/pedido/excluir/'+id);
     };
+
+    entregar(id:number){
+        return this.http.put('http://localhost:8080/pedido/entrega/'+id,null);
+    }
     
 
     
