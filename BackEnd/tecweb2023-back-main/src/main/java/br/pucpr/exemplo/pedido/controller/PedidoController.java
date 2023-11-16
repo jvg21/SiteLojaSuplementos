@@ -48,4 +48,9 @@ public class PedidoController {
       pedidoService.excluir(id);
     }
 
+    @PutMapping("/pedido/entrega/{id}")
+    public void entregar(@PathVariable int id){
+      pedidoService.entrega(id);
+    }
+
 }
