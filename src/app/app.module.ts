@@ -30,10 +30,11 @@ import { ProdutoSpecComponent } from './Components/Pages/Produto/produto-spec/pr
 import { TransportadoraListComponent } from './Components/Pages/Transportadora/transportadora-list/transportadora-list.component';
 import { CarrinhoComponent } from './Components/Pages/carrinho/carrinho.component';
 import { ProdutoSearchComponent } from './Components/Pages/Produto/produto-search/produto-search.component';
-import { PedidoComponent } from './Components/Pages/pedido/pedido.component';
+import { PedidoComponent } from './Components/Pages/Pedido/pedido/pedido.component';
 import { UserListComponent } from './Components/Pages/User/user-list/user-list.component';
 import { UpdateCadastroComponent } from './Components/Pages/User/update-cadastro/update-cadastro.component';
 import { LayoutAdmComponent } from './Components/Pages/Layout/layout-adm/layout-adm.component';
+import { PedidoListComponent } from './Components/Pages/Pedido/pedido-list/pedido-list.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { LayoutAdmComponent } from './Components/Pages/Layout/layout-adm/layout-
     UserListComponent,
     UpdateCadastroComponent,
     LayoutAdmComponent,
+    PedidoListComponent,
   ],
   imports: [
     HttpClientModule,
