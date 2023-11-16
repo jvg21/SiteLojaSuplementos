@@ -36,10 +36,12 @@ export class PedidoListComponent {
 
   alterar(){
     ///alterar o status
+    let date: Date = new Date();  
+
 
     let pedido = new PedidoModel;
     pedido.id = Number(this.selectedRow.dataEntrega);
-    pedido.entrega = 'Entregue';
+    pedido.entrega = 'Entregue' + date.getDate().toString()+"/"+(date.getMonth()+1).toString()+"/"+date.getFullYear().toString();
     
     this.pedidoService.entregar(pedido.id).subscribe(pedido => {
       this.listar();

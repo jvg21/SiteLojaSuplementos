@@ -30,7 +30,7 @@ export class CadastroComponent {
     Complemento : new FormControl(''),
     Cep : new FormControl('',[Validators.required]),
   },{
-    validators:checkPasswords;
+    validators:checkPasswords
   }
   
   );

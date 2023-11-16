@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
-import { CarrinhoModel } from 'src/app/Application/model/carrinho.model';
 import { PedidoModel } from 'src/app/Application/model/pedido.model';
 import { ProdutoModel } from 'src/app/Application/model/produto.model';
 import { UsuarioModel } from 'src/app/Application/model/usuario.model';
-import { CarrinhoService } from 'src/app/Application/service/carrinho.service';
 import { PedidoService } from 'src/app/Application/service/pedido.service';
-import { ProdutoService } from 'src/app/Application/service/produto.service';
 import { UsuarioService } from 'src/app/Application/service/usuario.service';
 
 @Component({
