@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { checkPasswords } from 'src/app/Application/common/confirmPassword';
 import { PasswordShow } from 'src/app/Application/common/passwordShow';
 import { UsuarioModel } from 'src/app/Application/model/usuario.model';
 import { UsuarioService } from 'src/app/Application/service/usuario.service';
@@ -20,8 +21,8 @@ export class UpdateCadastroComponent {
     Nome : new FormControl('',[Validators.required]),
     Email : new FormControl('',[Validators.required]),
     Cpf : new FormControl('',[Validators.required]),
-    Senha : new FormControl('',[Validators.required]),
-    Csenha : new FormControl(''),
+    Password : new FormControl('',[Validators.required]),
+    ConfirmPassword : new FormControl(''),
     Uf : new FormControl('',[Validators.required]),
     Cidade : new FormControl('',[Validators.required]),
     Endereco : new FormControl('',[Validators.required]),
@@ -29,6 +30,8 @@ export class UpdateCadastroComponent {
     Complemento : new FormControl(''),
     Cep : new FormControl('',[Validators.required]),
     Acesso: new FormControl('')
+  },{
+    validators:checkPasswords
   });
   
   
@@ -38,7 +41,9 @@ export class UpdateCadastroComponent {
       this.cadastroForm.controls['Nome'].setValue(String(usuario.nome));
       this.cadastroForm.controls['Email'].setValue(String(usuario.email));
       this.cadastroForm.controls['Cpf'].setValue(String(usuario.cpf));
-      this.cadastroForm.controls['Senha'].setValue(String(usuario.senha));
+      this.cadastroForm.controls['Password'].setValue(String(usuario.senha));
+      
+      this.cadastroForm.controls['ConfirmPassword'].setValue(String(usuario.senha));
       this.cadastroForm.controls['Cep'].setValue(String(usuario.cep));
       this.cadastroForm.controls['Uf'].setValue(String(usuario.uf));
       this.cadastroForm.controls['Cidade'].setValue(String(usuario.cidade));
@@ -56,7 +61,7 @@ export class UpdateCadastroComponent {
     produto.nome = this.cadastroForm.controls['Nome'].value || '';
     produto.email = this.cadastroForm.controls['Email'].value || '';
     produto.cpf = this.cadastroForm.controls['Cpf'].value || '';
-    produto.senha = this.cadastroForm.controls['Senha'].value || '';
+    produto.senha = this.cadastroForm.controls['Password'].value || '';
     produto.cep = this.cadastroForm.controls['Cep'].value || '';
     produto.uf = this.cadastroForm.controls['Uf'].value || '';
     produto.endereco = this.cadastroForm.controls['Endereco'].value || '';

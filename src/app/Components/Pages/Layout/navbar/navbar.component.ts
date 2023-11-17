@@ -16,12 +16,16 @@ export class NavbarComponent  {
   ngOnInit(): void {
     // console.log(this.LoginStatus);
 
-    this.usuarioService.getLogin().forEach(x=>{
-  
-      if(x.id!=null|| x!= undefined){
-        this.LoginStatus = true;
-        this.LoginAcess = x.acesso || 'Usuario';
-      }
+    this.usuarioService.getLogin().subscribe({
+      next: (usuario)=>{
+        if(usuario.id!=null|| usuario!= undefined){
+          this.LoginStatus = true;
+          this.LoginAcess = usuario.acesso || 'Usuario';
+        }
+      },
+      error:(e) => (console.info(e)),
+      complete:() => console.info('complete')
+      
     })
   
   }

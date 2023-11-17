@@ -27,13 +27,13 @@ const routes: Routes = [
     {path:"carrinho", component:CarrinhoComponent},
     {path:"produto-search", component:ProdutoSearchComponent},
     {path:"pedidos",component:PedidoComponent},
-    {path:"pedidosList",component:PedidoListComponent},
     {path:"updatecadastro",component:UpdateCadastroComponent}
   ]},
   {path:"adm",component:LayoutAdmComponent,children:[
     {path:"produto",component:ProdutoListComponent},
     {path:"transportadora",component:TransportadoraListComponent},
-    {path:"usuario",component:UserListComponent}
+    {path:"usuario",component:UserListComponent},
+    {path:"pedidosList",component:PedidoListComponent},
   ]},
 
   {path:'PageNotFound' , component:ErrorPageComponent},

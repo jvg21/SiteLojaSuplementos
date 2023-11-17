@@ -5,6 +5,8 @@ import br.pucpr.exemplo.pedido.repository.PedidoRepository;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 @Service
@@ -37,9 +39,15 @@ public class PedidoService {
 
   public Pedido entrega(Integer id) {
 
+    LocalDate currentDate = LocalDate.now();
+    // Criar um formatador para o formato desejado
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    // Formatando a data
+    String formattedDate = currentDate.format(formatter);
+
     if (pedidoRepository.findById(id).isPresent()) {
       Pedido pedido = pedidoRepository.findById(id).get();
-      pedido.setEntrega("Entregue");
+      pedido.setEntrega("Pedido Entregue: "+formattedDate);
       return pedidoRepository.save(pedido);
     }
     return null;
