@@ -26,6 +26,9 @@
                 <li class="nav-item" *ngIf="LoginStatus == true && LoginAcess== 'Adm' ">
                     <a class="nav-link" aria-current="page" routerLink="/adm/produto">Produtos</a>
                 </li>
+                <li class="nav-item" *ngIf="LoginStatus == true && LoginAcess== 'Adm' ">
+                    <a class="nav-link" aria-current="page" routerLink="/adm/pedidosList">Pedidos</a>
+                </li>
                 <!---------usuario------------->
 
                 <li class="nav-item" *ngIf="LoginStatus == true && LoginAcess== 'Usuario' ">
