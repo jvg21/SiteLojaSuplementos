@@ -23,7 +23,7 @@
         </div>
 
         <div class="input-group">
-            <input type="text" id="cpf" placeholder="CPF" formControlName="Cpf">
+            <input type="text" id="cpf" placeholder="CPF" formControlName="Cpf" [ngModel]="cpf.cpf|cpf" (ngModelChange)="cpf.cpf=$event" maxlength="14">
         </div>
         <div *ngIf="cadastroForm.controls['Cpf'].invalid && cadastroForm.controls['Cpf'].dirty">
             <p style="color: red;">Cpf Inválido</p>
@@ -55,7 +55,7 @@
         <div class="separator"></div>
         <h2 style="text-align: left;">Endereço</h2>
         <div class="input-group">
-            <input type="text" id="cep" placeholder="CEP" formControlName="Cep" />
+            <input type="text" id="cep" placeholder="CEP" formControlName="Cep" [ngModel]="cep.cep|cep" (ngModelChange)="cep.cep=$event" maxlength="9"/>
             <div *ngIf="cadastroForm.controls['Cep'].invalid && cadastroForm.controls['Cep'].dirty">
                 <p style="color: red;">Cep Inválido</p>
             </div>

@@ -8,7 +8,7 @@
 
     <div class="product" *ngFor="let produto of dataSource;">
         <h2>{{produto.nome + ' ' + produto.marca + ' ' + produto.peso + ' ' + produto.medidaPeso}}</h2>
-        <img (click)="redirectTo(produto.id || 0)" [src]="'../../../Images/' + produto.url" [alt]="produto.url ? produto.nome : 'Imagem Indisponível'" height="120" width="120">
+        <img src="" (click)="redirectTo(produto.id || 0)" [src]="'../../../../../assets/Images/' + produto.url" [alt]="produto.url ? produto.nome : 'Imagem Indisponível'" height="120" width="120">
         <p>Preço: R$ {{produto.valor}}</p>
         <button class="add-to-cart" (click)="adicionarCarrinho(produto.id || 0)">
             <a>Adicionar ao Carrinho</a>

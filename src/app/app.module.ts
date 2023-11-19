@@ -4,6 +4,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CpfPipe } from './Application/common/cpf/cpf.pipe';
+import { Cpf } from './Application/common/cpf/cpf.class';
+
 
 //angular materials
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -35,6 +38,7 @@ import { UserListComponent } from './Components/Pages/User/user-list/user-list.c
 import { UpdateCadastroComponent } from './Components/Pages/User/update-cadastro/update-cadastro.component';
 import { LayoutAdmComponent } from './Components/Pages/Layout/layout-adm/layout-adm.component';
 import { PedidoListComponent } from './Components/Pages/Pedido/pedido-list/pedido-list.component';
+import { CepPipe } from './Application/common/cep/cep.pipe';
 
 @NgModule({
   declarations: [
@@ -55,6 +59,8 @@ import { PedidoListComponent } from './Components/Pages/Pedido/pedido-list/pedid
     UpdateCadastroComponent,
     LayoutAdmComponent,
     PedidoListComponent,
+    CpfPipe,
+    CepPipe,
   ],
   imports: [
     HttpClientModule,
