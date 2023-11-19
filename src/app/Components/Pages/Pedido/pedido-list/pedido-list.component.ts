@@ -41,10 +41,6 @@ export class PedidoListComponent {
     let date: Date = new Date();  
     let pedido = new PedidoModel;
     pedido.id = Number(this.selectedRow.id);
-    // let data = date.getDate().toString()+"/"+(date.getMonth()+1).toString()+"/"+date.getFullYear().toString();
-    // console.log(data);
-    // pedido.entrega = 'Pedido Entregue: ' + data.toString();
-    
     this.pedidoService.entregar(pedido.id).subscribe(pedido => {
       alert("Pedido Entregue")
       this.listar();
@@ -52,21 +48,4 @@ export class PedidoListComponent {
     
   }
 
-  // filtro1(){
-  //   for(let i = 0;i<this.dataSource.length;i++){
-  //     if(this.dataSource[i].entrega == "Pedido a caminho"){
-  //       this.listaPedidos.push(this.dataSource[i]);
-  //     }
-  //   }
-  //   this.dataSource = this.listaPedidos;
-  // }
-
-  // filtro2(){
-  //   for(let i = 0;i<this.dataSource.length;i++){
-  //     if(this.dataSource[i].entrega != "Pedido a caminho"){
-  //       this.listaPedidos.push(this.dataSource[i]);
-  //     }
-  //   }
-  //   this.dataSource = this.listaPedidos;
-  // }
 }

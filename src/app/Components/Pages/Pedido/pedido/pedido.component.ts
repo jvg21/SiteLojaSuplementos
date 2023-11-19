@@ -22,7 +22,6 @@ export class PedidoComponent {
     this.getPedido();
   }
 
-
   getPedido() {
     this.usuarioService.getLogin().subscribe(usuario => {
       if (usuario.id != undefined || usuario.id != null) {
@@ -35,7 +34,6 @@ export class PedidoComponent {
         });
 
       }
-
     });
 
   }

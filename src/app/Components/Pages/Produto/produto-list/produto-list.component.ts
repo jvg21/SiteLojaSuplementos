@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validator, Validators } from '@angular/forms';
+import { produtoForm } from 'src/app/Application/common/form/produto.form';
 import { ProdutoModel } from 'src/app/Application/model/produto.model';
 import { ProdutoService } from 'src/app/Application/service/produto.service';
 
@@ -12,28 +12,16 @@ export class ProdutoListComponent {
   displayedColumns: string[] = ['id', 'nome', 'valor', 'marca', 'peso','medidaPeso','ativado','descricao','url'];
   dataSource: ProdutoModel[] = [];
   selectedRow = new ProdutoModel;
+  produtoForm = produtoForm;
+  adicionarControl = true;
   constructor(private produtoService: ProdutoService) { }
 
-  adicionarControl = true;
-  
-  produtoForm = new FormGroup({
-    Id: new FormControl({ value: '', disabled: true }),
-    Nome: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    Valor: new FormControl(0, [Validators.required, Validators.min(0)]),
-    Peso: new FormControl(1, [Validators.required, Validators.min(0)]),
-    MedidaPeso: new FormControl('',[Validators.required]),
-    Marca: new FormControl('', [Validators.required]),
-    Ativado: new FormControl(true, [Validators.required]),
-    Url: new FormControl('', [Validators.required]),
-    Descricao: new FormControl('', [Validators.required, Validators.minLength(3),Validators.maxLength(200)]),
-
-  })
-
+  ngOnInit(): void {
+    this.listar();
+  }
   setAdiconarControll(foo:boolean){
-    
     this.adicionarControl = foo;
     this.controlModal();
-
   }
   controlModal() {
     if (this.adicionarControl) {
@@ -57,17 +45,10 @@ export class ProdutoListComponent {
 
     }
   }
-
   logs(row: ProdutoModel) {
     this.selectedRow = row;
-    // console.log(this.selectedRow);
 
   }
-  ngOnInit(): void {
-    this.listar();
-    // console.log(this.dataSource)
-  }
-
   adicionar() {
     
     let produto = new ProdutoModel;
@@ -79,9 +60,6 @@ export class ProdutoListComponent {
     produto.ativado = this.produtoForm.controls['Ativado'].value || true;
     produto.descricao = this.produtoForm.controls['Descricao'].value || '';
     produto.url = this.produtoForm.controls['Url'].value || '';
-
-    // console.log(produto);
-    
     this.produtoService.salvar(produto).subscribe(produto => {
       this.listar()
       alert(produto.nome + " Gravado Com sucesso");
