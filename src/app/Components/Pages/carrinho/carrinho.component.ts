@@ -128,7 +128,7 @@ export class CarrinhoComponent {
        console.log(this.pedidoSource);
       
       this.pedidoService.salvar(this.pedidoSource).subscribe({});
-      
+      alert("Obrigado pela Compra")
       if (usuario.id != undefined || usuario.id != null) {
         this.carrinhoService.deleteAll(usuario.id).subscribe({
           
@@ -137,8 +137,6 @@ export class CarrinhoComponent {
       }
     }
     )
-    
-    
   }
 }
 
