@@ -33,7 +33,7 @@ export class UpdateCadastroComponent {
       this.cadastroForm.controls['Cidade'].setValue(String(usuario.cidade));
       this.cadastroForm.controls['Endereco'].setValue(String(usuario.endereco));
       this.cadastroForm.controls['Acesso'].setValue(String(usuario.acesso)||'Usuario');
-      this.cadastroForm.controls['Numero'].setValue(Number(usuario.numero) || 0);
+      this.cadastroForm.controls['Numero'].setValue(String(usuario.numero )|| '');
     // console.log(this.dataSource)
   });
 

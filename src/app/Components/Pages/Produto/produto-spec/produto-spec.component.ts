@@ -6,6 +6,7 @@ import { ProdutoModel } from 'src/app/Application/model/produto.model';
 import { UsuarioModel } from 'src/app/Application/model/usuario.model';
 import { CarrinhoService } from 'src/app/Application/service/carrinho.service';
 import { ProdutoService } from 'src/app/Application/service/produto.service';
+import { UsuarioService } from 'src/app/Application/service/usuario.service';
 
 @Component({
   selector: 'app-produto-spec',
@@ -16,9 +17,10 @@ export class ProdutoSpecComponent {
   private routeSub = new Subscription;
   dataSource: ProdutoModel = new ProdutoModel;
   userData = new UsuarioModel;
-  constructor(private route: ActivatedRoute, private produtoService: ProdutoService, private carrinhoService:CarrinhoService) { }
+  constructor(private route: ActivatedRoute, private produtoService: ProdutoService, private carrinhoService:CarrinhoService,private usuarioService:UsuarioService) { }
 
   ngOnInit() {
+    this.getLogin();
     this.routeSub = this.route.params.subscribe(params => {
       // console.log(params) //log the entire params object
       console.log(params['id']) //log the value of id
@@ -29,6 +31,12 @@ export class ProdutoSpecComponent {
       });
     });
   }
+  getLogin(){
+    this.usuarioService.getLogin().subscribe(usuario=>{
+      this.userData = usuario;
+    })
+  }
+    ;
 
   adicionarCarrinho(id:number){
 

@@ -53,7 +53,7 @@ export class UserListComponent {
       this.cadastroForm.controls['Cidade'].setValue(String(this.selectedRow.cidade));
       this.cadastroForm.controls['Endereco'].setValue(String(this.selectedRow.endereco));
       this.cadastroForm.controls['Acesso'].setValue(String(this.selectedRow.acesso)||'Usuario');
-      this.cadastroForm.controls['Numero'].setValue(Number(this.selectedRow.numero) || 0);
+      this.cadastroForm.controls['Numero'].setValue(String(this.selectedRow.numero) ||'');
     }
   }
 
@@ -77,7 +77,7 @@ export class UserListComponent {
     produto.uf = this.cadastroForm.controls['Uf'].value || '';
     produto.cidade = this.cadastroForm.controls['Cidade'].value || '';
     produto.endereco = this.cadastroForm.controls['Endereco'].value || '';
-    produto.numero = this.cadastroForm.controls['Numero'].value || 0;
+    produto.numero = Number(this.cadastroForm.controls['Numero'].value) || 0;
     produto.complemento = this.cadastroForm.controls['Complemento'].value || '';
     produto.cep = this.cadastroForm.controls['Cep'].value || '';
     produto.acesso = this.cadastroForm.controls['Acesso'].value || 'Usuario';

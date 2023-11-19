@@ -33,7 +33,7 @@ export class CadastroComponent {
     user.cidade = this.cadastroForm.controls['Cidade'].value || '';
     user.endereco = this.cadastroForm.controls['Endereco'].value || '';
     user.complemento = this.cadastroForm.controls['Complemento'].value || '';
-    user.numero = this.cadastroForm.controls['Numero'].value || 0;
+    user.numero = Number(this.cadastroForm.controls['Numero'].value )|| undefined;
     user.cep = this.cadastroForm.controls['Cep'].value || '';
     user.acesso = 'Usuario';
 

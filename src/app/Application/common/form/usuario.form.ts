@@ -11,7 +11,7 @@ export const cadastroForm = new FormGroup({
     Uf: new FormControl('', [Validators.required]),
     Cidade: new FormControl('', [Validators.required]),
     Endereco: new FormControl('', [Validators.required]),
-    Numero: new FormControl(0, [Validators.required]),
+    Numero: new FormControl('', [Validators.required]),
     Complemento: new FormControl(''),
     Acesso: new FormControl(''),
     Cep: new FormControl('', [Validators.required,Validators.maxLength(14),Validators.pattern(/^\d{5}-\d{3}$/)]),
