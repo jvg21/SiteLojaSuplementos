@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { checkPasswords } from 'src/app/Application/common/confirmPassword';
+import { Cep } from 'src/app/Application/common/mask/cep/cep.class';
+import { cadastroForm } from 'src/app/Application/common/form/usuario.form';
 import { PasswordShow } from 'src/app/Application/common/passwordShow';
 import { UsuarioModel } from 'src/app/Application/model/usuario.model';
 import { UsuarioService } from 'src/app/Application/service/usuario.service';
@@ -12,29 +12,13 @@ import { UsuarioService } from 'src/app/Application/service/usuario.service';
 })
 export class UpdateCadastroComponent {
   PasswordShow = new PasswordShow();
+  cep = new Cep();
   selectedRow = new UsuarioModel;
-  constructor(private usuarioService: UsuarioService) { }
   adicionarControl = true;
+  cadastroForm = cadastroForm;
 
-  cadastroForm = new FormGroup({
-    Id : new FormControl({ value: '', disabled: true }),
-    Nome : new FormControl('',[Validators.required]),
-    Email : new FormControl('',[Validators.required]),
-    Cpf : new FormControl('',[Validators.required]),
-    Password : new FormControl('',[Validators.required]),
-    ConfirmPassword : new FormControl(''),
-    Uf : new FormControl('',[Validators.required]),
-    Cidade : new FormControl('',[Validators.required]),
-    Endereco : new FormControl('',[Validators.required]),
-    Numero : new FormControl(0,[Validators.required]),
-    Complemento : new FormControl(''),
-    Cep : new FormControl('',[Validators.required]),
-    Acesso: new FormControl('')
-  },{
-    validators:checkPasswords
-  });
-  
-  
+  constructor(private usuarioService: UsuarioService) { }
+
   ngOnInit(): void {
     this.usuarioService.getLogin().subscribe(usuario => {
       this.cadastroForm.controls['Id'].setValue(String(usuario.id));

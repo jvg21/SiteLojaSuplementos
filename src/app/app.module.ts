@@ -4,8 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { CpfPipe } from './Application/common/cpf/cpf.pipe';
-import { Cpf } from './Application/common/cpf/cpf.class';
+import { CpfPipe } from './Application/common/mask/cpf/cpf.pipe';
+import { Cpf } from './Application/common/mask/cpf/cpf.class';
 
 
 //angular materials
@@ -38,7 +38,8 @@ import { UserListComponent } from './Components/Pages/User/user-list/user-list.c
 import { UpdateCadastroComponent } from './Components/Pages/User/update-cadastro/update-cadastro.component';
 import { LayoutAdmComponent } from './Components/Pages/Layout/layout-adm/layout-adm.component';
 import { PedidoListComponent } from './Components/Pages/Pedido/pedido-list/pedido-list.component';
-import { CepPipe } from './Application/common/cep/cep.pipe';
+import { CepPipe } from './Application/common/mask/cep/cep.pipe';
+import { CnpjPipe } from './Application/common/mask/cnpj/cnpj.pipe';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { CepPipe } from './Application/common/cep/cep.pipe';
     PedidoListComponent,
     CpfPipe,
     CepPipe,
+    CnpjPipe,
   ],
   imports: [
     HttpClientModule,

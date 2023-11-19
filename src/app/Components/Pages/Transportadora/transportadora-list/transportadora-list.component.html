@@ -33,7 +33,7 @@
 
                     <div class="mb-3">
                         <label for="cnpjTransportadora" class="form-label">Cnpj</label>
-                        <input type="text" class="form-control" id="cnpjTransportadora" formControlName="Cnpj" maxlength="17" >
+                        <input type="text" class="form-control" id="cnpjTransportadora" formControlName="Cnpj" [ngModel]="cnpj.cnpj|cnpj" (ngModelChange)="cnpj.cnpj=$event" maxlength="18" >
                         <div *ngIf="transportadoraForm.controls['Cnpj'].invalid &&transportadoraForm.controls['Cnpj'].dirty"
                             style="color: red;" id="nomeHelp" class="form-text">Valor Inválido</div>
                     </div>

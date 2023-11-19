@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Cep } from 'src/app/Application/common/mask/cep/cep.class';
+import { Cpf } from 'src/app/Application/common/mask/cpf/cpf.class';
+import { cadastroForm } from 'src/app/Application/common/form/usuario.form';
 import { UsuarioModel } from 'src/app/Application/model/usuario.model';
 import { UsuarioService } from 'src/app/Application/service/usuario.service';
 
@@ -13,25 +15,11 @@ export class UserListComponent {
   'complemento', 'cep', 'acesso'];
   dataSource: UsuarioModel[] = [];
   selectedRow = new UsuarioModel;
-  constructor(private usuarioService: UsuarioService) { }
-
+  cpf = new Cpf();
+  cep = new Cep();
   adicionarControl = true;
-
-  cadastroForm = new FormGroup({
-    Id : new FormControl({ value: '', disabled: true }),
-    Nome : new FormControl('',[Validators.required]),
-    Email : new FormControl('',[Validators.required]),
-    Cpf : new FormControl('',[Validators.required]),
-    Senha : new FormControl('',[Validators.required]),
-    Csenha : new FormControl(''),
-    Uf : new FormControl('',[Validators.required]),
-    Cidade : new FormControl('',[Validators.required]),
-    Endereco : new FormControl('',[Validators.required]),
-    Numero : new FormControl(0,[Validators.required]),
-    Complemento : new FormControl(''),
-    Cep : new FormControl('',[Validators.required]),
-    Acesso: new FormControl('')
-  });
+  cadastroForm = cadastroForm;
+  constructor(private usuarioService: UsuarioService) { }
 
   setAdiconarControll(foo: boolean) {
 
@@ -45,8 +33,8 @@ export class UserListComponent {
       this.cadastroForm.controls['Nome'].setValue('');
       this.cadastroForm.controls['Email'].setValue('');
       this.cadastroForm.controls['Cpf'].setValue('');
-      this.cadastroForm.controls['Senha'].setValue('');
-      this.cadastroForm.controls['Csenha'].setValue('');
+      this.cadastroForm.controls['Password'].setValue('');
+      this.cadastroForm.controls['ConfirmPassword'].setValue('');
       this.cadastroForm.controls['Cep'].setValue('');
       this.cadastroForm.controls['Uf'].setValue('');
       this.cadastroForm.controls['Cidade'].setValue('');
@@ -59,7 +47,7 @@ export class UserListComponent {
       this.cadastroForm.controls['Nome'].setValue(String(this.selectedRow.nome));
       this.cadastroForm.controls['Email'].setValue(String(this.selectedRow.email));
       this.cadastroForm.controls['Cpf'].setValue(String(this.selectedRow.cpf));
-      this.cadastroForm.controls['Senha'].setValue(String(this.selectedRow.senha));
+      this.cadastroForm.controls['Password'].setValue(String(this.selectedRow.senha));
       this.cadastroForm.controls['Cep'].setValue(String(this.selectedRow.cep));
       this.cadastroForm.controls['Uf'].setValue(String(this.selectedRow.uf));
       this.cadastroForm.controls['Cidade'].setValue(String(this.selectedRow.cidade));
@@ -85,7 +73,7 @@ export class UserListComponent {
     produto.nome = this.cadastroForm.controls['Nome'].value || '';
     produto.email = this.cadastroForm.controls['Email'].value || '';
     produto.cpf = this.cadastroForm.controls['Cpf'].value || '';
-    produto.senha = this.cadastroForm.controls['Senha'].value || '';
+    produto.senha = this.cadastroForm.controls['Password'].value || '';
     produto.uf = this.cadastroForm.controls['Uf'].value || '';
     produto.cidade = this.cadastroForm.controls['Cidade'].value || '';
     produto.endereco = this.cadastroForm.controls['Endereco'].value || '';
@@ -116,7 +104,7 @@ export class UserListComponent {
     produto.nome = this.cadastroForm.controls['Nome'].value || '';
     produto.email = this.cadastroForm.controls['Email'].value || '';
     produto.cpf = this.cadastroForm.controls['Cpf'].value || '';
-    produto.senha = this.cadastroForm.controls['Senha'].value || '';
+    produto.senha = this.cadastroForm.controls['Password'].value || '';
     produto.cep = this.cadastroForm.controls['Cep'].value || '';
     produto.uf = this.cadastroForm.controls['Uf'].value || '';
     produto.endereco = this.cadastroForm.controls['Endereco'].value || '';

@@ -31,7 +31,7 @@
         <div class="separator"></div>
         <h2 style="text-align: left;">Endereço</h2>
         <div class="input-group">
-            <input type="text" id="cep" placeholder="CEP" formControlName="Cep" />
+            <input type="text" id="cep" placeholder="CEP" formControlName="Cep" [ngModel]="cep.cep|cep" (ngModelChange)="cep.cep=$event" maxlength="9"/>
             <select class="form-control" id="uf" formControlName="Uf">
                 <option value="" disabled selected hidden>Estado</option>
                 <option value="AC">AC</option>

@@ -41,14 +41,14 @@
 
                     <div class="mb-3">
                         <label for="cpf" class="form-label">Cpf</label>
-                        <input type="text" class="form-control" id="cpf" formControlName="Cpf">
+                        <input type="text" class="form-control" id="cpf" formControlName="Cpf"  [ngModel]="cpf.cpf|cpf" (ngModelChange)="cpf.cpf=$event" maxlength="14">
                         <div *ngIf="cadastroForm.controls['Cpf'].invalid &&cadastroForm.controls['Cpf'].dirty"
                             style="color: red;" id="nomeHelp" class="form-text">Cpf Inválido</div>
                     </div>
 
                     <div class="mb-3">
                         <label for="Cep" class="form-label">Cep</label>
-                        <input type="text" class="form-control" id="Cep" formControlName="Cep">
+                        <input type="text" class="form-control" id="Cep" formControlName="Cep" [ngModel]="cep.cep|cep" (ngModelChange)="cep.cep=$event" maxlength="9">
                         <div *ngIf="cadastroForm.controls['Cep'].invalid &&cadastroForm.controls['Cep'].dirty"
                             style="color: red;" id="nomeHelp" class="form-text">Cep Inválido</div>
                     </div>
@@ -101,7 +101,7 @@
 
                     <div class="mb-3">
                         <label for="Numero" class="form-label">Numero</label>
-                        <input type="number" class="form-control" id="cpf" formControlName="Numero">
+                        <input type="number" class="form-control" id="Numero" formControlName="Numero">
                         <div *ngIf="cadastroForm.controls['Numero'].invalid &&cadastroForm.controls['Numero'].dirty"
                             style="color: red;" id="nomeHelp" class="form-text">Numero Inválido</div>
                     </div>
@@ -115,15 +115,15 @@
 
                     <div class="mb-3">
                         <label for="Senha" class="form-label">Senha</label>
-                        <input type="text" class="form-control" id="Senha" formControlName="Senha">
-                        <div *ngIf="cadastroForm.controls['Senha'].invalid &&cadastroForm.controls['Senha'].dirty"
+                        <input type="text" class="form-control" id="Senha" formControlName="Password">
+                        <div *ngIf="cadastroForm.controls['Password'].invalid &&cadastroForm.controls['Password'].dirty"
                             style="color: red;" id="nomeHelp" class="form-text">Senha Inválida</div>
                     </div>
 
-                    <div class="mb-3" *ngIf="adicionarControl">
+                    <div class="mb-3" >
                         <label for="CSenha" class="form-label">Confirmar Senha</label>
-                        <input type="text" class="form-control" id="CSenha" formControlName="Csenha">
-                        <div *ngIf="cadastroForm.controls['Csenha'].invalid &&cadastroForm.controls['Csenha'].dirty"
+                        <input type="text" class="form-control" id="CSenha" formControlName="ConfirmPassword">
+                        <div *ngIf="cadastroForm.controls['ConfirmPassword'].invalid &&cadastroForm.controls['ConfirmPassword'].dirty"
                             style="color: red;" id="nomeHelp" class="form-text">Complemento Inválido</div>
                     </div>
 

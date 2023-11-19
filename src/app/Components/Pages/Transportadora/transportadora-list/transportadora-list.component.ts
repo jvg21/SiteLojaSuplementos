@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { transportadoraForm } from 'src/app/Application/common/form/transportadora.form';
+import { Cnpj } from 'src/app/Application/common/mask/cnpj/cnpj.class';
 import { TransportadoraModel } from 'src/app/Application/model/transportadora.model';
 import { transportadoraService } from 'src/app/Application/service/transportadora.service';
 
@@ -12,12 +13,17 @@ export class TransportadoraListComponent {
   displayedColumns: string[] = ['id', 'nome', 'cnpj', 'email', 'ativado'];
   dataSource: TransportadoraModel[] = [];
   selectedRow = new TransportadoraModel;
+  cnpj = new Cnpj();
+  adicionarControl = true;
+  transportadoraForm = transportadoraForm;
   constructor(private transportadoraService: transportadoraService) { }
 
-  adicionarControl = true;
+  ngOnInit(): void {
+    this.listar();
+    // console.log(this.dataSource)
+  }
 
   setAdiconarControll(foo: boolean) {
-
     this.adicionarControl = foo;
     this.controlModal();
 
@@ -40,46 +46,18 @@ export class TransportadoraListComponent {
 
   logs(row: TransportadoraModel) {
     this.selectedRow = row;
-    // console.log(this.selectedRow);
-
   }
-  ngOnInit(): void {
-    this.listar();
-    // console.log(this.dataSource)
-  }
-
-  transportadoraForm = new FormGroup({
-    Id: new FormControl({ value: '', disabled: true }),
-    Nome: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    Cnpj: new FormControl('', [Validators.required, Validators.minLength(14)]),
-    Email: new FormControl('', [Validators.required, Validators.email,Validators.minLength(3)]),
-    Ativado: new FormControl(true, [Validators.required])
-
-  })
-
-  // formatCnpj() {
-  //   // Remove qualquer caractere não numérico do CNPJ
-  //   this.cnpj = this.cnpj.replace(/\D/g, '');
-  
-  //   // Formata o CNPJ com pontos e traço
-  //   this.cnpj = this.cnpj.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
-  // }
-
   
   adicionar() {
-
     let transportadora = new TransportadoraModel;
     transportadora.nome = this.transportadoraForm.controls['Nome'].value || '';
     transportadora.cnpj = this.transportadoraForm.controls['Cnpj'].value || '';
     transportadora.email = this.transportadoraForm.controls['Email'].value || '';
     transportadora.ativado = this.transportadoraForm.controls['Ativado'].value || true;
-
-
     this.transportadoraService.salvar(transportadora).subscribe(transportadora => {
       this.listar()
       alert(transportadora.nome + " Gravado Com sucesso");
     });
-
   }
 
   listar() {
@@ -97,8 +75,6 @@ export class TransportadoraListComponent {
     transportadora.cnpj = this.transportadoraForm.controls['Cnpj'].value || '';
     transportadora.email = this.transportadoraForm.controls['Email'].value || '';
     transportadora.ativado = this.transportadoraForm.controls['Ativado'].value || true;
-
-    // console.log("tt!"+transportadora.id);
 
     this.transportadoraService.alterar(transportadora).subscribe(transportadora => {
       this.listar()
