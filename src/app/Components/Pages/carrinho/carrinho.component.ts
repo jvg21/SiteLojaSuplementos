@@ -133,7 +133,7 @@ export class CarrinhoComponent {
         this.carrinhoService.deleteAll(usuario.id).subscribe({
           
         });
-        window.location.reload();
+        window.location.href = './navegar/pedidos';
       }
     }
     )
